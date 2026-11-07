@@ -1,0 +1,3904 @@
+{
+  "_meta": {
+    "dataset": "conversations",
+    "simulated": true,
+    "seed": 42,
+    "notice": "SIMULATED DATA generated for the 9antra hackathon prototype. Not real people, prices or payments.",
+    "count": 120
+  },
+  "records": [
+    {
+      "conversation_id": "CONV0001",
+      "customer_id": "CUST0096",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-04T08:17:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Building LLM Applications et Generative AI & Prompt Engineering ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 78,
+        "satisfaction_score": 76,
+        "mentioned_course_id": "C006",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0002",
+      "customer_id": "CUST0013",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-25T16:29:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je n'arrive pas à accéder à mon cours Data Analysis with AI."
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 44,
+        "satisfaction_score": 56,
+        "mentioned_course_id": "C007",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0003",
+      "customer_id": "CUST0003",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-26T13:42:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation Python for AI, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 87,
+        "satisfaction_score": 54,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0004",
+      "customer_id": "CUST0019",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-17T04:38:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chrit AI for Marketing & Sales ama ma najemch nodkhol lel cours."
+        },
+        {
+          "role": "agent",
+          "text": "AI for Marketing & Sales costs 199 TND and lasts 3 weeks (12h, self-paced). Use AI for content creation, campaign optimisation and lead scoring."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 39,
+        "satisfaction_score": 38,
+        "mentioned_course_id": "C008",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0006",
+      "customer_id": "CUST0067",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-14T20:02:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur machine learning ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Machine Learning Essentials costs 349 TND and lasts 6 weeks (32h, live+self-paced). Supervised and unsupervised learning with scikit-learn on real-style datasets."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 71,
+        "satisfaction_score": 72,
+        "mentioned_course_id": "C003",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0007",
+      "customer_id": "CUST0009",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-21T12:24:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation Computer Vision Bootcamp, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 85,
+        "satisfaction_score": 90,
+        "mentioned_course_id": "C010",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0008",
+      "customer_id": "CUST0093",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-24T12:48:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, mais ça ne m'intéresse pas."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 0,
+        "satisfaction_score": 30,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0009",
+      "customer_id": "CUST0048",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-24T17:09:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I bought Data Analysis with AI last week, how do I access the videos?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 43,
+        "satisfaction_score": 24,
+        "mentioned_course_id": "C007",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0011",
+      "customer_id": "CUST0085",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-09-25T16:14:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation Building LLM Applications m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "negative",
+        "interest_score": 37,
+        "satisfaction_score": 39,
+        "mentioned_course_id": "C006",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0012",
+      "customer_id": "CUST0004",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-04T02:58:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation MLOps & Model Deployment, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 84,
+        "satisfaction_score": 74,
+        "mentioned_course_id": "C012",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0013",
+      "customer_id": "CUST0012",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-27T13:41:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Khallast MLOps & Model Deployment ama el paiement ma t3addech."
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 59,
+        "satisfaction_score": 21,
+        "mentioned_course_id": "C012",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0014",
+      "customer_id": "CUST0007",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-25T07:43:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chnowa el far9 bin MLOps & Model Deployment w Data Analysis with AI?"
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 70,
+        "satisfaction_score": 81,
+        "mentioned_course_id": "C012",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0016",
+      "customer_id": "CUST0023",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-08T03:28:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation AI in FinTech, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "AI in FinTech costs 399 TND and lasts 5 weeks (24h, live+self-paced). Credit scoring, fraud detection and compliance use cases in finance."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 92,
+        "satisfaction_score": 88,
+        "mentioned_course_id": "C009",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0017",
+      "customer_id": "CUST0091",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-10T23:44:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chnowa el far9 bin Building LLM Applications w Generative AI & Prompt Engineering?"
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 73,
+        "satisfaction_score": 52,
+        "mentioned_course_id": "C006",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0018",
+      "customer_id": "CUST0076",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-10-03T03:13:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Do you have something about data? How long does it take?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 60,
+        "satisfaction_score": 86,
+        "mentioned_course_id": "C007",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0019",
+      "customer_id": "CUST0045",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-12T04:38:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Generative AI & Prompt Engineering et Building LLM Applications ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "I work full time, I don't have much time."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "This is frustrating, I expected better."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [
+          "time"
+        ],
+        "sentiment": "negative",
+        "interest_score": 67,
+        "satisfaction_score": 34,
+        "mentioned_course_id": "C005",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0021",
+      "customer_id": "CUST0010",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-05T01:36:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi prompt? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 68,
+        "satisfaction_score": 62,
+        "mentioned_course_id": "C005",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0022",
+      "customer_id": "CUST0058",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-09-09T00:13:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Thanks but I'm not interested anymore."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 5,
+        "satisfaction_score": 60,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0023",
+      "customer_id": "CUST0065",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-28T18:11:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Generative AI & Prompt Engineering et Building LLM Applications ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 75,
+        "satisfaction_score": 60,
+        "mentioned_course_id": "C005",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0024",
+      "customer_id": "CUST0083",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-09-29T12:17:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur rag ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Je n'ai pas beaucoup de temps."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [
+          "time"
+        ],
+        "sentiment": "positive",
+        "interest_score": 69,
+        "satisfaction_score": 74,
+        "mentioned_course_id": "C006",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0026",
+      "customer_id": "CUST0029",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-16T02:26:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je n'arrive pas à accéder à mon cours Python for AI."
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 36,
+        "satisfaction_score": 39,
+        "mentioned_course_id": "C002",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0027",
+      "customer_id": "CUST0024",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-23T02:28:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Mon paiement pour Generative AI & Prompt Engineering a échoué, que faire ?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 76,
+        "satisfaction_score": 64,
+        "mentioned_course_id": "C005",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0028",
+      "customer_id": "CUST0040",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-16T02:01:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chrit Generative AI & Prompt Engineering ama ma najemch nodkhol lel cours."
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 44,
+        "satisfaction_score": 36,
+        "mentioned_course_id": "C005",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0029",
+      "customer_id": "CUST0026",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-15T22:12:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I paid for Generative AI & Prompt Engineering but I still have no access, the payment says pending."
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "This is frustrating, I expected better."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 73,
+        "satisfaction_score": 23,
+        "mentioned_course_id": "C005",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0031",
+      "customer_id": "CUST0011",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-09-03T01:30:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi machine learning? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Machine Learning Essentials costs 349 TND and lasts 6 weeks (32h, live+self-paced). Supervised and unsupervised learning with scikit-learn on real-style datasets."
+        },
+        {
+          "role": "customer",
+          "text": "Is the certificate recognized? I've never heard of you before."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [
+          "trust"
+        ],
+        "sentiment": "negative",
+        "interest_score": 57,
+        "satisfaction_score": 34,
+        "mentioned_course_id": "C003",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0032",
+      "customer_id": "CUST0033",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-16T19:53:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I want to enroll in the Python for AI course. How can I pay?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Ghalia chwaya."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "positive",
+        "interest_score": 96,
+        "satisfaction_score": 72,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0033",
+      "customer_id": "CUST0077",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-19T05:11:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation Python for AI m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 52,
+        "satisfaction_score": 52,
+        "mentioned_course_id": "C002",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0034",
+      "customer_id": "CUST0070",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-31T03:27:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation Data Analysis with AI m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "positive",
+        "interest_score": 52,
+        "satisfaction_score": 81,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0036",
+      "customer_id": "CUST0009",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-05T16:25:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "What's the difference between Machine Learning Essentials and Computer Vision Bootcamp? Which one should I take?"
+        },
+        {
+          "role": "agent",
+          "text": "Machine Learning Essentials costs 349 TND and lasts 6 weeks (32h, live+self-paced). Supervised and unsupervised learning with scikit-learn on real-style datasets."
+        },
+        {
+          "role": "customer",
+          "text": "J'ai peur que ce soit trop difficile."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [
+          "difficulty"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 63,
+        "satisfaction_score": 70,
+        "mentioned_course_id": "C003",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0037",
+      "customer_id": "CUST0084",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-09-25T14:39:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi prompt? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 72,
+        "satisfaction_score": 85,
+        "mentioned_course_id": "C005",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0038",
+      "customer_id": "CUST0011",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-05T04:31:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chnowa el far9 bin Computer Vision Bootcamp w Machine Learning Essentials?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "J'ai peur que ce soit trop difficile."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [
+          "difficulty"
+        ],
+        "sentiment": "negative",
+        "interest_score": 65,
+        "satisfaction_score": 25,
+        "mentioned_course_id": "C010",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0039",
+      "customer_id": "CUST0094",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-15T21:29:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, mais ça ne m'intéresse pas."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 4,
+        "satisfaction_score": 31,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0041",
+      "customer_id": "CUST0074",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-11T22:53:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je veux m'inscrire à la formation MLOps & Model Deployment. Comment payer ?"
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Je n'ai pas beaucoup de temps."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [
+          "time"
+        ],
+        "sentiment": "positive",
+        "interest_score": 85,
+        "satisfaction_score": 78,
+        "mentioned_course_id": "C012",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0042",
+      "customer_id": "CUST0028",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-09-30T10:09:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I can't log in to my Building LLM Applications course."
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 46,
+        "satisfaction_score": 22,
+        "mentioned_course_id": "C006",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0043",
+      "customer_id": "CUST0086",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-19T15:02:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Can you tell me more about your strategy courses? What will I learn?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Strategy for Managers costs 449 TND and lasts 2 weeks (14h, live). Plan AI adoption, evaluate ROI and manage AI projects in a company."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 57,
+        "satisfaction_score": 61,
+        "mentioned_course_id": "C011",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0044",
+      "customer_id": "CUST0018",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-14T21:39:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation AI Foundations for Everyone, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 84,
+        "satisfaction_score": 72,
+        "mentioned_course_id": "C001",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0046",
+      "customer_id": "CUST0056",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-12T17:26:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I'm interested in Python for AI but it's too expensive for me."
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Je n'ai pas beaucoup de temps."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price",
+          "time"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 55,
+        "satisfaction_score": 56,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0047",
+      "customer_id": "CUST0081",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-09-25T10:08:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi machine learning? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Machine Learning Essentials costs 349 TND and lasts 6 weeks (32h, live+self-paced). Supervised and unsupervised learning with scikit-learn on real-style datasets."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 59,
+        "satisfaction_score": 71,
+        "mentioned_course_id": "C003",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0048",
+      "customer_id": "CUST0084",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-06T18:52:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation Computer Vision Bootcamp, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 94,
+        "satisfaction_score": 79,
+        "mentioned_course_id": "C010",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0049",
+      "customer_id": "CUST0021",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-10T23:57:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi data? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 69,
+        "satisfaction_score": 74,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0051",
+      "customer_id": "CUST0025",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-23T05:52:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Mon paiement pour Computer Vision Bootcamp a échoué, que faire ?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "This is frustrating, I expected better."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 69,
+        "satisfaction_score": 36,
+        "mentioned_course_id": "C010",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0052",
+      "customer_id": "CUST0028",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-10-04T15:24:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Generative AI & Prompt Engineering ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "negative",
+        "interest_score": 41,
+        "satisfaction_score": 28,
+        "mentioned_course_id": "C005",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0053",
+      "customer_id": "CUST0006",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-10T03:12:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur machine learning ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Machine Learning Essentials costs 349 TND and lasts 6 weeks (32h, live+self-paced). Supervised and unsupervised learning with scikit-learn on real-style datasets."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 65,
+        "satisfaction_score": 89,
+        "mentioned_course_id": "C003",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0054",
+      "customer_id": "CUST0051",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-14T10:54:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi rag? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 58,
+        "satisfaction_score": 71,
+        "mentioned_course_id": "C006",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0056",
+      "customer_id": "CUST0054",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-10-05T22:32:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "AI for Marketing & Sales ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "AI for Marketing & Sales costs 199 TND and lasts 3 weeks (12h, self-paced). Use AI for content creation, campaign optimisation and lead scoring."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 63,
+        "satisfaction_score": 70,
+        "mentioned_course_id": "C008",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0057",
+      "customer_id": "CUST0019",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-26T23:47:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Mon paiement pour Data Analysis with AI a échoué, que faire ?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 63,
+        "satisfaction_score": 33,
+        "mentioned_course_id": "C007",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0058",
+      "customer_id": "CUST0061",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-17T02:19:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Please stop sending me messages."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 18,
+        "satisfaction_score": 62,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0059",
+      "customer_id": "CUST0059",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-21T19:13:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, ma yhemnich."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 9,
+        "satisfaction_score": 58,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0061",
+      "customer_id": "CUST0038",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-13T19:52:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation AI Foundations for Everyone, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 90,
+        "satisfaction_score": 87,
+        "mentioned_course_id": "C001",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0062",
+      "customer_id": "CUST0014",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-09-01T19:19:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation Deep Learning with PyTorch m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "Deep Learning with PyTorch costs 499 TND and lasts 8 weeks (40h, live). Neural networks, CNNs and training best practices in PyTorch."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 57,
+        "satisfaction_score": 65,
+        "mentioned_course_id": "C004",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0063",
+      "customer_id": "CUST0071",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-22T11:17:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I can't log in to my MLOps & Model Deployment course."
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 33,
+        "satisfaction_score": 22,
+        "mentioned_course_id": "C012",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0064",
+      "customer_id": "CUST0069",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-09-27T16:21:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Data Analysis with AI et Machine Learning Essentials ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 82,
+        "satisfaction_score": 75,
+        "mentioned_course_id": "C007",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0066",
+      "customer_id": "CUST0043",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-10-08T05:48:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation Data Analysis with AI, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 87,
+        "satisfaction_score": 89,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0067",
+      "customer_id": "CUST0055",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-23T11:28:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Data Analysis with AI ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Je n'ai pas beaucoup de temps."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price",
+          "time"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 61,
+        "satisfaction_score": 58,
+        "mentioned_course_id": "C007",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0068",
+      "customer_id": "CUST0002",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-27T06:40:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Do you have something about data? How long does it take?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Le certificat est-il reconnu ?"
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [
+          "trust"
+        ],
+        "sentiment": "negative",
+        "interest_score": 45,
+        "satisfaction_score": 40,
+        "mentioned_course_id": "C007",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0069",
+      "customer_id": "CUST0029",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-25T13:34:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je suis prêt à acheter Python for AI, envoyez-moi le lien de paiement."
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 88,
+        "satisfaction_score": 77,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0071",
+      "customer_id": "CUST0063",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-01T14:35:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je suis prêt à acheter AI Foundations for Everyone, envoyez-moi le lien de paiement."
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 91,
+        "satisfaction_score": 70,
+        "mentioned_course_id": "C001",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0072",
+      "customer_id": "CUST0096",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-13T15:50:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je veux m'inscrire à la formation Generative AI & Prompt Engineering. Comment payer ?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 83,
+        "satisfaction_score": 79,
+        "mentioned_course_id": "C005",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0073",
+      "customer_id": "CUST0099",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-20T10:07:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Computer Vision Bootcamp et Deep Learning with PyTorch ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 74,
+        "satisfaction_score": 52,
+        "mentioned_course_id": "C010",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0074",
+      "customer_id": "CUST0018",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-09T22:31:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chnowa el far9 bin AI Foundations for Everyone w AI in FinTech?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 67,
+        "satisfaction_score": 79,
+        "mentioned_course_id": "C001",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0076",
+      "customer_id": "CUST0087",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-10-23T18:31:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "What's the difference between Python for AI and Data Analysis with AI? Which one should I take?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 78,
+        "satisfaction_score": 59,
+        "mentioned_course_id": "C002",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0077",
+      "customer_id": "CUST0041",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-09-17T06:35:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation Building LLM Applications m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 56,
+        "satisfaction_score": 58,
+        "mentioned_course_id": "C006",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0078",
+      "customer_id": "CUST0081",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-20T07:07:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Python for AI et Building LLM Applications ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 80,
+        "satisfaction_score": 74,
+        "mentioned_course_id": "C002",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0079",
+      "customer_id": "CUST0061",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-08T12:43:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Do you have something about ai? How long does it take?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 69,
+        "satisfaction_score": 77,
+        "mentioned_course_id": "C001",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0081",
+      "customer_id": "CUST0039",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-21T14:02:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je n'arrive pas à accéder à mon cours Python for AI."
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 38,
+        "satisfaction_score": 32,
+        "mentioned_course_id": "C002",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0082",
+      "customer_id": "CUST0042",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-10-14T01:37:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I paid for AI Strategy for Managers but I still have no access, the payment says pending."
+        },
+        {
+          "role": "agent",
+          "text": "AI Strategy for Managers costs 449 TND and lasts 2 weeks (14h, live). Plan AI adoption, evaluate ROI and manage AI projects in a company."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 71,
+        "satisfaction_score": 23,
+        "mentioned_course_id": "C011",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0083",
+      "customer_id": "CUST0098",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-10-24T01:09:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Khallast AI in FinTech ama el paiement ma t3addech."
+        },
+        {
+          "role": "agent",
+          "text": "AI in FinTech costs 399 TND and lasts 5 weeks (24h, live+self-paced). Credit scoring, fraud detection and compliance use cases in finance."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 75,
+        "satisfaction_score": 67,
+        "mentioned_course_id": "C009",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0084",
+      "customer_id": "CUST0093",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-29T17:48:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur data ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 62,
+        "satisfaction_score": 58,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0086",
+      "customer_id": "CUST0009",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-20T02:20:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chnowa el far9 bin Computer Vision Bootcamp w Deep Learning with PyTorch?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 80,
+        "satisfaction_score": 70,
+        "mentioned_course_id": "C010",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0087",
+      "customer_id": "CUST0037",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-23T11:17:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I want to enroll in the Computer Vision Bootcamp course. How can I pay?"
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "J'ai peur que ce soit trop difficile."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [
+          "difficulty"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 79,
+        "satisfaction_score": 61,
+        "mentioned_course_id": "C010",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0088",
+      "customer_id": "CUST0090",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-10T19:53:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je suis prêt à acheter Generative AI & Prompt Engineering, envoyez-moi le lien de paiement."
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 87,
+        "satisfaction_score": 72,
+        "mentioned_course_id": "C005",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0089",
+      "customer_id": "CUST0083",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-08T02:24:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Mon paiement pour AI Foundations for Everyone a échoué, que faire ?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 72,
+        "satisfaction_score": 28,
+        "mentioned_course_id": "C001",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0091",
+      "customer_id": "CUST0021",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-10T05:23:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "MLOps & Model Deployment ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "negative",
+        "interest_score": 39,
+        "satisfaction_score": 36,
+        "mentioned_course_id": "C012",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0092",
+      "customer_id": "CUST0056",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-05T22:16:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je suis prêt à acheter Data Analysis with AI, envoyez-moi le lien de paiement."
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 95,
+        "satisfaction_score": 75,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0093",
+      "customer_id": "CUST0011",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-11T00:45:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I paid for Deep Learning with PyTorch but I still have no access, the payment says pending."
+        },
+        {
+          "role": "agent",
+          "text": "Deep Learning with PyTorch costs 499 TND and lasts 8 weeks (40h, live). Neural networks, CNNs and training best practices in PyTorch."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 71,
+        "satisfaction_score": 62,
+        "mentioned_course_id": "C004",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0094",
+      "customer_id": "CUST0012",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-03T13:08:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I want to enroll in the MLOps & Model Deployment course. How can I pay?"
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 95,
+        "satisfaction_score": 73,
+        "mentioned_course_id": "C012",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0096",
+      "customer_id": "CUST0022",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-28T05:24:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je suis prêt à acheter Computer Vision Bootcamp, envoyez-moi le lien de paiement."
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 93,
+        "satisfaction_score": 78,
+        "mentioned_course_id": "C010",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0097",
+      "customer_id": "CUST0064",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-25T10:28:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation Generative AI & Prompt Engineering m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Le certificat est-il reconnu ?"
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price",
+          "trust"
+        ],
+        "sentiment": "negative",
+        "interest_score": 47,
+        "satisfaction_score": 33,
+        "mentioned_course_id": "C005",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0098",
+      "customer_id": "CUST0018",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-26T20:19:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi ai? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 72,
+        "satisfaction_score": 88,
+        "mentioned_course_id": "C001",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0099",
+      "customer_id": "CUST0051",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-07T15:04:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi python? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 71,
+        "satisfaction_score": 76,
+        "mentioned_course_id": "C002",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0101",
+      "customer_id": "CUST0089",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-02T07:02:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Do you have something about rag? How long does it take?"
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Ghalia chwaya."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 64,
+        "satisfaction_score": 60,
+        "mentioned_course_id": "C006",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0102",
+      "customer_id": "CUST0013",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-28T05:22:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur python ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 61,
+        "satisfaction_score": 81,
+        "mentioned_course_id": "C002",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0103",
+      "customer_id": "CUST0054",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-11T05:11:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chrit AI in FinTech ama ma najemch nodkhol lel cours."
+        },
+        {
+          "role": "agent",
+          "text": "AI in FinTech costs 399 TND and lasts 5 weeks (24h, live+self-paced). Credit scoring, fraud detection and compliance use cases in finance."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 57,
+        "satisfaction_score": 61,
+        "mentioned_course_id": "C009",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0104",
+      "customer_id": "CUST0093",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-22T07:00:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Quelle est la différence entre Data Analysis with AI et AI Foundations for Everyone ? Laquelle choisir ?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "I'm not sure I have the level, I've never coded."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [
+          "difficulty"
+        ],
+        "sentiment": "negative",
+        "interest_score": 59,
+        "satisfaction_score": 36,
+        "mentioned_course_id": "C007",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0106",
+      "customer_id": "CUST0001",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-25T16:06:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chnowa el far9 bin AI Foundations for Everyone w Computer Vision Bootcamp?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 75,
+        "satisfaction_score": 85,
+        "mentioned_course_id": "C001",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0107",
+      "customer_id": "CUST0050",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-11T23:28:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Data Analysis with AI ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "negative",
+        "interest_score": 39,
+        "satisfaction_score": 24,
+        "mentioned_course_id": "C007",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0108",
+      "customer_id": "CUST0024",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-18T08:43:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi data? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 62,
+        "satisfaction_score": 87,
+        "mentioned_course_id": "C007",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0109",
+      "customer_id": "CUST0041",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-16T02:11:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, mais ça ne m'intéresse pas."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 18,
+        "satisfaction_score": 70,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0111",
+      "customer_id": "CUST0066",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-30T19:58:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I want to enroll in the Data Analysis with AI course. How can I pay?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 95,
+        "satisfaction_score": 73,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0112",
+      "customer_id": "CUST0097",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-26T21:08:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur ai ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 58,
+        "satisfaction_score": 68,
+        "mentioned_course_id": "C001",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0113",
+      "customer_id": "CUST0081",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-18T03:45:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur machine learning ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Machine Learning Essentials costs 349 TND and lasts 6 weeks (32h, live+self-paced). Supervised and unsupervised learning with scikit-learn on real-style datasets."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 67,
+        "satisfaction_score": 79,
+        "mentioned_course_id": "C003",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0114",
+      "customer_id": "CUST0087",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-23T20:47:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I tried to pay for Computer Vision Bootcamp but my card was declined."
+        },
+        {
+          "role": "agent",
+          "text": "Computer Vision Bootcamp costs 599 TND and lasts 8 weeks (48h, live). Image classification, object detection and deployment of vision models."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 74,
+        "satisfaction_score": 54,
+        "mentioned_course_id": "C010",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0116",
+      "customer_id": "CUST0089",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-07T12:49:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je n'arrive pas à accéder à mon cours Building LLM Applications."
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 53,
+        "satisfaction_score": 52,
+        "mentioned_course_id": "C006",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0117",
+      "customer_id": "CUST0028",
+      "channel": "voice",
+      "language": "darija",
+      "started_at": "2026-10-02T14:54:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Chrit Building LLM Applications ama ma najemch nodkhol lel cours."
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 36,
+        "satisfaction_score": 38,
+        "mentioned_course_id": "C006",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0118",
+      "customer_id": "CUST0088",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-09-28T19:26:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I paid for AI Strategy for Managers but I still have no access, the payment says pending."
+        },
+        {
+          "role": "agent",
+          "text": "AI Strategy for Managers costs 449 TND and lasts 2 weeks (14h, live). Plan AI adoption, evaluate ROI and manage AI projects in a company."
+        },
+        {
+          "role": "customer",
+          "text": "Je suis déçu, ce n'est pas normal."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 63,
+        "satisfaction_score": 24,
+        "mentioned_course_id": "C011",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0119",
+      "customer_id": "CUST0021",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-29T03:23:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, ma yhemnich."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 0,
+        "satisfaction_score": 21,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0121",
+      "customer_id": "CUST0089",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-19T14:54:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je veux m'inscrire à la formation Building LLM Applications. Comment payer ?"
+        },
+        {
+          "role": "agent",
+          "text": "Building LLM Applications costs 549 TND and lasts 6 weeks (36h, live). RAG, tool use and AI agents: build and deploy LLM-powered apps."
+        },
+        {
+          "role": "customer",
+          "text": "I'm not sure I have the level, I've never coded."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [
+          "difficulty"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 81,
+        "satisfaction_score": 70,
+        "mentioned_course_id": "C006",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0122",
+      "customer_id": "CUST0073",
+      "channel": "voice",
+      "language": "en",
+      "started_at": "2026-09-14T01:51:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I want to enroll in the Data Analysis with AI course. How can I pay?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 88,
+        "satisfaction_score": 72,
+        "mentioned_course_id": "C007",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0123",
+      "customer_id": "CUST0097",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-31T06:18:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je veux m'inscrire à la formation Generative AI & Prompt Engineering. Comment payer ?"
+        },
+        {
+          "role": "agent",
+          "text": "Generative AI & Prompt Engineering costs 179 TND and lasts 2 weeks (10h, self-paced). Practical prompting and everyday productivity with generative AI tools."
+        },
+        {
+          "role": "customer",
+          "text": "Ghalia chwaya."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "positive",
+        "interest_score": 91,
+        "satisfaction_score": 70,
+        "mentioned_course_id": "C005",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0124",
+      "customer_id": "CUST0039",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-16T19:21:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je veux m'inscrire à la formation Python for AI. Comment payer ?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Great, that sounds perfect, thank you!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 97,
+        "satisfaction_score": 82,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0126",
+      "customer_id": "CUST0003",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-20T04:08:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Python for AI ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "negative",
+        "interest_score": 50,
+        "satisfaction_score": 33,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0127",
+      "customer_id": "CUST0069",
+      "channel": "voice",
+      "language": "fr",
+      "started_at": "2026-10-29T20:59:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "La formation AI in FinTech m'intéresse mais c'est trop cher."
+        },
+        {
+          "role": "agent",
+          "text": "AI in FinTech costs 399 TND and lasts 5 weeks (24h, live+self-paced). Credit scoring, fraud detection and compliance use cases in finance."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 59,
+        "satisfaction_score": 68,
+        "mentioned_course_id": "C009",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0128",
+      "customer_id": "CUST0009",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-02T08:47:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur deep learning ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Deep Learning with PyTorch costs 499 TND and lasts 8 weeks (40h, live). Neural networks, CNNs and training best practices in PyTorch."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 57,
+        "satisfaction_score": 53,
+        "mentioned_course_id": "C004",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0129",
+      "customer_id": "CUST0021",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-23T19:42:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "MLOps & Model Deployment ya3jebni ama ghalia barcha."
+        },
+        {
+          "role": "agent",
+          "text": "MLOps & Model Deployment costs 529 TND and lasts 5 weeks (30h, live). Package, deploy and monitor ML models with Docker, CI/CD and monitoring."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 57,
+        "satisfaction_score": 63,
+        "mentioned_course_id": "C012",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0131",
+      "customer_id": "CUST0006",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-09T05:19:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, mais ça ne m'intéresse pas."
+        },
+        {
+          "role": "customer",
+          "text": "This is frustrating, I expected better."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 5,
+        "satisfaction_score": 27,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0132",
+      "customer_id": "CUST0093",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-02T01:24:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur data ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "Honestly it's too expensive for a student."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "positive",
+        "interest_score": 66,
+        "satisfaction_score": 79,
+        "mentioned_course_id": "C007",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0133",
+      "customer_id": "CUST0048",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-22T12:59:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je suis prêt à acheter Data Analysis with AI, envoyez-moi le lien de paiement."
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 84,
+        "satisfaction_score": 54,
+        "mentioned_course_id": "C007",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0134",
+      "customer_id": "CUST0070",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-06T18:50:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi data? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Data Analysis with AI costs 229 TND and lasts 4 weeks (18h, self-paced). Analyse business data with spreadsheets, Python and AI assistants."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 58,
+        "satisfaction_score": 66,
+        "mentioned_course_id": "C007",
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0136",
+      "customer_id": "CUST0076",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-09-19T18:49:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Is there any discount on Deep Learning with PyTorch? It's a bit pricey."
+        },
+        {
+          "role": "agent",
+          "text": "Deep Learning with PyTorch costs 499 TND and lasts 8 weeks (40h, live). Neural networks, CNNs and training best practices in PyTorch."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "price_objection",
+        "objections": [
+          "price"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 57,
+        "satisfaction_score": 60,
+        "mentioned_course_id": "C004",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0137",
+      "customer_id": "CUST0018",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-10-13T12:11:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Mon paiement pour AI Foundations for Everyone a échoué, que faire ?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 68,
+        "satisfaction_score": 26,
+        "mentioned_course_id": "C001",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0138",
+      "customer_id": "CUST0034",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-28T12:49:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Merci, mais ça ne m'intéresse pas."
+        },
+        {
+          "role": "customer",
+          "text": "This is frustrating, I expected better."
+        }
+      ],
+      "labels": {
+        "intent": "not_interested",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 3,
+        "satisfaction_score": 32,
+        "mentioned_course_id": null,
+        "outcome": "lost"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0139",
+      "customer_id": "CUST0034",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-21T13:35:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Khallast AI Strategy for Managers ama el paiement ma t3addech."
+        },
+        {
+          "role": "agent",
+          "text": "AI Strategy for Managers costs 449 TND and lasts 2 weeks (14h, live). Plan AI adoption, evaluate ROI and manage AI projects in a company."
+        },
+        {
+          "role": "customer",
+          "text": "This is frustrating, I expected better."
+        }
+      ],
+      "labels": {
+        "intent": "payment_issue",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 61,
+        "satisfaction_score": 23,
+        "mentioned_course_id": "C011",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0141",
+      "customer_id": "CUST0016",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-18T08:50:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation AI for Marketing & Sales, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "AI for Marketing & Sales costs 199 TND and lasts 3 weeks (12h, self-paced). Use AI for content creation, campaign optimisation and lead scoring."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 87,
+        "satisfaction_score": 81,
+        "mentioned_course_id": "C008",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0142",
+      "customer_id": "CUST0036",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-10-09T11:49:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "3andkom formation fi python? 9addech todhher?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 72,
+        "satisfaction_score": 71,
+        "mentioned_course_id": "C002",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0143",
+      "customer_id": "CUST0026",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-22T19:41:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "What's the difference between Python for AI and AI Strategy for Managers? Which one should I take?"
+        },
+        {
+          "role": "agent",
+          "text": "Python for AI costs 199 TND and lasts 4 weeks (20h, self-paced). Python basics, NumPy and pandas, aimed at future AI practitioners."
+        },
+        {
+          "role": "customer",
+          "text": "D'accord, je vais réfléchir."
+        }
+      ],
+      "labels": {
+        "intent": "course_comparison",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 77,
+        "satisfaction_score": 67,
+        "mentioned_course_id": "C002",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0144",
+      "customer_id": "CUST0065",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-22T12:28:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Avez-vous une formation sur ai ? Quelle est la durée ?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "OK, I'll think about it."
+        }
+      ],
+      "labels": {
+        "intent": "information_request",
+        "objections": [],
+        "sentiment": "neutral",
+        "interest_score": 67,
+        "satisfaction_score": 66,
+        "mentioned_course_id": "C001",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0146",
+      "customer_id": "CUST0023",
+      "channel": "chat",
+      "language": "darija",
+      "started_at": "2026-09-17T07:30:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "N7eb nechri formation AI Strategy for Managers, kifech nkhallas?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Strategy for Managers costs 449 TND and lasts 2 weeks (14h, live). Plan AI adoption, evaluate ROI and manage AI projects in a company."
+        },
+        {
+          "role": "customer",
+          "text": "Ya3tik essa7a, behi barcha!"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 88,
+        "satisfaction_score": 85,
+        "mentioned_course_id": "C011",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0147",
+      "customer_id": "CUST0063",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-14T05:26:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je veux m'inscrire à la formation AI Foundations for Everyone. Comment payer ?"
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Je n'ai pas beaucoup de temps."
+        },
+        {
+          "role": "agent",
+          "text": "I understand. Let me suggest an option that fits you better."
+        },
+        {
+          "role": "customer",
+          "text": "Behi, nchouf."
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [
+          "time"
+        ],
+        "sentiment": "neutral",
+        "interest_score": 82,
+        "satisfaction_score": 60,
+        "mentioned_course_id": "C001",
+        "outcome": "follow_up"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0148",
+      "customer_id": "CUST0100",
+      "channel": "chat",
+      "language": "en",
+      "started_at": "2026-10-11T02:21:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "I'm ready to buy AI in FinTech, please send me the payment link."
+        },
+        {
+          "role": "agent",
+          "text": "AI in FinTech costs 399 TND and lasts 5 weeks (24h, live+self-paced). Credit scoring, fraud detection and compliance use cases in finance."
+        },
+        {
+          "role": "customer",
+          "text": "Parfait, merci beaucoup !"
+        }
+      ],
+      "labels": {
+        "intent": "purchase_intent",
+        "objections": [],
+        "sentiment": "positive",
+        "interest_score": 86,
+        "satisfaction_score": 75,
+        "mentioned_course_id": "C009",
+        "outcome": "converted"
+      },
+      "simulated": true
+    },
+    {
+      "conversation_id": "CONV0149",
+      "customer_id": "CUST0082",
+      "channel": "chat",
+      "language": "fr",
+      "started_at": "2026-09-28T03:22:00",
+      "turns": [
+        {
+          "role": "customer",
+          "text": "Je n'arrive pas à accéder à mon cours AI Foundations for Everyone."
+        },
+        {
+          "role": "agent",
+          "text": "AI Foundations for Everyone costs 149 TND and lasts 3 weeks (12h, self-paced). Non-technical introduction to AI concepts, use cases and limits."
+        },
+        {
+          "role": "customer",
+          "text": "Mouch normal hedha."
+        }
+      ],
+      "labels": {
+        "intent": "support_request",
+        "objections": [],
+        "sentiment": "negative",
+        "interest_score": 37,
+        "satisfaction_score": 32,
+        "mentioned_course_id": "C001",
+        "outcome": "needs_support"
+      },
+      "simulated": true
+    }
+  ]
+}

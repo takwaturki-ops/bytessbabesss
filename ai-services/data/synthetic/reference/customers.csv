@@ -1,0 +1,101 @@
+customer_id,full_name,email,city,country,age,segment,occupation,experience_level,preferred_language,interests,budget_min_tnd,budget_max_tnd,known_devices,signup_date,simulated
+CUST0001,Walid Gharbi,walid.gharbi1@example.com,Ariana,TN,20,student,Business student,beginner,en,foundations;machine_learning,100,300,DEV-0001-A,2025-11-03,True
+CUST0002,Eya Trabelsi,eya.trabelsi2@example.com,Kairouan,TN,18,student,Business student,beginner,en,machine_learning;data,100,300,DEV-0002-A,2026-05-12,True
+CUST0003,Bilel Toumi,bilel.toumi3@example.com,Monastir,TN,23,student,Engineering student,beginner,darija,programming;machine_learning,100,300,DEV-0003-A,2026-07-16,True
+CUST0004,Khalil Gharbi,khalil.gharbi4@example.com,Bizerte,TN,21,professional,Bank employee,intermediate,darija,programming;engineering,200,600,DEV-0004-A,2025-11-23,True
+CUST0005,Ines Jlassi,ines.jlassi5@example.com,Sfax,TN,21,manager,Operations director,beginner,fr,foundations;business,300,800,DEV-0005-A;DEV-0005-B,2026-05-05,True
+CUST0006,Emna Gharbi,emna.gharbi6@example.com,Sousse,TN,42,professional,Data analyst,beginner,fr,machine_learning;programming,200,600,DEV-0006-A,2025-10-05,True
+CUST0007,Mohamed Jlassi,mohamed.jlassi7@example.com,Sousse,TN,48,professional,Bank employee,beginner,darija,engineering;generative_ai,200,600,DEV-0007-A,2026-05-12,True
+CUST0008,Hiba Kefi,hiba.kefi8@example.com,Tunis,TN,39,entrepreneur,Agency owner,beginner,fr,business;data,150,500,DEV-0008-A,2026-03-24,True
+CUST0009,Aziz Ferchichi,aziz.ferchichi9@example.com,Sousse,TN,35,professional,Accountant,beginner,ar,business;machine_learning,200,600,DEV-0009-A;DEV-0009-B,2025-11-06,True
+CUST0010,Eya Toumi,eya.toumi10@example.com,Kairouan,TN,50,professional,Software developer,intermediate,darija,generative_ai;business,200,600,DEV-0010-A;DEV-0010-B,2026-06-12,True
+CUST0011,Rahma Belhaj,rahma.belhaj11@example.com,Ben Arous,TN,48,professional,Teacher,beginner,ar,machine_learning;business,200,600,DEV-0011-A,2025-09-18,True
+CUST0012,Oumaima Gharbi,oumaima.gharbi12@example.com,Nabeul,TN,26,professional,Data analyst,beginner,ar,engineering;programming,200,600,DEV-0012-A,2026-04-20,True
+CUST0013,Omar Bouazizi,omar.bouazizi13@example.com,Kairouan,TN,31,professional,Accountant,beginner,fr,data;programming,200,600,DEV-0013-A,2025-12-04,True
+CUST0014,Lina Ben Ali,lina.benali14@example.com,Sfax,TN,42,professional,Data analyst,beginner,fr,machine_learning;data,200,600,DEV-0014-A,2026-07-23,True
+CUST0015,Mohamed Ferchichi,mohamed.ferchichi15@example.com,Sousse,TN,49,entrepreneur,Freelancer,beginner,ar,data;business,150,500,DEV-0015-A,2026-05-16,True
+CUST0016,Lina Haddad,lina.haddad16@example.com,Bizerte,TN,44,entrepreneur,Freelancer,intermediate,ar,data;business,150,500,DEV-0016-A,2026-07-02,True
+CUST0017,Mariem Chebbi,mariem.chebbi17@example.com,Ben Arous,TN,21,student,Computer science student,beginner,en,programming;machine_learning,100,300,DEV-0017-A;DEV-0017-B,2026-08-16,True
+CUST0018,Emna Kefi,emna.kefi18@example.com,Gabes,TN,21,student,Business student,beginner,darija,machine_learning;foundations,100,300,DEV-0018-A,2026-01-02,True
+CUST0019,Mariem Ferchichi,mariem.ferchichi19@example.com,Sfax,TN,46,entrepreneur,Agency owner,beginner,ar,business;data,150,500,DEV-0019-A,2025-09-22,True
+CUST0020,Walid Gharbi,walid.gharbi20@example.com,Ariana,TN,21,student,Computer science student,intermediate,fr,foundations;programming,100,300,DEV-0020-A;DEV-0020-B,2026-01-08,True
+CUST0021,Mariem Jaziri,mariem.jaziri21@example.com,Tunis,TN,53,professional,Software developer,advanced,darija,engineering;data,200,600,DEV-0021-A,2026-06-08,True
+CUST0022,Eya Ferchichi,eya.ferchichi22@example.com,Sousse,TN,43,professional,Software developer,advanced,fr,machine_learning;data,200,600,DEV-0022-A,2026-01-12,True
+CUST0023,Ines Belhaj,ines.belhaj23@example.com,Gabes,TN,28,professional,Accountant,beginner,darija,business;engineering,200,600,DEV-0023-A,2025-11-28,True
+CUST0024,Yasmine Kefi,yasmine.kefi24@example.com,Kairouan,TN,26,student,Computer science student,beginner,ar,data;generative_ai,100,300,DEV-0024-A,2026-07-28,True
+CUST0025,Chaima Jaziri,chaima.jaziri25@example.com,Sfax,TN,55,professional,Accountant,intermediate,fr,generative_ai;machine_learning,200,600,DEV-0025-A;DEV-0025-B,2025-09-30,True
+CUST0026,Fares Toumi,fares.toumi26@example.com,Nabeul,TN,34,professional,Data analyst,beginner,en,programming;generative_ai,200,600,DEV-0026-A;DEV-0026-B,2026-03-24,True
+CUST0027,Lina Jaziri,lina.jaziri27@example.com,Sfax,TN,26,student,Computer science student,intermediate,fr,data;programming,100,300,DEV-0027-A,2026-07-28,True
+CUST0028,Anis Chebbi,anis.chebbi28@example.com,Kairouan,TN,38,professional,Teacher,advanced,darija,generative_ai;machine_learning,200,600,DEV-0028-A,2025-09-25,True
+CUST0029,Mehdi Haddad,mehdi.haddad29@example.com,Bizerte,TN,19,student,Computer science student,intermediate,fr,programming;machine_learning,100,300,DEV-0029-A;DEV-0029-B,2026-05-17,True
+CUST0030,Ahmed Kefi,ahmed.kefi30@example.com,Bizerte,TN,18,student,Computer science student,intermediate,darija,foundations;generative_ai,100,300,DEV-0030-A;DEV-0030-B,2026-03-15,True
+CUST0031,Seif Mansouri,seif.mansouri31@example.com,Gabes,TN,54,professional,Bank employee,intermediate,fr,programming;generative_ai,200,600,DEV-0031-A,2025-09-13,True
+CUST0032,Anis Mansouri,anis.mansouri32@example.com,Kairouan,TN,28,professional,Bank employee,beginner,fr,programming;engineering,200,600,DEV-0032-A,2026-08-12,True
+CUST0033,Anis Dridi,anis.dridi33@example.com,Nabeul,TN,26,student,Engineering student,advanced,en,machine_learning;programming,100,300,DEV-0033-A,2026-05-03,True
+CUST0034,Emna Bouazizi,emna.bouazizi34@example.com,Tunis,TN,30,manager,Operations director,advanced,darija,business;foundations,300,800,DEV-0034-A,2025-09-24,True
+CUST0035,Emna Chebbi,emna.chebbi35@example.com,Tunis,TN,25,student,Computer science student,beginner,darija,programming;generative_ai,100,300,DEV-0035-A,2026-05-08,True
+CUST0036,Mariem Ben Ali,mariem.benali36@example.com,Bizerte,TN,23,professional,Data analyst,beginner,ar,machine_learning;programming,200,600,DEV-0036-A,2025-12-01,True
+CUST0037,Hamza Ben Ali,hamza.benali37@example.com,Ben Arous,TN,22,student,Computer science student,beginner,ar,foundations;machine_learning,100,300,DEV-0037-A,2026-03-25,True
+CUST0038,Eya Jlassi,eya.jlassi38@example.com,Ben Arous,TN,31,manager,Marketing manager,beginner,ar,business;foundations,300,800,DEV-0038-A,2025-11-30,True
+CUST0039,Hiba Hammami,hiba.hammami39@example.com,Ben Arous,TN,39,professional,Software developer,intermediate,fr,data;programming,200,600,DEV-0039-A,2026-02-04,True
+CUST0040,Hamza Mejri,hamza.mejri40@example.com,Ariana,TN,45,professional,Bank employee,intermediate,darija,engineering;generative_ai,200,600,DEV-0040-A,2026-03-31,True
+CUST0041,Khalil Haddad,khalil.haddad41@example.com,Ariana,TN,46,entrepreneur,Freelancer,intermediate,fr,generative_ai;data,150,500,DEV-0041-A,2025-09-21,True
+CUST0042,Aziz Khelifi,aziz.khelifi42@example.com,Sfax,TN,37,professional,Teacher,intermediate,en,business;generative_ai,200,600,DEV-0042-A;DEV-0042-B,2026-05-04,True
+CUST0043,Hiba Sassi,hiba.sassi43@example.com,Tunis,TN,18,student,Computer science student,advanced,en,machine_learning;data,100,300,DEV-0043-A,2026-01-11,True
+CUST0044,Eya Toumi,eya.toumi44@example.com,Monastir,TN,21,student,Computer science student,intermediate,fr,generative_ai;data,100,300,DEV-0044-A,2026-07-09,True
+CUST0045,Seif Belhaj,seif.belhaj45@example.com,Tunis,TN,26,student,Computer science student,advanced,fr,data;generative_ai,100,300,DEV-0045-A;DEV-0045-B,2026-01-07,True
+CUST0046,Hiba Khelifi,hiba.khelifi46@example.com,Gabes,TN,51,manager,Marketing manager,intermediate,ar,generative_ai;foundations,300,800,DEV-0046-A,2026-01-01,True
+CUST0047,Bilel Ayari,bilel.ayari47@example.com,Kairouan,TN,50,entrepreneur,Freelancer,beginner,ar,data;generative_ai,150,500,DEV-0047-A,2026-05-04,True
+CUST0048,Skander Kefi,skander.kefi48@example.com,Sousse,TN,20,student,Computer science student,beginner,fr,data;programming,100,300,DEV-0048-A;DEV-0048-B,2026-02-01,True
+CUST0049,Eya Kefi,eya.kefi49@example.com,Ariana,TN,45,professional,Bank employee,advanced,ar,machine_learning;data,200,600,DEV-0049-A,2025-11-11,True
+CUST0050,Khalil Ferchichi,khalil.ferchichi50@example.com,Monastir,TN,24,student,Business student,intermediate,ar,foundations;data,100,300,DEV-0050-A,2026-05-12,True
+CUST0051,Asma Chebbi,asma.chebbi51@example.com,Monastir,TN,23,student,Business student,intermediate,ar,generative_ai;programming,100,300,DEV-0051-A;DEV-0051-B,2026-01-05,True
+CUST0052,Lina Mansouri,lina.mansouri52@example.com,Monastir,TN,55,manager,Operations director,beginner,en,generative_ai;business,300,800,DEV-0052-A;DEV-0052-B,2026-01-08,True
+CUST0053,Rania Trabelsi,rania.trabelsi53@example.com,Gabes,TN,23,student,Engineering student,intermediate,fr,foundations;machine_learning,100,300,DEV-0053-A,2026-01-29,True
+CUST0054,Skander Jaziri,skander.jaziri54@example.com,Tunis,TN,41,professional,Accountant,intermediate,darija,business;engineering,200,600,DEV-0054-A,2026-08-17,True
+CUST0055,Mariem Hammami,mariem.hammami55@example.com,Ariana,TN,27,entrepreneur,Agency owner,intermediate,ar,data;business,150,500,DEV-0055-A;DEV-0055-B,2025-09-08,True
+CUST0056,Skander Dridi,skander.dridi56@example.com,Sousse,TN,22,student,Computer science student,intermediate,darija,data;programming,100,300,DEV-0056-A,2026-02-21,True
+CUST0057,Khalil Hammami,khalil.hammami57@example.com,Bizerte,TN,19,student,Business student,intermediate,fr,machine_learning;programming,100,300,DEV-0057-A,2026-02-24,True
+CUST0058,Mohamed Khelifi,mohamed.khelifi58@example.com,Gabes,TN,25,professional,Bank employee,advanced,en,data;machine_learning,200,600,DEV-0058-A,2025-09-04,True
+CUST0059,Youssef Belhaj,youssef.belhaj59@example.com,Ben Arous,TN,26,student,Engineering student,beginner,darija,data;foundations,100,300,DEV-0059-A,2026-03-20,True
+CUST0060,Emna Chebbi,emna.chebbi60@example.com,Gabes,TN,34,entrepreneur,Agency owner,intermediate,en,business;generative_ai,150,500,DEV-0060-A,2025-12-22,True
+CUST0061,Emna Kefi,emna.kefi61@example.com,Bizerte,TN,23,student,Engineering student,advanced,en,machine_learning;foundations,100,300,DEV-0061-A;DEV-0061-B,2026-08-27,True
+CUST0062,Omar Hammami,omar.hammami62@example.com,Kairouan,TN,21,student,Business student,beginner,en,generative_ai;data,100,300,DEV-0062-A,2026-08-24,True
+CUST0063,Mohamed Sassi,mohamed.sassi63@example.com,Ben Arous,TN,23,student,Engineering student,intermediate,fr,machine_learning;foundations,100,300,DEV-0063-A,2025-11-24,True
+CUST0064,Hamza Dridi,hamza.dridi64@example.com,Bizerte,TN,33,entrepreneur,E-commerce founder,intermediate,fr,generative_ai;data,150,500,DEV-0064-A,2025-09-13,True
+CUST0065,Rania Hammami,rania.hammami65@example.com,Ben Arous,TN,26,student,Business student,beginner,fr,generative_ai;foundations,100,300,DEV-0065-A;DEV-0065-B,2026-05-08,True
+CUST0066,Nour Bouazizi,nour.bouazizi66@example.com,Bizerte,TN,18,student,Computer science student,intermediate,en,data;machine_learning,100,300,DEV-0066-A;DEV-0066-B,2025-12-24,True
+CUST0067,Salma Ben Ali,salma.benali67@example.com,Gabes,TN,40,professional,Accountant,advanced,fr,machine_learning;business,200,600,DEV-0067-A,2026-07-05,True
+CUST0068,Mehdi Jaziri,mehdi.jaziri68@example.com,Tunis,TN,28,professional,Accountant,intermediate,darija,data;engineering,200,600,DEV-0068-A;DEV-0068-B,2026-04-27,True
+CUST0069,Salma Haddad,salma.haddad69@example.com,Kairouan,TN,43,entrepreneur,Agency owner,advanced,fr,data;business,150,500,DEV-0069-A,2026-01-25,True
+CUST0070,Ines Toumi,ines.toumi70@example.com,Ariana,TN,32,professional,Data analyst,intermediate,fr,engineering;data,200,600,DEV-0070-A;DEV-0070-B,2026-07-25,True
+CUST0071,Rania Ben Ali,rania.benali71@example.com,Gabes,TN,37,professional,Software developer,beginner,en,business;engineering,200,600,DEV-0071-A,2026-01-12,True
+CUST0072,Mohamed Chebbi,mohamed.chebbi72@example.com,Monastir,TN,26,manager,Operations director,beginner,fr,generative_ai;business,300,800,DEV-0072-A;DEV-0072-B,2026-06-21,True
+CUST0073,Mohamed Trabelsi,mohamed.trabelsi73@example.com,Gabes,TN,19,student,Engineering student,intermediate,en,foundations;data,100,300,DEV-0073-A,2025-12-19,True
+CUST0074,Sarra Ferchichi,sarra.ferchichi74@example.com,Monastir,TN,39,professional,Teacher,beginner,fr,engineering;data,200,600,DEV-0074-A,2025-11-11,True
+CUST0075,Fares Ben Ali,fares.benali75@example.com,Ben Arous,TN,21,manager,IT manager,beginner,en,generative_ai;foundations,300,800,DEV-0075-A,2026-06-01,True
+CUST0076,Fares Belhaj,fares.belhaj76@example.com,Gabes,TN,41,professional,Bank employee,beginner,en,machine_learning;data,200,600,DEV-0076-A,2026-03-17,True
+CUST0077,Eya Ferchichi,eya.ferchichi77@example.com,Gabes,TN,19,student,Engineering student,beginner,fr,generative_ai;programming,100,300,DEV-0077-A,2025-12-12,True
+CUST0078,Mehdi Ben Ali,mehdi.benali78@example.com,Monastir,TN,22,professional,Accountant,intermediate,en,engineering;machine_learning,200,600,DEV-0078-A,2026-01-18,True
+CUST0079,Seif Trabelsi,seif.trabelsi79@example.com,Bizerte,TN,25,student,Business student,beginner,fr,data;machine_learning,100,300,DEV-0079-A,2026-05-02,True
+CUST0080,Ahmed Bouazizi,ahmed.bouazizi80@example.com,Sfax,TN,21,student,Computer science student,beginner,fr,programming;generative_ai,100,300,DEV-0080-A,2025-12-20,True
+CUST0081,Lina Sassi,lina.sassi81@example.com,Gabes,TN,49,professional,Accountant,beginner,fr,programming;machine_learning,200,600,DEV-0081-A;DEV-0081-B,2025-10-30,True
+CUST0082,Omar Mansouri,omar.mansouri82@example.com,Nabeul,TN,51,manager,Marketing manager,intermediate,fr,foundations;generative_ai,300,800,DEV-0082-A;DEV-0082-B,2025-11-05,True
+CUST0083,Fares Ferchichi,fares.ferchichi83@example.com,Nabeul,TN,40,manager,Operations director,intermediate,fr,foundations;generative_ai,300,800,DEV-0083-A,2026-05-28,True
+CUST0084,Ahmed Chebbi,ahmed.chebbi84@example.com,Tunis,TN,39,professional,Bank employee,intermediate,darija,generative_ai;machine_learning,200,600,DEV-0084-A,2025-09-27,True
+CUST0085,Rahma Mansouri,rahma.mansouri85@example.com,Kairouan,TN,40,professional,Software developer,advanced,ar,data;generative_ai,200,600,DEV-0085-A,2026-01-11,True
+CUST0086,Amine Mansouri,amine.mansouri86@example.com,Sfax,TN,49,professional,Data analyst,beginner,en,business;generative_ai,200,600,DEV-0086-A,2026-03-17,True
+CUST0087,Emna Haddad,emna.haddad87@example.com,Kairouan,TN,21,professional,Teacher,beginner,en,programming;machine_learning,200,600,DEV-0087-A,2026-05-08,True
+CUST0088,Oumaima Jaziri,oumaima.jaziri88@example.com,Gabes,TN,29,professional,Data analyst,advanced,fr,data;business,200,600,DEV-0088-A,2026-04-04,True
+CUST0089,Nour Dridi,nour.dridi89@example.com,Monastir,TN,55,professional,Accountant,beginner,fr,generative_ai;engineering,200,600,DEV-0089-A,2025-10-19,True
+CUST0090,Hiba Chebbi,hiba.chebbi90@example.com,Ariana,TN,48,professional,Data analyst,beginner,en,engineering;generative_ai,200,600,DEV-0090-A,2026-01-06,True
+CUST0091,Anis Sassi,anis.sassi91@example.com,Gabes,TN,41,professional,Teacher,beginner,darija,generative_ai;data,200,600,DEV-0091-A,2026-01-11,True
+CUST0092,Emna Sassi,emna.sassi92@example.com,Sfax,TN,21,student,Engineering student,intermediate,ar,generative_ai;data,100,300,DEV-0092-A,2026-04-03,True
+CUST0093,Amine Mejri,amine.mejri93@example.com,Ben Arous,TN,25,student,Engineering student,intermediate,fr,data;programming,100,300,DEV-0093-A,2026-05-12,True
+CUST0094,Walid Hammami,walid.hammami94@example.com,Sfax,TN,21,professional,Data analyst,intermediate,fr,business;generative_ai,200,600,DEV-0094-A,2026-06-26,True
+CUST0095,Mohamed Sassi,mohamed.sassi95@example.com,Ariana,TN,20,student,Business student,advanced,fr,generative_ai;machine_learning,100,300,DEV-0095-A,2026-04-15,True
+CUST0096,Mehdi Bouazizi,mehdi.bouazizi96@example.com,Nabeul,TN,19,student,Engineering student,advanced,fr,generative_ai;foundations,100,300,DEV-0096-A,2025-09-20,True
+CUST0097,Oumaima Mejri,oumaima.mejri97@example.com,Sfax,TN,44,manager,IT manager,beginner,fr,generative_ai;foundations,300,800,DEV-0097-A,2025-09-22,True
+CUST0098,Skander Toumi,skander.toumi98@example.com,Sfax,TN,33,professional,Bank employee,beginner,darija,business;programming,200,600,DEV-0098-A,2025-10-24,True
+CUST0099,Mariem Jaziri,mariem.jaziri99@example.com,Monastir,TN,26,professional,Accountant,beginner,fr,machine_learning;programming,200,600,DEV-0099-A,2026-07-04,True
+CUST0100,Salma Chebbi,salma.chebbi100@example.com,Gabes,TN,42,manager,Operations director,advanced,en,business;foundations,300,800,DEV-0100-A,2025-11-05,True
