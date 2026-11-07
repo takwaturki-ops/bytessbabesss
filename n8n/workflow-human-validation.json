@@ -1,0 +1,67 @@
+{
+  "id": "7d3a1f2e-9b4c-4a6e-8f2d-1c2b3a4d5e6f",
+  "meta": {
+    "instanceId": "smartfin-local"
+  },
+  "name": "Workflow de validation humaine",
+  "tags": [],
+  "active": false,
+  "versionId": "c4448c34-1f75-4479-805e-20d8a69a7e00",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "nodes": [
+    {
+      "id": "3f2a9b8c-1111-4222-8333-444455556801",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "parameters": {
+        "path": "human-validation",
+        "method": "POST",
+        "responseMode": "lastNode",
+        "responseData": "firstEntryJson",
+        "authentication": "headerAuth"
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3f2a9b8c-1111-4222-8333-444455556990",
+          "name": "X-API-Key"
+        }
+      }
+    },
+    {
+      "id": "3f2a9b8c-1111-4222-8333-444455556802",
+      "name": "Agent Payment",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [550, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8001/agent/payment",
+        "bodyContentType": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}"
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3f2a9b8c-1111-4222-8333-444455556990",
+          "name": "X-API-Key"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Agent Payment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

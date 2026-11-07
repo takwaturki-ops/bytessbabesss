@@ -1,0 +1,76 @@
+{
+  "id": "7d3a1f2e-9b4c-4a6e-8f2d-1c2b3a4d5e6f",
+  "meta": {
+    "instanceId": "smartfin-local"
+  },
+  "name": "Workflow d'analyse",
+  "tags": [],
+  "active": false,
+  "versionId": "c4448c34-1f75-4479-805e-20d8a69a7e00",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "nodes": [
+    {
+      "id": "3f2a9b8c-1111-4222-8333-444455556701",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.schedule",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "cronExpression": "0 0 * * *",
+        "timezone": "Europe/Paris"
+      }
+    },
+    {
+      "id": "3f2a9b8c-1111-4222-8333-444455556702",
+      "name": "Financial Data Analyst",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [550, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8001/agent/financial-data-analyst",
+        "bodyContentType": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}"
+      }
+    },
+    {
+      "id": "3f2a9b8c-1111-4222-8333-444455556703",
+      "name": "Business Strategy Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8001/agent/business-strategy",
+        "bodyContentType": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}"
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Financial Data Analyst",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Financial Data Analyst": {
+      "main": [
+        [
+          {
+            "node": "Business Strategy Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
