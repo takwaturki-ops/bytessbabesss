@@ -138,14 +138,24 @@ class PurchaseWorkflow:
         now = datetime.now(timezone.utc).replace(microsecond=0, tzinfo=None)
         event, history = self._simulate_provider_event(req, order_id, txn_id, course_id, amount, now)
         history = [h.model_dump() for h in req.previous_transactions] + history
+        supplied = [f for f in ("device_id", "card_fingerprint", "ip_country") if getattr(req, f)]
+        if supplied:
+            warnings.append(f"caller-supplied metadata used for fraud screening (untrusted, not provider-verified): "
+                            f"{', '.join(supplied)}")
+        if req.known_devices is not None:
+            known_devices = req.known_devices
+        elif req.payment_scenario == "suspicious_location":
+            known_devices = []
+        else:  # previous behaviour: the current device counts as known
+            known_devices = [event["device_id"]]
 
         # 4. Security & Fraud Detection Agent (deterministic decision) -------------------------------
         t0 = time.perf_counter()
         fraud_resp = self.fraud.run({"event": event, "history": history,
                                      "customer_context": {"customer_id": req.customer_id, "home_country": "TN",
-                                                          "known_devices": [event["device_id"]] if req.payment_scenario
-                                                          != "suspicious_location" else []}})
+                                                          "known_devices": known_devices}})
         out["fraud_agent_result"] = fraud_resp
+        warnings.extend(f"fraud_agent: {w}" for w in fraud_resp.meta.warnings)
         if fraud_resp.status != "ok":  # fail closed: no security decision -> no payment
             step("Fraud screening", "fraud_agent", "error", summary="; ".join(fraud_resp.errors), resp=fraud_resp, t0=t0)
             return finish("error", errors=fraud_resp.errors)
@@ -195,6 +205,13 @@ class PurchaseWorkflow:
                 "status": "success", "provider_reference": f"PSIM-{txn_id}", "signature_valid": True,
                 "ip_country": "TN", "device_id": device, "card_fingerprint": f"fp_{req.customer_id}",
                 "payment_method": req.payment_method, "timestamp": now.isoformat()}
+        # Caller-supplied metadata (UNTRUSTED, not provider evidence) replaces the simulated defaults.
+        if req.device_id:
+            base["device_id"] = req.device_id
+        if req.card_fingerprint:
+            base["card_fingerprint"] = req.card_fingerprint
+        if req.ip_country:
+            base["ip_country"] = req.ip_country.upper()
         history: list[dict] = []
 
         def past(minutes, **over):
@@ -216,8 +233,11 @@ class PurchaseWorkflow:
                              failure_reason="card_declined") for k in range(n)]
         elif sc == "invalid_signature":
             base.update(signature_valid=False)
-        elif sc == "suspicious_location":
-            base.update(ip_country="NG", device_id=f"DEV-UNKNOWN-{req.customer_id}")
+        elif sc == "suspicious_location":  # simulated values only fill fields the caller did not supply
+            if not req.ip_country:
+                base["ip_country"] = "NG"
+            if not req.device_id:
+                base["device_id"] = f"DEV-UNKNOWN-{req.customer_id}"
         if base["status"] != "failed":
             base["failure_reason"] = None
         return base, history

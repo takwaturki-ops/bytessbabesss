@@ -4,7 +4,7 @@ from __future__ import annotations
 from core.base_agent import BaseAgent
 from schemas.common import AgentMeta
 from schemas.fraud import FraudCheckInput, FraudDraft, FraudOutput
-from tools.fraud_rules import decide, evaluate
+from tools.fraud_rules import decide, evaluate, future_history
 
 LABEL = {"allow": "ALLOW", "block": "BLOCK", "require_human_approval": "REVIEW"}
 
@@ -20,6 +20,10 @@ class FraudAgent(BaseAgent[FraudCheckInput, FraudOutput]):
         hits = evaluate(inp)
         action, score, level = decide(hits)   # final decision - never touched by the LLM
         ev = inp.event
+        ignored = future_history(inp)
+        if ignored:
+            meta.warnings.append(f"history_after_event_ignored:{len(ignored)} ({', '.join(ignored[:5])}) - "
+                                 f"check clocks/timezones; naive timestamps are read as UTC")
 
         def template() -> FraudDraft:
             if not hits:

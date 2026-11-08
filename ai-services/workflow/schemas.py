@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 from schemas.common import AgentResponse, Turn
 from schemas.financial import FinancialOutput
-from schemas.fraud import FraudOutput, TxnEvent
+from schemas.fraud import FraudOutput, HistoryTxn
 from schemas.intel import CustomerInsights
 from schemas.payment import PaymentOutput
 from schemas.sales import SalesOutput
@@ -47,9 +47,22 @@ class PurchaseWorkflowRequest(BaseModel):
     payment_method: Literal["card", "mobile_wallet", "bank_transfer"] = "card"
     discount_code: Optional[str] = Field(None, max_length=32)
     conversation_history: list[Turn] = Field(default_factory=list, max_length=50)
-    previous_transactions: list[TxnEvent] = Field(
+    previous_transactions: list[HistoryTxn] = Field(
         default_factory=list, max_length=200,
-        description="real recent transactions of this customer, supplied by the backend (agents never read the DB)")
+        description="recent transactions of this customer, supplied by the backend (agents never read the DB). "
+                    "Each needs status (success|failed|pending|requires_review) and an ISO-8601 timestamp; "
+                    "offsets such as +01:00 are converted to UTC, naive timestamps are read as UTC.")
+    # Transaction metadata for fraud screening. UNTRUSTED inputs: supplied by the caller (browser/backend),
+    # NOT verified payment-provider evidence. When omitted, simulated defaults derived from customer_id are used.
+    device_id: Optional[str] = Field(None, pattern=r"^[A-Za-z0-9_.:\-]{1,128}$",
+                                     description="UNTRUSTED device identifier of the current attempt")
+    card_fingerprint: Optional[str] = Field(None, pattern=r"^[A-Za-z0-9_.:\-]{1,128}$",
+                                            description="UNTRUSTED card fingerprint (never a card number)")
+    ip_country: Optional[str] = Field(None, pattern=r"^[A-Za-z]{2}$",
+                                      description="UNTRUSTED ISO country code of the client IP, e.g. TN")
+    known_devices: Optional[list[str]] = Field(
+        None, max_length=50, description="devices previously seen for this customer (from the backend). If omitted, "
+                                         "the current device is treated as known (previous behaviour).")
     workflow_id: Optional[str] = Field(None, pattern=r"^[A-Za-z0-9_\-]{4,40}$",
                                        description="optional, for reproducible demos/tests; generated if omitted")
 

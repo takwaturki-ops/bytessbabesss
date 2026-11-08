@@ -1,6 +1,6 @@
 # 9antra AI Agents - Evaluation Report
 
-Generated: 2026-11-07 23:35 UTC  
+Generated: 2026-11-08 00:21 UTC  
 **MOCK MODE - no LLM was called; text fields are deterministic templates labelled [MOCK]. Scores measure the deterministic rules + heuristic baseline, not Claude.**  
 All data is SIMULATED.
 

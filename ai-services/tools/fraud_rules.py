@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta
 
+from core.timeutil import to_utc_naive
 from schemas.fraud import FraudCheckInput, RuleHit
 
 # Thresholds (tunable, documented in README)
@@ -15,7 +16,16 @@ AMOUNT_TOLERANCE = 0.01
 
 
 def _t(ts: str) -> datetime:
-    return datetime.fromisoformat(ts.replace("Z", "+00:00")).replace(tzinfo=None)
+    """UTC wall-clock time. Offsets are converted to UTC (previously they were dropped - bug fixed)."""
+    return to_utc_naive(ts)
+
+
+def future_history(inp: FraudCheckInput) -> list[str]:
+    """IDs of history entries dated AFTER the current event. They are excluded from the rules (unchanged
+    behaviour), and the agent reports them as a warning so they are never ignored silently."""
+    now = _t(inp.event.timestamp)
+    return [h.transaction_id for h in inp.history
+            if h.transaction_id != inp.event.transaction_id and _t(h.timestamp) > now]
 
 
 def evaluate(inp: FraudCheckInput) -> list[RuleHit]:

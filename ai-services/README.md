@@ -101,7 +101,31 @@ POST /workflow/purchase
 ```
 
 Optional fields: `confirm_purchase` (default `true`), `payment_method`, `discount_code` (`WELCOME10`,
-`STUDENT20`, `HACK15`), `conversation_history`, `previous_transactions`, `workflow_id` (for reproducible demos).
+`STUDENT20`, `HACK15`), `conversation_history`, `previous_transactions`, `workflow_id` (for reproducible demos),
+`device_id`, `card_fingerprint`, `ip_country`, `known_devices`.
+
+**Transaction history (`previous_transactions`, and `history` on `/agents/fraud`)**: the backend sends the
+customer's recent transactions so fraud rules see real behaviour.
+
+- `status` is **required** for every history entry. Accepted values: `success`, `failed`, `pending`,
+  `requires_review` (case-insensitive, so `FAILED` works). Anything else (`declined`, a missing value...) returns
+  **422**. A missing status is never silently treated as failed or pending. Only the *current* event of
+  `/agents/fraud` still defaults to `pending`, for backward compatibility.
+- `timestamp` must be ISO-8601. Offsets are **converted** to UTC: `2026-11-08T10:00:00+01:00` (Tunis) is the same
+  instant as `2026-11-08T09:00:00Z`. Naive timestamps (no offset) are read as **UTC**. Invalid timestamps return 422.
+- History dated after the current event is excluded from the rules, as before. It is now reported in `warnings`
+  (`history_after_event_ignored`) so a clock or timezone mistake is visible. The usual cause is a local time sent
+  without its `+01:00` offset.
+
+**Transaction metadata (`device_id`, `card_fingerprint`, `ip_country`, `known_devices`)**: these are
+**untrusted, caller-supplied inputs, not verified payment-provider evidence**. They feed the fraud rules
+(repeated attempts by card, device velocity, geo mismatch) and the response adds a warning when they are used.
+When omitted, the previous simulated defaults apply (`DEV-<customer_id>`, `fp_<customer_id>`, `TN`, current
+device treated as known). Send fingerprints or tokens only, never card numbers. The schema rejects spaces and
+values over 128 characters.
+
+Fraud thresholds are unchanged: **3** failed attempts within 30 min means human review, **5** means block.
+Two failed attempts are therefore still allowed by design.
 
 **Response (shortened, real output in mock mode)**
 
@@ -186,7 +210,9 @@ ai-services/
 
 ## 8. Test results (mock mode, 2026-11-08)
 
-- **215/215 pytest tests pass**: the 174 original agent tests plus 41 new workflow and API tests covering
+- **259/259 pytest tests pass**, including 44 fraud regression tests for timezone normalization (+01:00 / Z /
+  naive give identical decisions), required history status, metadata propagation and the 2/3/5-failure thresholds.
+- The workflow and API tests (41) cover
   success, failed, pending, duplicate, amount mismatch, repeated and excessive attempts, invalid signature,
   suspicious location, unknown course, customer declines, invalid input, ID consistency, LLM-cannot-override-fraud,
   no-revenue-unless-paid, status codes and API-key enforcement.
