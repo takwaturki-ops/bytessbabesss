@@ -20,14 +20,14 @@ npm install
 npm start
 ```
 
-**3. Frontend** (port 5173). Copy `frontend/.env.example` to `frontend/.env` (`VITE_API_BASE_URL=http://localhost:4000`).
+**3. Frontend** (port 5173). Copy `frontend/.env.example` to `frontend/.env` and leave `VITE_API_BASE_URL` empty: the Vite dev server forwards `/api/*` to the backend, so everything is served from **one URL, http://localhost:5173**.
 ```powershell
 cd frontend
 npm install
 npm run dev
 ```
 
-Check: http://localhost:4000/api/health shows `database`, `database_mode` and `ai_service`.
+Check: http://localhost:5173/api/health (proxied to the backend) shows `database`, `database_mode` and `ai_service`.
 
 ## Demo script
 1. Open http://localhost:5173: the mascot greets you in Derja.

@@ -2,12 +2,11 @@ import axios from "axios";
 
 import { readToken, resolveApiBaseUrl } from "./authHelpers";
 
-// Backend origin from the environment (frontend/.env: VITE_API_BASE_URL=http://localhost:4000).
+// Backend origin. In development it is left empty: requests go to the same URL as the app
+// (http://localhost:5173/api/...) and the Vite proxy forwards them to the backend (vite.config.js).
+// Set VITE_API_BASE_URL only when the API lives on another origin (for example a deployed backend).
 const envBaseUrl = import.meta.env?.VITE_API_BASE_URL;
-if (!envBaseUrl && import.meta.env?.DEV) {
-  console.warn("VITE_API_BASE_URL is not set; using http://localhost:4000 for local development.");
-}
-export const API_BASE_URL = resolveApiBaseUrl(envBaseUrl);
+export const API_BASE_URL = resolveApiBaseUrl(envBaseUrl, import.meta.env?.DEV ? "" : undefined);
 
 const api = axios.create({
   baseURL: `${API_BASE_URL}/api/auth`,
