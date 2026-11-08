@@ -61,7 +61,7 @@ def _respond(resp: AgentResponse) -> AgentResponse:
 def health() -> dict:
     llm = get_default_client()
     return {"status": "ok", "service": "9antra-ai-agents", "version": VERSION, "mode": llm.mode,
-            "model": llm.model, "agents": ["sales", "customer_intel", "fraud", "payment", "financial"],
+            "provider": llm.provider, "model": llm.model, "agents": ["sales", "customer_intel", "fraud", "payment", "financial"],
             "auth_required": bool(os.getenv("INTERNAL_API_KEY")), "data": "simulated"}
 
 

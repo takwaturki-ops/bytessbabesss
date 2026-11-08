@@ -79,7 +79,7 @@ pass the same event to the payment agent.
 
 | Method | Path | Purpose |
 |---|---|---|
-| GET | `/health` | status, mode (`mock`/`live`), model |
+| GET | `/health` | status, mode (`mock`/`live`), provider (`anthropic`/`deepseek`, live only), model |
 | GET | `/docs` | interactive Swagger documentation |
 | POST | `/workflow/purchase` | **complete five-agent purchase journey** |
 | POST | `/agents/sales`, `/agents/customer-intelligence`, `/agents/fraud`, `/agents/payment`, `/agents/financial` | one agent at a time |
@@ -179,9 +179,11 @@ Then open http://localhost:8001/health and http://localhost:8001/docs.
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `LLM_MODE` | `mock` | `mock` = no API calls (text labelled `[MOCK]`); `live` = real Claude calls |
+| `LLM_MODE` | `mock` | `mock` = no API calls (text labelled `[MOCK]`); `live` = real LLM calls |
+| `LLM_PROVIDER` | `anthropic` | live provider: `anthropic` (Claude, structured outputs) or `deepseek` (JSON mode, validated with the same Pydantic schemas) |
 | `LLM_MODEL` | `sonnet` | `sonnet` (claude-sonnet-5-5), `haiku` (cheapest), `opus` (upgrade) or a full model id |
-| `LLM_API_KEY` / `ANTHROPIC_API_KEY` | - | needed only in live mode |
+| `LLM_API_KEY` / `ANTHROPIC_API_KEY` | - | Claude key, live mode only |
+| `DEEPSEEK_API_KEY` | - | DeepSeek key (`LLM_PROVIDER=deepseek`; `LLM_API_KEY` also works). Model `deepseek-chat` by default; `DEEPSEEK_BASE_URL` optional |
 | `INTERNAL_API_KEY` | empty | when set, POST endpoints require header `X-API-Key` (shared with Node.js) |
 | `LLM_EFFORT`, `LLM_MAX_TOKENS`, `LLM_TIMEOUT_S`, `LLM_MAX_RETRIES` | low, 1500, 45, 2 | cost / latency limits |
 
