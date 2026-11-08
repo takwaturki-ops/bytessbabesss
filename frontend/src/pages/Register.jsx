@@ -18,7 +18,7 @@ export default function Register() {
       setToken(res.data.token);
       localStorage.setItem("smartfin_token", res.data.token);
       setUser(res.data.user || res.data);
-      navigate("/me");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.error || "Erreur register");
     }
