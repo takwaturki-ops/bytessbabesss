@@ -1,6 +1,7 @@
 import { createApp } from "./app.js";
 import { checkDatabaseConnection, createPool } from "./config/database.js";
 import { getConfig, loadEnv } from "./config/env.js";
+import { createAiClient } from "./services/aiClient.js";
 
 // Single startup entry point of the backend:  npm start  ->  node src/server.js
 loadEnv();
@@ -16,21 +17,35 @@ if (config.weakSecret) {
   console.warn("Warning: JWT_SECRET is shorter than 32 characters; use a long random value.");
 }
 
-console.log("DATABASE_URL chargée :", Boolean(config.databaseUrl));
-const pool = createPool(config.databaseUrl);
+let pool;
+let databaseMode = "postgres";
+if (config.inMemoryDb) {
+  const { createMemoryPool } = await import("./config/memoryDb.js");
+  pool = await createMemoryPool({ demoAdmin: config.demoAdmin });
+  databaseMode = "in-memory (demo only, data lost on restart)";
+  console.warn("USE_IN_MEMORY_DB=true: using an IN-MEMORY database (pg-mem). Not Neon. Data is lost on restart.");
+  if (config.demoAdmin) console.warn(`Demo admin account created: ${config.demoAdmin.email}`);
+} else {
+  console.log("DATABASE_URL chargée :", Boolean(config.databaseUrl));
+  pool = createPool(config.databaseUrl);
+}
+
 const app = createApp({
   pool,
   jwtSecret: config.jwtSecret,
   jwtExpiresIn: config.jwtExpiresIn,
   corsOrigins: config.corsOrigins,
+  ai: createAiClient({ baseUrl: config.aiServiceUrl, apiKey: config.internalApiKey, timeoutMs: config.aiTimeoutMs }),
+  databaseMode,
 });
 
 const database = await checkDatabaseConnection(pool);
 if (database === "connected") {
-  console.log("Connexion réussie à Neon PostgreSQL !");
+  console.log(config.inMemoryDb ? "In-memory database ready." : "Connexion réussie à Neon PostgreSQL !");
 } else {
-  console.error(`PostgreSQL ${database}: the server starts, authentication routes will answer 503 until it is reachable.`);
+  console.error(`PostgreSQL ${database}: the server starts, database routes will answer 503 until it is reachable.`);
 }
+console.log(`AI service: ${config.aiServiceUrl}`);
 
 const server = app.listen(config.port, () => {
   console.log(`Server running on http://localhost:${config.port}`);
@@ -38,7 +53,7 @@ const server = app.listen(config.port, () => {
 
 const shutdown = () => {
   server.close(() => {
-    Promise.resolve(pool?.end()).finally(() => process.exit(0));
+    Promise.resolve(pool?.end?.()).finally(() => process.exit(0));
   });
 };
 process.on("SIGINT", shutdown);

@@ -32,5 +32,14 @@ export function getConfig(env = process.env) {
       .map((origin) => origin.trim())
       .filter(Boolean),
     weakSecret: jwtSecret.length < 32,
+    // AI service (ai-services/, FastAPI). INTERNAL_API_KEY is sent server-side as X-API-Key.
+    aiServiceUrl: env.AI_SERVICE_URL || "http://localhost:8001",
+    internalApiKey: env.INTERNAL_API_KEY || "",
+    aiTimeoutMs: Number(env.AI_TIMEOUT_MS) || 20000,
+    // LOCAL DEMO ONLY: in-memory PostgreSQL (pg-mem) when no Neon database is available. Data is lost on restart.
+    inMemoryDb: env.USE_IN_MEMORY_DB === "true",
+    demoAdmin: env.DEMO_ADMIN_EMAIL && env.DEMO_ADMIN_PASSWORD
+      ? { email: env.DEMO_ADMIN_EMAIL, password: env.DEMO_ADMIN_PASSWORD, name: env.DEMO_ADMIN_NAME || "Admin 9antra" }
+      : null,
   };
 }

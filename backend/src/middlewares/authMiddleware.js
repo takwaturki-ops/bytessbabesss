@@ -33,3 +33,28 @@ export function createAuthMiddleware({ jwtSecret }) {
     return next();
   };
 }
+
+/**
+ * Admin-only routes. Use AFTER protect. The role is re-read from the database on every request,
+ * so a role stored in an old token (or a demoted admin) can never grant access.
+ */
+export function createRequireAdmin({ pool }) {
+  return async function requireAdmin(req, res, next) {
+    try {
+      if (!pool) {
+        return res.status(503).json({ status: "error", errors: ["Database is not configured"] });
+      }
+      const { rows } = await pool.query("SELECT role FROM users WHERE id = $1", [req.auth.userId]);
+      if (!rows.length) {
+        return unauthorized(res, "User no longer exists");
+      }
+      if (rows[0].role !== "admin") {
+        return res.status(403).json({ status: "error", errors: ["Admin access required"] });
+      }
+      req.auth.role = "admin";
+      return next();
+    } catch (err) {
+      return next(err);
+    }
+  };
+}

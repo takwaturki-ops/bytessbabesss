@@ -14,6 +14,7 @@ export const SCHEMA_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.u
 export function createMemoryPool() {
   const db = newDb();
   db.public.none(readFileSync(SCHEMA_PATH, "utf8"));
+  db.public.none(readFileSync(SCHEMA_PATH.replace("schema.sql", "seed.sql"), "utf8"));
   const { Pool } = db.adapters.createPg();
   return new Pool();
 }
