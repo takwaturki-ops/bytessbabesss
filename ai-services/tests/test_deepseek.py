@@ -41,7 +41,7 @@ def generate(llm: LLMClient):
 @pytest.fixture(autouse=True)
 def deepseek_key(monkeypatch, tmp_path):
     monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-test-not-a-real-key")
-    monkeypatch.setattr(Settings, "usage_log", tmp_path / "usage.jsonl", raising=False)
+    monkeypatch.setattr("core.llm_client.LLMClient._log_usage", lambda self, agent, info: None)  # keep the real usage log clean
 
 
 def test_valid_json_is_parsed_and_labelled_live():
