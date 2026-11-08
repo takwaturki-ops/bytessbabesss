@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
+import pool from "./config/database.js";
 
 dotenv.config({ path: "../.env.local" });
 console.log("DATABASE_URL chargée :", !!process.env.DATABASE_URL);
