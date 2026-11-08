@@ -39,7 +39,7 @@
       "position": [550, 300],
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8001/agent/sales",
+        "url": "http://localhost:8001/agents/sales",
         "bodyContentType": "json",
         "jsonBody": "={{ JSON.stringify($json) }}"
       },
@@ -58,7 +58,7 @@
       "position": [850, 300],
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8001/agent/customer-intelligence",
+        "url": "http://localhost:8001/agents/customer-intelligence",
         "bodyContentType": "json",
         "jsonBody": "={{ JSON.stringify($json) }}"
       },
@@ -99,7 +99,7 @@
       "position": [1450, 300],
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8001/agent/security",
+        "url": "http://localhost:8001/agents/fraud",
         "bodyContentType": "json",
         "jsonBody": "={{ JSON.stringify($json) }}"
       },
@@ -140,7 +140,7 @@
       "position": [1750, 560],
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8001/agent/payment",
+        "url": "http://localhost:8001/agents/payment",
         "bodyContentType": "json",
         "jsonBody": "={{ JSON.stringify($json) }}"
       },

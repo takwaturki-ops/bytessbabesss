@@ -39,7 +39,7 @@
       "position": [550, 300],
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8001/agent/security",
+        "url": "http://localhost:8001/agents/fraud",
         "bodyContentType": "json",
         "jsonBody": "={{ JSON.stringify($json) }}"
       },
