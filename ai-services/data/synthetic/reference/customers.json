@@ -1,0 +1,2334 @@
+{
+  "_meta": {
+    "dataset": "customers",
+    "simulated": true,
+    "seed": 42,
+    "notice": "SIMULATED DATA generated for the 9antra hackathon prototype. Not real people, prices or payments.",
+    "count": 100
+  },
+  "records": [
+    {
+      "customer_id": "CUST0001",
+      "full_name": "Walid Gharbi",
+      "email": "walid.gharbi1@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 20,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "foundations",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0001-A"
+      ],
+      "signup_date": "2025-11-03",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0002",
+      "full_name": "Eya Trabelsi",
+      "email": "eya.trabelsi2@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 18,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "machine_learning",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0002-A"
+      ],
+      "signup_date": "2026-05-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0003",
+      "full_name": "Bilel Toumi",
+      "email": "bilel.toumi3@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 23,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "programming",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0003-A"
+      ],
+      "signup_date": "2026-07-16",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0004",
+      "full_name": "Khalil Gharbi",
+      "email": "khalil.gharbi4@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 21,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "programming",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0004-A"
+      ],
+      "signup_date": "2025-11-23",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0005",
+      "full_name": "Ines Jlassi",
+      "email": "ines.jlassi5@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 21,
+      "segment": "manager",
+      "occupation": "Operations director",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "foundations",
+        "business"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0005-A",
+        "DEV-0005-B"
+      ],
+      "signup_date": "2026-05-05",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0006",
+      "full_name": "Emna Gharbi",
+      "email": "emna.gharbi6@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 42,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0006-A"
+      ],
+      "signup_date": "2025-10-05",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0007",
+      "full_name": "Mohamed Jlassi",
+      "email": "mohamed.jlassi7@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 48,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "engineering",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0007-A"
+      ],
+      "signup_date": "2026-05-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0008",
+      "full_name": "Hiba Kefi",
+      "email": "hiba.kefi8@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 39,
+      "segment": "entrepreneur",
+      "occupation": "Agency owner",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "business",
+        "data"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0008-A"
+      ],
+      "signup_date": "2026-03-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0009",
+      "full_name": "Aziz Ferchichi",
+      "email": "aziz.ferchichi9@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 35,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "business",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0009-A",
+        "DEV-0009-B"
+      ],
+      "signup_date": "2025-11-06",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0010",
+      "full_name": "Eya Toumi",
+      "email": "eya.toumi10@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 50,
+      "segment": "professional",
+      "occupation": "Software developer",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "generative_ai",
+        "business"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0010-A",
+        "DEV-0010-B"
+      ],
+      "signup_date": "2026-06-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0011",
+      "full_name": "Rahma Belhaj",
+      "email": "rahma.belhaj11@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 48,
+      "segment": "professional",
+      "occupation": "Teacher",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "machine_learning",
+        "business"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0011-A"
+      ],
+      "signup_date": "2025-09-18",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0012",
+      "full_name": "Oumaima Gharbi",
+      "email": "oumaima.gharbi12@example.com",
+      "city": "Nabeul",
+      "country": "TN",
+      "age": 26,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "engineering",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0012-A"
+      ],
+      "signup_date": "2026-04-20",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0013",
+      "full_name": "Omar Bouazizi",
+      "email": "omar.bouazizi13@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 31,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0013-A"
+      ],
+      "signup_date": "2025-12-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0014",
+      "full_name": "Lina Ben Ali",
+      "email": "lina.benali14@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 42,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0014-A"
+      ],
+      "signup_date": "2026-07-23",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0015",
+      "full_name": "Mohamed Ferchichi",
+      "email": "mohamed.ferchichi15@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 49,
+      "segment": "entrepreneur",
+      "occupation": "Freelancer",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "data",
+        "business"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0015-A"
+      ],
+      "signup_date": "2026-05-16",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0016",
+      "full_name": "Lina Haddad",
+      "email": "lina.haddad16@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 44,
+      "segment": "entrepreneur",
+      "occupation": "Freelancer",
+      "experience_level": "intermediate",
+      "preferred_language": "ar",
+      "interests": [
+        "data",
+        "business"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0016-A"
+      ],
+      "signup_date": "2026-07-02",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0017",
+      "full_name": "Mariem Chebbi",
+      "email": "mariem.chebbi17@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "programming",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0017-A",
+        "DEV-0017-B"
+      ],
+      "signup_date": "2026-08-16",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0018",
+      "full_name": "Emna Kefi",
+      "email": "emna.kefi18@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "machine_learning",
+        "foundations"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0018-A"
+      ],
+      "signup_date": "2026-01-02",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0019",
+      "full_name": "Mariem Ferchichi",
+      "email": "mariem.ferchichi19@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 46,
+      "segment": "entrepreneur",
+      "occupation": "Agency owner",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "business",
+        "data"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0019-A"
+      ],
+      "signup_date": "2025-09-22",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0020",
+      "full_name": "Walid Gharbi",
+      "email": "walid.gharbi20@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "foundations",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0020-A",
+        "DEV-0020-B"
+      ],
+      "signup_date": "2026-01-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0021",
+      "full_name": "Mariem Jaziri",
+      "email": "mariem.jaziri21@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 53,
+      "segment": "professional",
+      "occupation": "Software developer",
+      "experience_level": "advanced",
+      "preferred_language": "darija",
+      "interests": [
+        "engineering",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0021-A"
+      ],
+      "signup_date": "2026-06-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0022",
+      "full_name": "Eya Ferchichi",
+      "email": "eya.ferchichi22@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 43,
+      "segment": "professional",
+      "occupation": "Software developer",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0022-A"
+      ],
+      "signup_date": "2026-01-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0023",
+      "full_name": "Ines Belhaj",
+      "email": "ines.belhaj23@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 28,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "business",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0023-A"
+      ],
+      "signup_date": "2025-11-28",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0024",
+      "full_name": "Yasmine Kefi",
+      "email": "yasmine.kefi24@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 26,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "data",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0024-A"
+      ],
+      "signup_date": "2026-07-28",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0025",
+      "full_name": "Chaima Jaziri",
+      "email": "chaima.jaziri25@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 55,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0025-A",
+        "DEV-0025-B"
+      ],
+      "signup_date": "2025-09-30",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0026",
+      "full_name": "Fares Toumi",
+      "email": "fares.toumi26@example.com",
+      "city": "Nabeul",
+      "country": "TN",
+      "age": 34,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "programming",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0026-A",
+        "DEV-0026-B"
+      ],
+      "signup_date": "2026-03-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0027",
+      "full_name": "Lina Jaziri",
+      "email": "lina.jaziri27@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 26,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0027-A"
+      ],
+      "signup_date": "2026-07-28",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0028",
+      "full_name": "Anis Chebbi",
+      "email": "anis.chebbi28@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 38,
+      "segment": "professional",
+      "occupation": "Teacher",
+      "experience_level": "advanced",
+      "preferred_language": "darija",
+      "interests": [
+        "generative_ai",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0028-A"
+      ],
+      "signup_date": "2025-09-25",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0029",
+      "full_name": "Mehdi Haddad",
+      "email": "mehdi.haddad29@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 19,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "programming",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0029-A",
+        "DEV-0029-B"
+      ],
+      "signup_date": "2026-05-17",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0030",
+      "full_name": "Ahmed Kefi",
+      "email": "ahmed.kefi30@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 18,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "foundations",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0030-A",
+        "DEV-0030-B"
+      ],
+      "signup_date": "2026-03-15",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0031",
+      "full_name": "Seif Mansouri",
+      "email": "seif.mansouri31@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 54,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "programming",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0031-A"
+      ],
+      "signup_date": "2025-09-13",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0032",
+      "full_name": "Anis Mansouri",
+      "email": "anis.mansouri32@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 28,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "programming",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0032-A"
+      ],
+      "signup_date": "2026-08-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0033",
+      "full_name": "Anis Dridi",
+      "email": "anis.dridi33@example.com",
+      "city": "Nabeul",
+      "country": "TN",
+      "age": 26,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "advanced",
+      "preferred_language": "en",
+      "interests": [
+        "machine_learning",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0033-A"
+      ],
+      "signup_date": "2026-05-03",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0034",
+      "full_name": "Emna Bouazizi",
+      "email": "emna.bouazizi34@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 30,
+      "segment": "manager",
+      "occupation": "Operations director",
+      "experience_level": "advanced",
+      "preferred_language": "darija",
+      "interests": [
+        "business",
+        "foundations"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0034-A"
+      ],
+      "signup_date": "2025-09-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0035",
+      "full_name": "Emna Chebbi",
+      "email": "emna.chebbi35@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 25,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "programming",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0035-A"
+      ],
+      "signup_date": "2026-05-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0036",
+      "full_name": "Mariem Ben Ali",
+      "email": "mariem.benali36@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 23,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "machine_learning",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0036-A"
+      ],
+      "signup_date": "2025-12-01",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0037",
+      "full_name": "Hamza Ben Ali",
+      "email": "hamza.benali37@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 22,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "foundations",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0037-A"
+      ],
+      "signup_date": "2026-03-25",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0038",
+      "full_name": "Eya Jlassi",
+      "email": "eya.jlassi38@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 31,
+      "segment": "manager",
+      "occupation": "Marketing manager",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "business",
+        "foundations"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0038-A"
+      ],
+      "signup_date": "2025-11-30",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0039",
+      "full_name": "Hiba Hammami",
+      "email": "hiba.hammami39@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 39,
+      "segment": "professional",
+      "occupation": "Software developer",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0039-A"
+      ],
+      "signup_date": "2026-02-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0040",
+      "full_name": "Hamza Mejri",
+      "email": "hamza.mejri40@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 45,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "engineering",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0040-A"
+      ],
+      "signup_date": "2026-03-31",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0041",
+      "full_name": "Khalil Haddad",
+      "email": "khalil.haddad41@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 46,
+      "segment": "entrepreneur",
+      "occupation": "Freelancer",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "data"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0041-A"
+      ],
+      "signup_date": "2025-09-21",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0042",
+      "full_name": "Aziz Khelifi",
+      "email": "aziz.khelifi42@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 37,
+      "segment": "professional",
+      "occupation": "Teacher",
+      "experience_level": "intermediate",
+      "preferred_language": "en",
+      "interests": [
+        "business",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0042-A",
+        "DEV-0042-B"
+      ],
+      "signup_date": "2026-05-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0043",
+      "full_name": "Hiba Sassi",
+      "email": "hiba.sassi43@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 18,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "advanced",
+      "preferred_language": "en",
+      "interests": [
+        "machine_learning",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0043-A"
+      ],
+      "signup_date": "2026-01-11",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0044",
+      "full_name": "Eya Toumi",
+      "email": "eya.toumi44@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0044-A"
+      ],
+      "signup_date": "2026-07-09",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0045",
+      "full_name": "Seif Belhaj",
+      "email": "seif.belhaj45@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 26,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0045-A",
+        "DEV-0045-B"
+      ],
+      "signup_date": "2026-01-07",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0046",
+      "full_name": "Hiba Khelifi",
+      "email": "hiba.khelifi46@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 51,
+      "segment": "manager",
+      "occupation": "Marketing manager",
+      "experience_level": "intermediate",
+      "preferred_language": "ar",
+      "interests": [
+        "generative_ai",
+        "foundations"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0046-A"
+      ],
+      "signup_date": "2026-01-01",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0047",
+      "full_name": "Bilel Ayari",
+      "email": "bilel.ayari47@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 50,
+      "segment": "entrepreneur",
+      "occupation": "Freelancer",
+      "experience_level": "beginner",
+      "preferred_language": "ar",
+      "interests": [
+        "data",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0047-A"
+      ],
+      "signup_date": "2026-05-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0048",
+      "full_name": "Skander Kefi",
+      "email": "skander.kefi48@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 20,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0048-A",
+        "DEV-0048-B"
+      ],
+      "signup_date": "2026-02-01",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0049",
+      "full_name": "Eya Kefi",
+      "email": "eya.kefi49@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 45,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "advanced",
+      "preferred_language": "ar",
+      "interests": [
+        "machine_learning",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0049-A"
+      ],
+      "signup_date": "2025-11-11",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0050",
+      "full_name": "Khalil Ferchichi",
+      "email": "khalil.ferchichi50@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 24,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "intermediate",
+      "preferred_language": "ar",
+      "interests": [
+        "foundations",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0050-A"
+      ],
+      "signup_date": "2026-05-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0051",
+      "full_name": "Asma Chebbi",
+      "email": "asma.chebbi51@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 23,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "intermediate",
+      "preferred_language": "ar",
+      "interests": [
+        "generative_ai",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0051-A",
+        "DEV-0051-B"
+      ],
+      "signup_date": "2026-01-05",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0052",
+      "full_name": "Lina Mansouri",
+      "email": "lina.mansouri52@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 55,
+      "segment": "manager",
+      "occupation": "Operations director",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "generative_ai",
+        "business"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0052-A",
+        "DEV-0052-B"
+      ],
+      "signup_date": "2026-01-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0053",
+      "full_name": "Rania Trabelsi",
+      "email": "rania.trabelsi53@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 23,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "foundations",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0053-A"
+      ],
+      "signup_date": "2026-01-29",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0054",
+      "full_name": "Skander Jaziri",
+      "email": "skander.jaziri54@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 41,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "business",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0054-A"
+      ],
+      "signup_date": "2026-08-17",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0055",
+      "full_name": "Mariem Hammami",
+      "email": "mariem.hammami55@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 27,
+      "segment": "entrepreneur",
+      "occupation": "Agency owner",
+      "experience_level": "intermediate",
+      "preferred_language": "ar",
+      "interests": [
+        "data",
+        "business"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0055-A",
+        "DEV-0055-B"
+      ],
+      "signup_date": "2025-09-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0056",
+      "full_name": "Skander Dridi",
+      "email": "skander.dridi56@example.com",
+      "city": "Sousse",
+      "country": "TN",
+      "age": 22,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "data",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0056-A"
+      ],
+      "signup_date": "2026-02-21",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0057",
+      "full_name": "Khalil Hammami",
+      "email": "khalil.hammami57@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 19,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0057-A"
+      ],
+      "signup_date": "2026-02-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0058",
+      "full_name": "Mohamed Khelifi",
+      "email": "mohamed.khelifi58@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 25,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "advanced",
+      "preferred_language": "en",
+      "interests": [
+        "data",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0058-A"
+      ],
+      "signup_date": "2025-09-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0059",
+      "full_name": "Youssef Belhaj",
+      "email": "youssef.belhaj59@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 26,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "data",
+        "foundations"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0059-A"
+      ],
+      "signup_date": "2026-03-20",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0060",
+      "full_name": "Emna Chebbi",
+      "email": "emna.chebbi60@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 34,
+      "segment": "entrepreneur",
+      "occupation": "Agency owner",
+      "experience_level": "intermediate",
+      "preferred_language": "en",
+      "interests": [
+        "business",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0060-A"
+      ],
+      "signup_date": "2025-12-22",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0061",
+      "full_name": "Emna Kefi",
+      "email": "emna.kefi61@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 23,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "advanced",
+      "preferred_language": "en",
+      "interests": [
+        "machine_learning",
+        "foundations"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0061-A",
+        "DEV-0061-B"
+      ],
+      "signup_date": "2026-08-27",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0062",
+      "full_name": "Omar Hammami",
+      "email": "omar.hammami62@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "generative_ai",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0062-A"
+      ],
+      "signup_date": "2026-08-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0063",
+      "full_name": "Mohamed Sassi",
+      "email": "mohamed.sassi63@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 23,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "foundations"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0063-A"
+      ],
+      "signup_date": "2025-11-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0064",
+      "full_name": "Hamza Dridi",
+      "email": "hamza.dridi64@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 33,
+      "segment": "entrepreneur",
+      "occupation": "E-commerce founder",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "data"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0064-A"
+      ],
+      "signup_date": "2025-09-13",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0065",
+      "full_name": "Rania Hammami",
+      "email": "rania.hammami65@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 26,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "foundations"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0065-A",
+        "DEV-0065-B"
+      ],
+      "signup_date": "2026-05-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0066",
+      "full_name": "Nour Bouazizi",
+      "email": "nour.bouazizi66@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 18,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "intermediate",
+      "preferred_language": "en",
+      "interests": [
+        "data",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0066-A",
+        "DEV-0066-B"
+      ],
+      "signup_date": "2025-12-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0067",
+      "full_name": "Salma Ben Ali",
+      "email": "salma.benali67@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 40,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "business"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0067-A"
+      ],
+      "signup_date": "2026-07-05",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0068",
+      "full_name": "Mehdi Jaziri",
+      "email": "mehdi.jaziri68@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 28,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "data",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0068-A",
+        "DEV-0068-B"
+      ],
+      "signup_date": "2026-04-27",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0069",
+      "full_name": "Salma Haddad",
+      "email": "salma.haddad69@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 43,
+      "segment": "entrepreneur",
+      "occupation": "Agency owner",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "business"
+      ],
+      "budget_min_tnd": 150,
+      "budget_max_tnd": 500,
+      "known_devices": [
+        "DEV-0069-A"
+      ],
+      "signup_date": "2026-01-25",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0070",
+      "full_name": "Ines Toumi",
+      "email": "ines.toumi70@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 32,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "engineering",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0070-A",
+        "DEV-0070-B"
+      ],
+      "signup_date": "2026-07-25",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0071",
+      "full_name": "Rania Ben Ali",
+      "email": "rania.benali71@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 37,
+      "segment": "professional",
+      "occupation": "Software developer",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "business",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0071-A"
+      ],
+      "signup_date": "2026-01-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0072",
+      "full_name": "Mohamed Chebbi",
+      "email": "mohamed.chebbi72@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 26,
+      "segment": "manager",
+      "occupation": "Operations director",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "business"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0072-A",
+        "DEV-0072-B"
+      ],
+      "signup_date": "2026-06-21",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0073",
+      "full_name": "Mohamed Trabelsi",
+      "email": "mohamed.trabelsi73@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 19,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "intermediate",
+      "preferred_language": "en",
+      "interests": [
+        "foundations",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0073-A"
+      ],
+      "signup_date": "2025-12-19",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0074",
+      "full_name": "Sarra Ferchichi",
+      "email": "sarra.ferchichi74@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 39,
+      "segment": "professional",
+      "occupation": "Teacher",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "engineering",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0074-A"
+      ],
+      "signup_date": "2025-11-11",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0075",
+      "full_name": "Fares Ben Ali",
+      "email": "fares.benali75@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 21,
+      "segment": "manager",
+      "occupation": "IT manager",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "generative_ai",
+        "foundations"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0075-A"
+      ],
+      "signup_date": "2026-06-01",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0076",
+      "full_name": "Fares Belhaj",
+      "email": "fares.belhaj76@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 41,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "machine_learning",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0076-A"
+      ],
+      "signup_date": "2026-03-17",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0077",
+      "full_name": "Eya Ferchichi",
+      "email": "eya.ferchichi77@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 19,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0077-A"
+      ],
+      "signup_date": "2025-12-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0078",
+      "full_name": "Mehdi Ben Ali",
+      "email": "mehdi.benali78@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 22,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "intermediate",
+      "preferred_language": "en",
+      "interests": [
+        "engineering",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0078-A"
+      ],
+      "signup_date": "2026-01-18",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0079",
+      "full_name": "Seif Trabelsi",
+      "email": "seif.trabelsi79@example.com",
+      "city": "Bizerte",
+      "country": "TN",
+      "age": 25,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0079-A"
+      ],
+      "signup_date": "2026-05-02",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0080",
+      "full_name": "Ahmed Bouazizi",
+      "email": "ahmed.bouazizi80@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Computer science student",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "programming",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0080-A"
+      ],
+      "signup_date": "2025-12-20",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0081",
+      "full_name": "Lina Sassi",
+      "email": "lina.sassi81@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 49,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "programming",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0081-A",
+        "DEV-0081-B"
+      ],
+      "signup_date": "2025-10-30",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0082",
+      "full_name": "Omar Mansouri",
+      "email": "omar.mansouri82@example.com",
+      "city": "Nabeul",
+      "country": "TN",
+      "age": 51,
+      "segment": "manager",
+      "occupation": "Marketing manager",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "foundations",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0082-A",
+        "DEV-0082-B"
+      ],
+      "signup_date": "2025-11-05",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0083",
+      "full_name": "Fares Ferchichi",
+      "email": "fares.ferchichi83@example.com",
+      "city": "Nabeul",
+      "country": "TN",
+      "age": 40,
+      "segment": "manager",
+      "occupation": "Operations director",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "foundations",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0083-A"
+      ],
+      "signup_date": "2026-05-28",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0084",
+      "full_name": "Ahmed Chebbi",
+      "email": "ahmed.chebbi84@example.com",
+      "city": "Tunis",
+      "country": "TN",
+      "age": 39,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "intermediate",
+      "preferred_language": "darija",
+      "interests": [
+        "generative_ai",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0084-A"
+      ],
+      "signup_date": "2025-09-27",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0085",
+      "full_name": "Rahma Mansouri",
+      "email": "rahma.mansouri85@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 40,
+      "segment": "professional",
+      "occupation": "Software developer",
+      "experience_level": "advanced",
+      "preferred_language": "ar",
+      "interests": [
+        "data",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0085-A"
+      ],
+      "signup_date": "2026-01-11",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0086",
+      "full_name": "Amine Mansouri",
+      "email": "amine.mansouri86@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 49,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "business",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0086-A"
+      ],
+      "signup_date": "2026-03-17",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0087",
+      "full_name": "Emna Haddad",
+      "email": "emna.haddad87@example.com",
+      "city": "Kairouan",
+      "country": "TN",
+      "age": 21,
+      "segment": "professional",
+      "occupation": "Teacher",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "programming",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0087-A"
+      ],
+      "signup_date": "2026-05-08",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0088",
+      "full_name": "Oumaima Jaziri",
+      "email": "oumaima.jaziri88@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 29,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "business"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0088-A"
+      ],
+      "signup_date": "2026-04-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0089",
+      "full_name": "Nour Dridi",
+      "email": "nour.dridi89@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 55,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "engineering"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0089-A"
+      ],
+      "signup_date": "2025-10-19",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0090",
+      "full_name": "Hiba Chebbi",
+      "email": "hiba.chebbi90@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 48,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "beginner",
+      "preferred_language": "en",
+      "interests": [
+        "engineering",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0090-A"
+      ],
+      "signup_date": "2026-01-06",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0091",
+      "full_name": "Anis Sassi",
+      "email": "anis.sassi91@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 41,
+      "segment": "professional",
+      "occupation": "Teacher",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "generative_ai",
+        "data"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0091-A"
+      ],
+      "signup_date": "2026-01-11",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0092",
+      "full_name": "Emna Sassi",
+      "email": "emna.sassi92@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 21,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "intermediate",
+      "preferred_language": "ar",
+      "interests": [
+        "generative_ai",
+        "data"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0092-A"
+      ],
+      "signup_date": "2026-04-03",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0093",
+      "full_name": "Amine Mejri",
+      "email": "amine.mejri93@example.com",
+      "city": "Ben Arous",
+      "country": "TN",
+      "age": 25,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "data",
+        "programming"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0093-A"
+      ],
+      "signup_date": "2026-05-12",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0094",
+      "full_name": "Walid Hammami",
+      "email": "walid.hammami94@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 21,
+      "segment": "professional",
+      "occupation": "Data analyst",
+      "experience_level": "intermediate",
+      "preferred_language": "fr",
+      "interests": [
+        "business",
+        "generative_ai"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0094-A"
+      ],
+      "signup_date": "2026-06-26",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0095",
+      "full_name": "Mohamed Sassi",
+      "email": "mohamed.sassi95@example.com",
+      "city": "Ariana",
+      "country": "TN",
+      "age": 20,
+      "segment": "student",
+      "occupation": "Business student",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "machine_learning"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0095-A"
+      ],
+      "signup_date": "2026-04-15",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0096",
+      "full_name": "Mehdi Bouazizi",
+      "email": "mehdi.bouazizi96@example.com",
+      "city": "Nabeul",
+      "country": "TN",
+      "age": 19,
+      "segment": "student",
+      "occupation": "Engineering student",
+      "experience_level": "advanced",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "foundations"
+      ],
+      "budget_min_tnd": 100,
+      "budget_max_tnd": 300,
+      "known_devices": [
+        "DEV-0096-A"
+      ],
+      "signup_date": "2025-09-20",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0097",
+      "full_name": "Oumaima Mejri",
+      "email": "oumaima.mejri97@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 44,
+      "segment": "manager",
+      "occupation": "IT manager",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "generative_ai",
+        "foundations"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0097-A"
+      ],
+      "signup_date": "2025-09-22",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0098",
+      "full_name": "Skander Toumi",
+      "email": "skander.toumi98@example.com",
+      "city": "Sfax",
+      "country": "TN",
+      "age": 33,
+      "segment": "professional",
+      "occupation": "Bank employee",
+      "experience_level": "beginner",
+      "preferred_language": "darija",
+      "interests": [
+        "business",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0098-A"
+      ],
+      "signup_date": "2025-10-24",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0099",
+      "full_name": "Mariem Jaziri",
+      "email": "mariem.jaziri99@example.com",
+      "city": "Monastir",
+      "country": "TN",
+      "age": 26,
+      "segment": "professional",
+      "occupation": "Accountant",
+      "experience_level": "beginner",
+      "preferred_language": "fr",
+      "interests": [
+        "machine_learning",
+        "programming"
+      ],
+      "budget_min_tnd": 200,
+      "budget_max_tnd": 600,
+      "known_devices": [
+        "DEV-0099-A"
+      ],
+      "signup_date": "2026-07-04",
+      "simulated": true
+    },
+    {
+      "customer_id": "CUST0100",
+      "full_name": "Salma Chebbi",
+      "email": "salma.chebbi100@example.com",
+      "city": "Gabes",
+      "country": "TN",
+      "age": 42,
+      "segment": "manager",
+      "occupation": "Operations director",
+      "experience_level": "advanced",
+      "preferred_language": "en",
+      "interests": [
+        "business",
+        "foundations"
+      ],
+      "budget_min_tnd": 300,
+      "budget_max_tnd": 800,
+      "known_devices": [
+        "DEV-0100-A"
+      ],
+      "signup_date": "2025-11-05",
+      "simulated": true
+    }
+  ]
+}

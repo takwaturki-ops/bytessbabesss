@@ -1,0 +1,2708 @@
+{
+  "generated_at": "2026-11-08 00:21 UTC",
+  "llm_mode": "mock",
+  "model": null,
+  "data": "SIMULATED",
+  "summary": {
+    "scenarios": 74,
+    "passed": 74,
+    "failed": 0
+  },
+  "scenario_results": {
+    "sales": [
+      {
+        "id": "S01",
+        "category": "normal",
+        "description": "Purchase intent (EN)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "purchase_intent",
+            "actual": "purchase_intent",
+            "passed": true
+          },
+          {
+            "path": "data.next_action",
+            "op": "eq",
+            "expected": "send_payment_link",
+            "actual": "send_payment_link",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].course_id",
+            "op": "contains",
+            "expected": "C002",
+            "actual": [
+              "C002"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.reply",
+            "op": "regex_present",
+            "expected": "199",
+            "actual": "[MOCK] Excellent choice! Python for AI (199 TND, 4 weeks, beginner). I will send you the secure payment link now.",
+            "passed": true
+          },
+          {
+            "path": "data.catalog_grounded",
+            "op": "eq",
+            "expected": true,
+            "actual": true,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S02",
+        "category": "normal",
+        "description": "Information request",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "information_request",
+            "actual": "information_request",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].course_id",
+            "op": "contains_any",
+            "expected": [
+              "C003"
+            ],
+            "actual": [
+              "C003"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S03",
+        "category": "normal",
+        "description": "Price objection from a student",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "price_objection",
+            "actual": "price_objection",
+            "passed": true
+          },
+          {
+            "path": "data.objection_type",
+            "op": "eq",
+            "expected": "price",
+            "actual": "price",
+            "passed": true
+          },
+          {
+            "path": "data.next_action",
+            "op": "eq",
+            "expected": "handle_objection",
+            "actual": "handle_objection",
+            "passed": true
+          },
+          {
+            "path": "data.catalog_grounded",
+            "op": "eq",
+            "expected": true,
+            "actual": true,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S04",
+        "category": "normal",
+        "description": "Course comparison",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "course_comparison",
+            "actual": "course_comparison",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].course_id",
+            "op": "contains_all",
+            "expected": [
+              "C003",
+              "C004"
+            ],
+            "actual": [
+              "C003",
+              "C004"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S05",
+        "category": "normal",
+        "description": "Payment issue is routed, no upsell",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "payment_issue",
+            "actual": "payment_issue",
+            "passed": true
+          },
+          {
+            "path": "data.next_action",
+            "op": "eq",
+            "expected": "route_to_payment_support",
+            "actual": "route_to_payment_support",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses",
+            "op": "len_eq",
+            "expected": 0,
+            "actual": [],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S06",
+        "category": "normal",
+        "description": "Support request",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "support_request",
+            "actual": "support_request",
+            "passed": true
+          },
+          {
+            "path": "data.next_action",
+            "op": "eq",
+            "expected": "route_to_customer_support",
+            "actual": "route_to_customer_support",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S07",
+        "category": "normal",
+        "description": "Not interested",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "not_interested",
+            "actual": "not_interested",
+            "passed": true
+          },
+          {
+            "path": "data.next_action",
+            "op": "eq",
+            "expected": "end_conversation",
+            "actual": "end_conversation",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S08",
+        "category": "normal",
+        "description": "Purchase intent (FR)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "purchase_intent",
+            "actual": "purchase_intent",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].course_id",
+            "op": "contains",
+            "expected": "C009",
+            "actual": [
+              "C009"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S09",
+        "category": "normal",
+        "description": "Information request (darija)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "information_request",
+            "actual": "information_request",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].course_id",
+            "op": "contains",
+            "expected": "C008",
+            "actual": [
+              "C008"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S10",
+        "category": "edge",
+        "description": "Difficulty objection -> beginner course",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.objection_type",
+            "op": "eq",
+            "expected": "difficulty",
+            "actual": "difficulty",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].level",
+            "op": "subset",
+            "expected": [
+              "beginner"
+            ],
+            "actual": [
+              "beginner"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses",
+            "op": "len_gte",
+            "expected": 1,
+            "actual": [
+              {
+                "course_id": "C007",
+                "title": "Data Analysis with AI",
+                "price_tnd": 229.0,
+                "level": "beginner",
+                "duration_weeks": 4,
+                "reason": "beginner-friendly"
+              }
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S11",
+        "category": "missing_input",
+        "description": "Empty message",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "error",
+            "actual": "error",
+            "passed": true
+          },
+          {
+            "path": "errors",
+            "op": "contains",
+            "expected": "invalid_input",
+            "actual": [
+              "invalid_input",
+              "customer_message: String should have at least 1 character"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S12",
+        "category": "invalid_output",
+        "description": "LLM hallucinates a price and a course",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.catalog_grounded",
+            "op": "eq",
+            "expected": false,
+            "actual": false,
+            "passed": true
+          },
+          {
+            "path": "data.reply",
+            "op": "regex_absent",
+            "expected": "(?<!\\d)99 TND",
+            "actual": "[FALLBACK] Here is what I recommend: Python for AI (199 TND, 4 weeks, beginner). Would you like more details?",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_courses[*].course_id",
+            "op": "not_contains",
+            "expected": "C999",
+            "actual": [
+              "C002"
+            ],
+            "passed": true
+          },
+          {
+            "path": "meta.guardrails_triggered",
+            "op": "len_gte",
+            "expected": 1,
+            "actual": [
+              "unknown_course_id_removed",
+              "reply_replaced:non_catalog_price [99.0]"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S13",
+        "category": "invalid_output",
+        "description": "LLM claims payment is done",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.reply",
+            "op": "regex_absent",
+            "expected": "payment (is|was) confirmed",
+            "actual": "[FALLBACK] Excellent choice! Python for AI (199 TND, 4 weeks, beginner). I will send you the secure payment link now.",
+            "passed": true
+          },
+          {
+            "path": "data.catalog_grounded",
+            "op": "eq",
+            "expected": false,
+            "actual": false,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S14",
+        "category": "ambiguous",
+        "description": "Bare greeting",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.detected_intent",
+            "op": "eq",
+            "expected": "information_request",
+            "actual": "information_request",
+            "passed": true
+          },
+          {
+            "path": "data.next_action",
+            "op": "in",
+            "expected": [
+              "present_courses",
+              "answer_question"
+            ],
+            "actual": "present_courses",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "S15",
+        "category": "edge",
+        "description": "Unknown customer id still answers",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "meta.warnings",
+            "op": "contains",
+            "expected": "unknown_customer_id:CUST9999",
+            "actual": [
+              "unknown_customer_id:CUST9999"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "customer_intel": [
+      {
+        "id": "I01",
+        "category": "normal",
+        "description": "Happy buyer",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "purchase_intent",
+            "actual": "purchase_intent",
+            "passed": true
+          },
+          {
+            "path": "data.sentiment",
+            "op": "eq",
+            "expected": "positive",
+            "actual": "positive",
+            "passed": true
+          },
+          {
+            "path": "data.purchase_stage",
+            "op": "eq",
+            "expected": "decision",
+            "actual": "decision",
+            "passed": true
+          },
+          {
+            "path": "data.interest_score",
+            "op": "gte",
+            "expected": 80,
+            "actual": 90,
+            "passed": true
+          },
+          {
+            "path": "data.mentioned_course_ids",
+            "op": "contains",
+            "expected": "C002",
+            "actual": [
+              "C002"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I02",
+        "category": "normal",
+        "description": "Price objection, disappointed (FR)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "price_objection",
+            "actual": "price_objection",
+            "passed": true
+          },
+          {
+            "path": "data.objections",
+            "op": "contains",
+            "expected": "price",
+            "actual": [
+              "price"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.sentiment",
+            "op": "eq",
+            "expected": "negative",
+            "actual": "negative",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I03",
+        "category": "normal",
+        "description": "Time objection, undecided",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "information_request",
+            "actual": "information_request",
+            "passed": true
+          },
+          {
+            "path": "data.objections",
+            "op": "contains",
+            "expected": "time",
+            "actual": [
+              "time"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.sentiment",
+            "op": "eq",
+            "expected": "neutral",
+            "actual": "neutral",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I04",
+        "category": "normal",
+        "description": "Trust objection",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.objections",
+            "op": "contains",
+            "expected": "trust",
+            "actual": [
+              "trust"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I05",
+        "category": "normal",
+        "description": "Payment problem",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "payment_issue",
+            "actual": "payment_issue",
+            "passed": true
+          },
+          {
+            "path": "data.purchase_stage",
+            "op": "eq",
+            "expected": "support",
+            "actual": "support",
+            "passed": true
+          },
+          {
+            "path": "data.sentiment",
+            "op": "eq",
+            "expected": "negative",
+            "actual": "negative",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I06",
+        "category": "normal",
+        "description": "Lost lead",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "not_interested",
+            "actual": "not_interested",
+            "passed": true
+          },
+          {
+            "path": "data.purchase_stage",
+            "op": "eq",
+            "expected": "lost",
+            "actual": "lost",
+            "passed": true
+          },
+          {
+            "path": "data.interest_score",
+            "op": "lte",
+            "expected": 20,
+            "actual": 0,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I07",
+        "category": "normal",
+        "description": "Support request",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "support_request",
+            "actual": "support_request",
+            "passed": true
+          },
+          {
+            "path": "data.mentioned_course_ids",
+            "op": "contains",
+            "expected": "C007",
+            "actual": [
+              "C007"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I08",
+        "category": "normal",
+        "description": "Darija happy buyer",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "purchase_intent",
+            "actual": "purchase_intent",
+            "passed": true
+          },
+          {
+            "path": "data.sentiment",
+            "op": "eq",
+            "expected": "positive",
+            "actual": "positive",
+            "passed": true
+          },
+          {
+            "path": "data.mentioned_course_ids",
+            "op": "contains",
+            "expected": "C008",
+            "actual": [
+              "C008"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I09",
+        "category": "edge",
+        "description": "Multiple objections",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.objections",
+            "op": "contains_all",
+            "expected": [
+              "price",
+              "difficulty"
+            ],
+            "actual": [
+              "price",
+              "difficulty"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I10",
+        "category": "missing_input",
+        "description": "No turns",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "error",
+            "actual": "error",
+            "passed": true
+          },
+          {
+            "path": "errors",
+            "op": "contains",
+            "expected": "invalid_input",
+            "actual": [
+              "invalid_input",
+              "turns: List should have at least 1 item after validation, not 0"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I11",
+        "category": "missing_input",
+        "description": "Only agent turns",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "error",
+            "actual": "error",
+            "passed": true
+          },
+          {
+            "path": "errors",
+            "op": "contains",
+            "expected": "invalid_input",
+            "actual": [
+              "invalid_input",
+              "turns: Value error, at least one customer turn is required"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I12",
+        "category": "invalid_output",
+        "description": "LLM returns unknown course and out-of-range score",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.mentioned_course_ids",
+            "op": "eq",
+            "expected": [
+              "C001"
+            ],
+            "actual": [
+              "C001"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.interest_score",
+            "op": "eq",
+            "expected": 100,
+            "actual": 100,
+            "passed": true
+          },
+          {
+            "path": "meta.guardrails_triggered",
+            "op": "contains_all",
+            "expected": [
+              "unknown_course_id_removed",
+              "scores_clamped"
+            ],
+            "actual": [
+              "unknown_course_id_removed",
+              "scores_clamped"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I13",
+        "category": "invalid_output",
+        "description": "LLM outage -> heuristic fallback",
+        "mode": "fallback",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "meta.mode",
+            "op": "eq",
+            "expected": "fallback",
+            "actual": "fallback",
+            "passed": true
+          },
+          {
+            "path": "data.summary",
+            "op": "startswith",
+            "expected": "[FALLBACK]",
+            "actual": "[FALLBACK] Customer intent: purchase intent; sentiment neutral; objections: none.",
+            "passed": true
+          },
+          {
+            "path": "data.primary_intent",
+            "op": "eq",
+            "expected": "purchase_intent",
+            "actual": "purchase_intent",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "I14",
+        "category": "ambiguous",
+        "description": "Mixed signals",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.sentiment",
+            "op": "eq",
+            "expected": "neutral",
+            "actual": "neutral",
+            "passed": true
+          },
+          {
+            "path": "data.objections",
+            "op": "contains",
+            "expected": "price",
+            "actual": [
+              "price"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "payment": [
+      {
+        "id": "P01",
+        "category": "normal",
+        "description": "Success with full evidence",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "success",
+            "actual": "success",
+            "passed": true
+          },
+          {
+            "path": "data.payment_confirmed",
+            "op": "eq",
+            "expected": true,
+            "actual": true,
+            "passed": true
+          },
+          {
+            "path": "data.recommended_action",
+            "op": "eq",
+            "expected": "grant_access",
+            "actual": "grant_access",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P02",
+        "category": "normal",
+        "description": "Card declined",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "failed",
+            "actual": "failed",
+            "passed": true
+          },
+          {
+            "path": "data.payment_confirmed",
+            "op": "eq",
+            "expected": false,
+            "actual": false,
+            "passed": true
+          },
+          {
+            "path": "data.recommended_action",
+            "op": "eq",
+            "expected": "retry_payment",
+            "actual": "retry_payment",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P03",
+        "category": "normal",
+        "description": "Pending at provider",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "pending",
+            "actual": "pending",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_action",
+            "op": "eq",
+            "expected": "wait_for_confirmation",
+            "actual": "wait_for_confirmation",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P04",
+        "category": "normal",
+        "description": "Provider flagged for review",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.recommended_action",
+            "op": "eq",
+            "expected": "manual_review",
+            "actual": "manual_review",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P05",
+        "category": "edge",
+        "description": "Success claimed without provider reference",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.payment_confirmed",
+            "op": "eq",
+            "expected": false,
+            "actual": false,
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons",
+            "op": "contains",
+            "expected": "missing_provider_reference",
+            "actual": [
+              "missing_provider_reference"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P06",
+        "category": "edge",
+        "description": "Success claimed with invalid signature",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons",
+            "op": "contains",
+            "expected": "signature_invalid_or_missing",
+            "actual": [
+              "signature_invalid_or_missing"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P07",
+        "category": "edge",
+        "description": "Success with amount lower than expected",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons",
+            "op": "contains",
+            "expected": "amount_mismatch",
+            "actual": [
+              "amount_mismatch"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P08",
+        "category": "edge",
+        "description": "Success in wrong currency",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons",
+            "op": "contains",
+            "expected": "currency_not_tnd",
+            "actual": [
+              "currency_not_tnd"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P09",
+        "category": "ambiguous",
+        "description": "Provider alias 'authorized' means pending",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "pending",
+            "actual": "pending",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P10",
+        "category": "ambiguous",
+        "description": "Unknown provider status",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.payment_confirmed",
+            "op": "eq",
+            "expected": false,
+            "actual": false,
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons[0]",
+            "op": "startswith",
+            "expected": "unknown_status",
+            "actual": "unknown_status:weird_state",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P11",
+        "category": "missing_input",
+        "description": "Missing order_id",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "error",
+            "actual": "error",
+            "passed": true
+          },
+          {
+            "path": "errors",
+            "op": "contains",
+            "expected": "invalid_input",
+            "actual": [
+              "invalid_input",
+              "order_id: Field required"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P12",
+        "category": "missing_input",
+        "description": "Success but expected amount unknown",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons",
+            "op": "contains",
+            "expected": "amount_or_expected_amount_missing",
+            "actual": [
+              "amount_or_expected_amount_missing"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P13",
+        "category": "invalid_output",
+        "description": "LLM claims success on a pending payment",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "pending",
+            "actual": "pending",
+            "passed": true
+          },
+          {
+            "path": "data.payment_confirmed",
+            "op": "eq",
+            "expected": false,
+            "actual": false,
+            "passed": true
+          },
+          {
+            "path": "meta.guardrails_triggered",
+            "op": "contains",
+            "expected": "unverified_success_claim_removed",
+            "actual": [
+              "unverified_success_claim_removed"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.customer_message",
+            "op": "regex_absent",
+            "expected": "successful|confirmed|confirmé",
+            "actual": "Votre paiement est en cours de traitement. Nous vous confirmerons dès sa validation.",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P14",
+        "category": "invalid_output",
+        "description": "LLM outage falls back to deterministic text",
+        "mode": "fallback",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "success",
+            "actual": "success",
+            "passed": true
+          },
+          {
+            "path": "meta.mode",
+            "op": "eq",
+            "expected": "fallback",
+            "actual": "fallback",
+            "passed": true
+          },
+          {
+            "path": "data.summary",
+            "op": "startswith",
+            "expected": "[FALLBACK]",
+            "actual": "[FALLBACK] Payment TXN-E1 for order ORD-E1 confirmed: 199.0 TND, provider reference PSIM-900001.",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P15",
+        "category": "ambiguous",
+        "description": "Upper-case alias PAID with full evidence",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "success",
+            "actual": "success",
+            "passed": true
+          },
+          {
+            "path": "data.payment_confirmed",
+            "op": "eq",
+            "expected": true,
+            "actual": true,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "P16",
+        "category": "edge",
+        "description": "Zero amount on a pending event",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.final_status",
+            "op": "eq",
+            "expected": "requires_review",
+            "actual": "requires_review",
+            "passed": true
+          },
+          {
+            "path": "data.review_reasons",
+            "op": "contains",
+            "expected": "invalid_amount",
+            "actual": [
+              "invalid_amount"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "financial": [
+      {
+        "id": "FA01",
+        "category": "normal",
+        "description": "Overview on a known mini-dataset",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.gross_revenue_tnd",
+            "op": "eq",
+            "expected": 457.2,
+            "actual": 457.2,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.paid_orders",
+            "op": "eq",
+            "expected": 3,
+            "actual": 3,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_orders",
+            "op": "eq",
+            "expected": 6,
+            "actual": 6,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA02",
+        "category": "normal",
+        "description": "Average order value and discount total",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.average_order_value_tnd",
+            "op": "eq",
+            "expected": 152.4,
+            "actual": 152.4,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.discount_total_tnd",
+            "op": "eq",
+            "expected": 39.8,
+            "actual": 39.8,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA03",
+        "category": "normal",
+        "description": "Payment statistics",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.payment_success_rate",
+            "op": "eq",
+            "expected": 0.375,
+            "actual": 0.375,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.first_attempt_success_rate",
+            "op": "eq",
+            "expected": 0.3333,
+            "actual": 0.3333,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.order_conversion_rate",
+            "op": "eq",
+            "expected": 0.5,
+            "actual": 0.5,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA04",
+        "category": "normal",
+        "description": "Best-selling course",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.revenue_by_course[0].key",
+            "op": "eq",
+            "expected": "C001",
+            "actual": "C001",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.revenue_by_course[0].revenue_tnd",
+            "op": "eq",
+            "expected": 298.0,
+            "actual": 298.0,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA05",
+        "category": "edge",
+        "description": "Date filter on October only",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_orders",
+            "op": "eq",
+            "expected": 3,
+            "actual": 3,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.gross_revenue_tnd",
+            "op": "eq",
+            "expected": 149.0,
+            "actual": 149.0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.paid_orders",
+            "op": "eq",
+            "expected": 1,
+            "actual": 1,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA06",
+        "category": "edge",
+        "description": "Empty dataset",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_orders",
+            "op": "eq",
+            "expected": 0,
+            "actual": 0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.gross_revenue_tnd",
+            "op": "eq",
+            "expected": 0.0,
+            "actual": 0.0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.average_order_value_tnd",
+            "op": "eq",
+            "expected": 0.0,
+            "actual": 0.0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.payment_success_rate",
+            "op": "eq",
+            "expected": 0.0,
+            "actual": 0.0,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA07",
+        "category": "missing_input",
+        "description": "Orders missing required column",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "error",
+            "actual": "error",
+            "passed": true
+          },
+          {
+            "path": "errors[0]",
+            "op": "regex_present",
+            "expected": "missing columns",
+            "actual": "internal_error: ValueError: orders missing columns: ['course_id', 'amount_tnd', 'list_price_tnd', 'payment_method', 'created_at']",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA08",
+        "category": "invalid_output",
+        "description": "LLM invents a revenue figure",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.narrative",
+            "op": "regex_absent",
+            "expected": "999999",
+            "actual": "3 of 6 orders were paid, generating 457.2 TND (average order value 152.4 TND). Order conversion is 50.00% and the payment success rate is 37.50% across 8 transactions.",
+            "passed": true
+          },
+          {
+            "path": "meta.guardrails_triggered[0]",
+            "op": "startswith",
+            "expected": "unverified_numbers_replaced",
+            "actual": "unverified_numbers_replaced:999999",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA09",
+        "category": "normal",
+        "description": "Dev split matches independent calculation",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_orders",
+            "op": "eq",
+            "expected": 80,
+            "actual": 80,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.paid_orders",
+            "op": "eq",
+            "expected": 64,
+            "actual": 64,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.gross_revenue_tnd",
+            "op": "eq",
+            "expected": 21004.3,
+            "actual": 21004.3,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.average_order_value_tnd",
+            "op": "eq",
+            "expected": 328.19,
+            "actual": 328.19,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.order_conversion_rate",
+            "op": "eq",
+            "expected": 0.8,
+            "actual": 0.8,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_transactions",
+            "op": "eq",
+            "expected": 92,
+            "actual": 92,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.successful_transactions",
+            "op": "eq",
+            "expected": 64,
+            "actual": 64,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.failed_transactions",
+            "op": "eq",
+            "expected": 18,
+            "actual": 18,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.payment_success_rate",
+            "op": "eq",
+            "expected": 0.6957,
+            "actual": 0.6957,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.first_attempt_success_rate",
+            "op": "eq",
+            "expected": 0.7,
+            "actual": 0.7,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.pending_amount_tnd",
+            "op": "eq",
+            "expected": 1335.0,
+            "actual": 1335.0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.at_risk_amount_tnd",
+            "op": "eq",
+            "expected": 1859.4,
+            "actual": 1859.4,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA10",
+        "category": "normal",
+        "description": "Eval split matches independent calculation",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_orders",
+            "op": "eq",
+            "expected": 20,
+            "actual": 20,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.paid_orders",
+            "op": "eq",
+            "expected": 16,
+            "actual": 16,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.gross_revenue_tnd",
+            "op": "eq",
+            "expected": 5724.15,
+            "actual": 5724.15,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.average_order_value_tnd",
+            "op": "eq",
+            "expected": 357.76,
+            "actual": 357.76,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.order_conversion_rate",
+            "op": "eq",
+            "expected": 0.8,
+            "actual": 0.8,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_transactions",
+            "op": "eq",
+            "expected": 23,
+            "actual": 23,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.successful_transactions",
+            "op": "eq",
+            "expected": 16,
+            "actual": 16,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.failed_transactions",
+            "op": "eq",
+            "expected": 4,
+            "actual": 4,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.payment_success_rate",
+            "op": "eq",
+            "expected": 0.6957,
+            "actual": 0.6957,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.first_attempt_success_rate",
+            "op": "eq",
+            "expected": 0.7,
+            "actual": 0.7,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.pending_amount_tnd",
+            "op": "eq",
+            "expected": 728.0,
+            "actual": 728.0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.at_risk_amount_tnd",
+            "op": "eq",
+            "expected": 199.0,
+            "actual": 199.0,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA11",
+        "category": "normal",
+        "description": "Failure reasons breakdown",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.failure_reasons.card_declined",
+            "op": "eq",
+            "expected": 2,
+            "actual": 2,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.failure_reasons.insufficient_funds",
+            "op": "eq",
+            "expected": 1,
+            "actual": 1,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA12",
+        "category": "invalid_output",
+        "description": "Valid LLM narrative is kept (no false guardrail)",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "meta.guardrails_triggered",
+            "op": "len_eq",
+            "expected": 0,
+            "actual": [],
+            "passed": true
+          },
+          {
+            "path": "data.narrative",
+            "op": "regex_present",
+            "expected": "457.2",
+            "actual": "Revenue was 457.2 TND from 3 paid orders; conversion is 50%.",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "FA13",
+        "category": "ambiguous",
+        "description": "Date range with no data",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.metrics.total_orders",
+            "op": "eq",
+            "expected": 0,
+            "actual": 0,
+            "passed": true
+          },
+          {
+            "path": "data.metrics.gross_revenue_tnd",
+            "op": "eq",
+            "expected": 0.0,
+            "actual": 0.0,
+            "passed": true
+          }
+        ]
+      }
+    ],
+    "fraud": [
+      {
+        "id": "F01",
+        "category": "normal",
+        "description": "Single clean success",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "allow",
+            "actual": "allow",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "len_eq",
+            "expected": 0,
+            "actual": [],
+            "passed": true
+          },
+          {
+            "path": "data.alert_summary",
+            "op": "is_null",
+            "expected": true,
+            "actual": null,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F02",
+        "category": "normal",
+        "description": "Order already paid -> duplicate",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "block",
+            "actual": "block",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "DUPLICATE_PAYMENT",
+            "actual": [
+              "DUPLICATE_PAYMENT"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F03",
+        "category": "normal",
+        "description": "3 failed attempts in 10 min",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "require_human_approval",
+            "actual": "require_human_approval",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "REPEATED_ATTEMPTS",
+            "actual": [
+              "REPEATED_ATTEMPTS"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F04",
+        "category": "normal",
+        "description": "6 failed attempts -> block",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "block",
+            "actual": "block",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "REPEATED_ATTEMPTS",
+            "actual": [
+              "REPEATED_ATTEMPTS"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F05",
+        "category": "normal",
+        "description": "Amount differs from catalog",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "require_human_approval",
+            "actual": "require_human_approval",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "AMOUNT_MISMATCH",
+            "actual": [
+              "AMOUNT_MISMATCH"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F06",
+        "category": "normal",
+        "description": "Success with invalid provider signature",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "block",
+            "actual": "block",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "INVALID_SIGNATURE",
+            "actual": [
+              "INVALID_SIGNATURE"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F07",
+        "category": "normal",
+        "description": "Foreign IP on unknown device",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "require_human_approval",
+            "actual": "require_human_approval",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "GEO_MISMATCH",
+            "actual": [
+              "GEO_MISMATCH"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F08",
+        "category": "edge",
+        "description": "Foreign IP but known device (travelling customer)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "allow",
+            "actual": "allow",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F09",
+        "category": "edge",
+        "description": "Two failures then success (false-positive check)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "allow",
+            "actual": "allow",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F10",
+        "category": "edge",
+        "description": "Duplicate AND amount mismatch",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "block",
+            "actual": "block",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains_all",
+            "expected": [
+              "DUPLICATE_PAYMENT",
+              "AMOUNT_MISMATCH"
+            ],
+            "actual": [
+              "AMOUNT_MISMATCH",
+              "DUPLICATE_PAYMENT"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.risk_score",
+            "op": "gte",
+            "expected": 90,
+            "actual": 100,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F11",
+        "category": "missing_input",
+        "description": "Event without timestamp",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "error",
+            "actual": "error",
+            "passed": true
+          },
+          {
+            "path": "errors",
+            "op": "contains",
+            "expected": "invalid_input",
+            "actual": [
+              "invalid_input",
+              "event.timestamp: Field required"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F12",
+        "category": "invalid_output",
+        "description": "LLM explanation tries to approve a blocked payment",
+        "mode": "scripted",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "block",
+            "actual": "block",
+            "passed": true
+          },
+          {
+            "path": "meta.guardrails_triggered",
+            "op": "contains",
+            "expected": "contradictory_explanation_replaced",
+            "actual": [
+              "contradictory_explanation_replaced"
+            ],
+            "passed": true
+          },
+          {
+            "path": "data.explanation",
+            "op": "regex_absent",
+            "expected": "safe to approve",
+            "actual": "Decision block (risk 70/100) because INVALID_SIGNATURE: provider signature invalid on a 'success' event.",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F13",
+        "category": "edge",
+        "description": "Non-TND currency",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "require_human_approval",
+            "actual": "require_human_approval",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "CURRENCY_MISMATCH",
+            "actual": [
+              "CURRENCY_MISMATCH"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F14",
+        "category": "edge",
+        "description": "Unusually high amount",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "require_human_approval",
+            "actual": "require_human_approval",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "HIGH_AMOUNT",
+            "actual": [
+              "HIGH_AMOUNT"
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F15",
+        "category": "ambiguous",
+        "description": "Five failures but 2 hours ago (outside window)",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "allow",
+            "actual": "allow",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "id": "F16",
+        "category": "edge",
+        "description": "Zero amount",
+        "mode": "mock",
+        "passed": true,
+        "checks": [
+          {
+            "path": "status",
+            "op": "eq",
+            "expected": "ok",
+            "actual": "ok",
+            "passed": true
+          },
+          {
+            "path": "data.action",
+            "op": "eq",
+            "expected": "block",
+            "actual": "block",
+            "passed": true
+          },
+          {
+            "path": "data.flags",
+            "op": "contains",
+            "expected": "INVALID_AMOUNT",
+            "actual": [
+              "INVALID_AMOUNT"
+            ],
+            "passed": true
+          }
+        ]
+      }
+    ]
+  },
+  "dataset_metrics": {
+    "fraud": {
+      "n": 50,
+      "action_accuracy": 1.0,
+      "expected_flags_found": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion": {
+        "tp": 20,
+        "fp": 0,
+        "tn": 30,
+        "fn": 0
+      },
+      "mismatches": []
+    },
+    "payment": {
+      "n": 23,
+      "status_accuracy": 1.0,
+      "unsafe_confirmations": 0
+    },
+    "customer_intel": {
+      "n": 30,
+      "intent_accuracy": 1.0,
+      "sentiment_accuracy": 0.9667,
+      "objection_exact_match": 1.0,
+      "interest_mae": 3.6
+    },
+    "sales": {
+      "n": 30,
+      "intent_accuracy": 1.0,
+      "recommendation_hit_rate": 1.0,
+      "intent_errors": {}
+    },
+    "financial": {
+      "cross_checks": [
+        {
+          "split": "dev",
+          "fields_checked": 12,
+          "mismatches": {}
+        },
+        {
+          "split": "eval",
+          "fields_checked": 12,
+          "mismatches": {}
+        },
+        {
+          "split": "all",
+          "fields_checked": 12,
+          "mismatches": {}
+        }
+      ],
+      "all_match": true
+    }
+  }
+}

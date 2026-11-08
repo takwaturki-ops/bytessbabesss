@@ -1,0 +1,564 @@
+{
+  "_meta": {
+    "dataset": "fraud_scenarios",
+    "simulated": true,
+    "seed": 42,
+    "notice": "SIMULATED DATA generated for the 9antra hackathon prototype. Not real people, prices or payments.",
+    "count": 10
+  },
+  "records": [
+    {
+      "scenario_id": "FRD029",
+      "scenario_type": "normal_two_failures_then_attempt",
+      "label": "normal",
+      "expected_action": "allow",
+      "expected_flags": [],
+      "customer_context": {
+        "customer_id": "CUST0066",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0066-A",
+          "DEV-0066-B"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN029-009",
+        "order_id": "FORD029",
+        "customer_id": "CUST0066",
+        "course_id": "C002",
+        "amount_tnd": 199.0,
+        "expected_amount_tnd": 199.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F029009",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0066-A",
+        "card_fingerprint": "fp_a8baf14f7fb3",
+        "timestamp": "2026-09-10T01:46:00"
+      },
+      "history": [
+        {
+          "transaction_id": "FTXN029-000",
+          "order_id": "FORD029",
+          "customer_id": "CUST0066",
+          "course_id": "C002",
+          "amount_tnd": 199.0,
+          "expected_amount_tnd": 199.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0066-A",
+          "card_fingerprint": "fp_a8baf14f7fb3",
+          "timestamp": "2026-09-10T01:37:00"
+        },
+        {
+          "transaction_id": "FTXN029-004",
+          "order_id": "FORD029",
+          "customer_id": "CUST0066",
+          "course_id": "C002",
+          "amount_tnd": 199.0,
+          "expected_amount_tnd": 199.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0066-A",
+          "card_fingerprint": "fp_a8baf14f7fb3",
+          "timestamp": "2026-09-10T01:41:00"
+        }
+      ],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD031",
+      "scenario_type": "duplicate_payment",
+      "label": "suspicious",
+      "expected_action": "block",
+      "expected_flags": [
+        "DUPLICATE_PAYMENT"
+      ],
+      "customer_context": {
+        "customer_id": "CUST0001",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0001-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN031-007",
+        "order_id": "FORD031",
+        "customer_id": "CUST0001",
+        "course_id": "C011",
+        "amount_tnd": 449.0,
+        "expected_amount_tnd": 449.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F031007",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0001-A",
+        "card_fingerprint": "fp_2c14afa2ae5b",
+        "timestamp": "2026-09-07T07:08:00"
+      },
+      "history": [
+        {
+          "transaction_id": "FTXN031-000",
+          "order_id": "FORD031",
+          "customer_id": "CUST0001",
+          "course_id": "C011",
+          "amount_tnd": 449.0,
+          "expected_amount_tnd": 449.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "success",
+          "provider_reference": "PSIM-F031000",
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0001-A",
+          "card_fingerprint": "fp_2c14afa2ae5b",
+          "timestamp": "2026-09-07T07:01:00"
+        }
+      ],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD005",
+      "scenario_type": "normal_single_success",
+      "label": "normal",
+      "expected_action": "allow",
+      "expected_flags": [],
+      "customer_context": {
+        "customer_id": "CUST0075",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0075-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN005-000",
+        "order_id": "FORD005",
+        "customer_id": "CUST0075",
+        "course_id": "C005",
+        "amount_tnd": 179.0,
+        "expected_amount_tnd": 179.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F005000",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0075-A",
+        "card_fingerprint": "fp_a005f69eab46",
+        "timestamp": "2026-09-01T20:19:00"
+      },
+      "history": [],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD015",
+      "scenario_type": "normal_retry_after_failure",
+      "label": "normal",
+      "expected_action": "allow",
+      "expected_flags": [],
+      "customer_context": {
+        "customer_id": "CUST0069",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0069-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN015-003",
+        "order_id": "FORD015",
+        "customer_id": "CUST0069",
+        "course_id": "C007",
+        "amount_tnd": 229.0,
+        "expected_amount_tnd": 229.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F015003",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0069-A",
+        "card_fingerprint": "fp_e9be4c152064",
+        "timestamp": "2026-09-09T16:54:00"
+      },
+      "history": [
+        {
+          "transaction_id": "FTXN015-000",
+          "order_id": "FORD015",
+          "customer_id": "CUST0069",
+          "course_id": "C007",
+          "amount_tnd": 229.0,
+          "expected_amount_tnd": 229.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0069-A",
+          "card_fingerprint": "fp_e9be4c152064",
+          "timestamp": "2026-09-09T16:51:00"
+        }
+      ],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD041",
+      "scenario_type": "amount_mismatch",
+      "label": "suspicious",
+      "expected_action": "require_human_approval",
+      "expected_flags": [
+        "AMOUNT_MISMATCH"
+      ],
+      "customer_context": {
+        "customer_id": "CUST0041",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0041-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN041-000",
+        "order_id": "FORD041",
+        "customer_id": "CUST0041",
+        "course_id": "C001",
+        "amount_tnd": 193.7,
+        "expected_amount_tnd": 149.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F041000",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0041-A",
+        "card_fingerprint": "fp_050c94c90480",
+        "timestamp": "2026-10-06T18:52:00"
+      },
+      "history": [],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD040",
+      "scenario_type": "amount_mismatch",
+      "label": "suspicious",
+      "expected_action": "require_human_approval",
+      "expected_flags": [
+        "AMOUNT_MISMATCH"
+      ],
+      "customer_context": {
+        "customer_id": "CUST0058",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0058-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN040-000",
+        "order_id": "FORD040",
+        "customer_id": "CUST0058",
+        "course_id": "C011",
+        "amount_tnd": 359.2,
+        "expected_amount_tnd": 449.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F040000",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0058-A",
+        "card_fingerprint": "fp_d11f9c098f2d",
+        "timestamp": "2026-10-08T03:31:00"
+      },
+      "history": [],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD033",
+      "scenario_type": "duplicate_payment",
+      "label": "suspicious",
+      "expected_action": "block",
+      "expected_flags": [
+        "DUPLICATE_PAYMENT"
+      ],
+      "customer_context": {
+        "customer_id": "CUST0088",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0088-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN033-007",
+        "order_id": "FORD033",
+        "customer_id": "CUST0088",
+        "course_id": "C007",
+        "amount_tnd": 229.0,
+        "expected_amount_tnd": 229.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F033007",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0088-A",
+        "card_fingerprint": "fp_2657219f0945",
+        "timestamp": "2026-09-10T19:08:00"
+      },
+      "history": [
+        {
+          "transaction_id": "FTXN033-000",
+          "order_id": "FORD033",
+          "customer_id": "CUST0088",
+          "course_id": "C007",
+          "amount_tnd": 229.0,
+          "expected_amount_tnd": 229.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "success",
+          "provider_reference": "PSIM-F033000",
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0088-A",
+          "card_fingerprint": "fp_2657219f0945",
+          "timestamp": "2026-09-10T19:01:00"
+        }
+      ],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD020",
+      "scenario_type": "normal_retry_after_failure",
+      "label": "normal",
+      "expected_action": "allow",
+      "expected_flags": [],
+      "customer_context": {
+        "customer_id": "CUST0061",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0061-A",
+          "DEV-0061-B"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN020-003",
+        "order_id": "FORD020",
+        "customer_id": "CUST0061",
+        "course_id": "C009",
+        "amount_tnd": 399.0,
+        "expected_amount_tnd": 399.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F020003",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0061-A",
+        "card_fingerprint": "fp_ae2689e898e1",
+        "timestamp": "2026-10-30T10:28:00"
+      },
+      "history": [
+        {
+          "transaction_id": "FTXN020-000",
+          "order_id": "FORD020",
+          "customer_id": "CUST0061",
+          "course_id": "C009",
+          "amount_tnd": 399.0,
+          "expected_amount_tnd": 399.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0061-A",
+          "card_fingerprint": "fp_ae2689e898e1",
+          "timestamp": "2026-10-30T10:25:00"
+        }
+      ],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD039",
+      "scenario_type": "repeated_attempts_excessive",
+      "label": "suspicious",
+      "expected_action": "block",
+      "expected_flags": [
+        "REPEATED_ATTEMPTS"
+      ],
+      "customer_context": {
+        "customer_id": "CUST0030",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0030-A",
+          "DEV-0030-B"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN039-012",
+        "order_id": "FORD039",
+        "customer_id": "CUST0030",
+        "course_id": "C005",
+        "amount_tnd": 179.0,
+        "expected_amount_tnd": 179.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "pending",
+        "provider_reference": null,
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0030-A",
+        "card_fingerprint": "fp_e5be5a5bfb9a",
+        "timestamp": "2026-10-08T10:41:00"
+      },
+      "history": [
+        {
+          "transaction_id": "FTXN039-000",
+          "order_id": "FORD039",
+          "customer_id": "CUST0030",
+          "course_id": "C005",
+          "amount_tnd": 179.0,
+          "expected_amount_tnd": 179.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0030-A",
+          "card_fingerprint": "fp_e5be5a5bfb9a",
+          "timestamp": "2026-10-08T10:29:00"
+        },
+        {
+          "transaction_id": "FTXN039-002",
+          "order_id": "FORD039",
+          "customer_id": "CUST0030",
+          "course_id": "C005",
+          "amount_tnd": 179.0,
+          "expected_amount_tnd": 179.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0030-A",
+          "card_fingerprint": "fp_e5be5a5bfb9a",
+          "timestamp": "2026-10-08T10:31:00"
+        },
+        {
+          "transaction_id": "FTXN039-004",
+          "order_id": "FORD039",
+          "customer_id": "CUST0030",
+          "course_id": "C005",
+          "amount_tnd": 179.0,
+          "expected_amount_tnd": 179.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0030-A",
+          "card_fingerprint": "fp_e5be5a5bfb9a",
+          "timestamp": "2026-10-08T10:33:00"
+        },
+        {
+          "transaction_id": "FTXN039-006",
+          "order_id": "FORD039",
+          "customer_id": "CUST0030",
+          "course_id": "C005",
+          "amount_tnd": 179.0,
+          "expected_amount_tnd": 179.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0030-A",
+          "card_fingerprint": "fp_e5be5a5bfb9a",
+          "timestamp": "2026-10-08T10:35:00"
+        },
+        {
+          "transaction_id": "FTXN039-008",
+          "order_id": "FORD039",
+          "customer_id": "CUST0030",
+          "course_id": "C005",
+          "amount_tnd": 179.0,
+          "expected_amount_tnd": 179.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0030-A",
+          "card_fingerprint": "fp_e5be5a5bfb9a",
+          "timestamp": "2026-10-08T10:37:00"
+        },
+        {
+          "transaction_id": "FTXN039-010",
+          "order_id": "FORD039",
+          "customer_id": "CUST0030",
+          "course_id": "C005",
+          "amount_tnd": 179.0,
+          "expected_amount_tnd": 179.0,
+          "currency": "TND",
+          "payment_method": "card",
+          "status": "failed",
+          "provider_reference": null,
+          "signature_valid": true,
+          "ip_country": "TN",
+          "device_id": "DEV-0030-A",
+          "card_fingerprint": "fp_e5be5a5bfb9a",
+          "timestamp": "2026-10-08T10:39:00"
+        }
+      ],
+      "simulated": true
+    },
+    {
+      "scenario_id": "FRD010",
+      "scenario_type": "normal_single_success",
+      "label": "normal",
+      "expected_action": "allow",
+      "expected_flags": [],
+      "customer_context": {
+        "customer_id": "CUST0063",
+        "home_country": "TN",
+        "known_devices": [
+          "DEV-0063-A"
+        ]
+      },
+      "event": {
+        "transaction_id": "FTXN010-000",
+        "order_id": "FORD010",
+        "customer_id": "CUST0063",
+        "course_id": "C010",
+        "amount_tnd": 599.0,
+        "expected_amount_tnd": 599.0,
+        "currency": "TND",
+        "payment_method": "card",
+        "status": "success",
+        "provider_reference": "PSIM-F010000",
+        "signature_valid": true,
+        "ip_country": "TN",
+        "device_id": "DEV-0063-A",
+        "card_fingerprint": "fp_a710bebb1bd2",
+        "timestamp": "2026-10-21T09:50:00"
+      },
+      "history": [],
+      "simulated": true
+    }
+  ]
+}

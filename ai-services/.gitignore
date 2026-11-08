@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+logs/
+# the repository root ignores ".env.*"; the example file holds no secrets and must be shared
+!.env.example

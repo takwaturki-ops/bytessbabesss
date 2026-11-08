@@ -1,0 +1,23 @@
+{
+  "simulated": true,
+  "seed": 42,
+  "notice": "SIMULATED DATA generated for the 9antra hackathon prototype. Not real people, prices or payments.",
+  "counts": {
+    "dev": {
+      "conversations": 120,
+      "orders": 80,
+      "transactions": 92,
+      "fraud_scenarios": 40
+    },
+    "eval": {
+      "conversations": 30,
+      "orders": 20,
+      "transactions": 23,
+      "fraud_scenarios": 10
+    },
+    "reference": {
+      "courses": 12,
+      "customers": 100
+    }
+  }
+}
