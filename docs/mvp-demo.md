@@ -56,3 +56,17 @@ Check: http://localhost:5173/api/health (proxied to the backend) shows `database
 | `GET /api/admin/stats`, `insights`, `users`, `PATCH users/:id/role`, `courses`, `PATCH courses/:id`, `orders`, `orders/:id`, `alerts`, `POST alerts/:id/decision`, `agent-activity` | admin (role read from the DB) |
 
 The backend calls the AI service (`/agents/sales`, `/workflow/purchase`, `/agents/financial`) server-side, with `X-API-Key` when `INTERNAL_API_KEY` is set.
+
+## Rate limiting (backend)
+Per client IP unless stated. A blocked request gets `429` with `Retry-After` and `RateLimit` headers; the frontend shows "Trop de tentatives. Réessayez dans N minutes."
+
+| What | Limit |
+|---|---|
+| Whole API | 600 requests / 15 min |
+| Failed logins | 10 / 15 min (successful logins do not count) |
+| Failed logins on one account (any IP) | 10 / 15 min |
+| Wrong 2FA codes | 10 / 15 min (plus 5 per login challenge) |
+| Accounts created | 5 / hour |
+| 2FA setup / enable / disable | 10 / 15 min |
+
+Counters live in memory: they reset when the backend restarts (use a shared store such as Redis with several instances). The client IP comes from `X-Forwarded-For` only when the proxy is trusted (`TRUST_PROXY`, default `loopback` for the Vite dev proxy; `1` behind one hosting proxy). Values are in `backend/src/middlewares/rateLimit.js`.

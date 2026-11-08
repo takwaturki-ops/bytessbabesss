@@ -16,6 +16,14 @@ export function loadEnv() {
   }
 }
 
+function parseTrustProxy(value) {
+  const v = (value ?? "").trim();
+  if (!v) return "loopback";
+  if (v === "false") return false;
+  if (/^\d+$/.test(v)) return Number(v);
+  return v;
+}
+
 /** Read and validate configuration. Throws when a required value is missing. */
 export function getConfig(env = process.env) {
   const jwtSecret = env.JWT_SECRET;
@@ -32,6 +40,9 @@ export function getConfig(env = process.env) {
       .map((origin) => origin.trim())
       .filter(Boolean),
     weakSecret: jwtSecret.length < 32,
+    // Express "trust proxy": who may set X-Forwarded-For (client IP for rate limiting).
+    // Default "loopback" (Vite dev proxy on this machine). Behind one hosting proxy use 1; no proxy: false.
+    trustProxy: parseTrustProxy(env.TRUST_PROXY),
     // AI service (ai-services/, FastAPI). INTERNAL_API_KEY is sent server-side as X-API-Key.
     aiServiceUrl: env.AI_SERVICE_URL || "http://localhost:8001",
     internalApiKey: env.INTERNAL_API_KEY || "",

@@ -36,6 +36,14 @@ export function normalizeOtp(value) {
 /** Backend errors are { status: "error", errors: ["..."] }. Returns a message safe to display. */
 export function getErrorMessage(error, fallback = "Une erreur est survenue.") {
   const data = error?.response?.data;
+  if (error?.response?.status === 429) {
+    // Rate limited: the backend sends Retry-After in seconds.
+    const seconds = Number(error.response.headers?.["retry-after"]);
+    const minutes = Number.isFinite(seconds) && seconds > 0 ? Math.ceil(seconds / 60) : null;
+    return minutes
+      ? `Trop de tentatives. Réessayez dans ${minutes} minute${minutes > 1 ? "s" : ""}.`
+      : "Trop de tentatives. Réessayez plus tard.";
+  }
   if (Array.isArray(data?.errors) && data.errors.length) {
     return data.errors.join(" ");
   }

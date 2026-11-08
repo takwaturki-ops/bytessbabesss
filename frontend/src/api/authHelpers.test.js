@@ -99,3 +99,10 @@ test("2FA: codes keep only 6 digits", () => {
   assert.equal(normalizeOtp("12a34-5678"), "123456");
   assert.equal(normalizeOtp(undefined), "");
 });
+
+test("rate limited (429): French message with the wait time from Retry-After", () => {
+  const err = (headers) => ({ isAxiosError: true, response: { status: 429, headers, data: { status: "error", errors: ["Too many failed login attempts."] } } });
+  assert.equal(getErrorMessage(err({ "retry-after": "840" })), "Trop de tentatives. Réessayez dans 14 minutes.");
+  assert.equal(getErrorMessage(err({ "retry-after": "30" })), "Trop de tentatives. Réessayez dans 1 minute.");
+  assert.equal(getErrorMessage(err({})), "Trop de tentatives. Réessayez plus tard.");
+});

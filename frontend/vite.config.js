@@ -12,6 +12,9 @@ export default defineConfig({
       "/api": {
         target: process.env.BACKEND_URL || "http://localhost:4000",
         changeOrigin: true,
+        // Send the browser's IP in X-Forwarded-For: the backend rate limits per client IP
+        // (it trusts this header only from a proxy on this machine, TRUST_PROXY=loopback).
+        xfwd: true,
       },
     },
   },

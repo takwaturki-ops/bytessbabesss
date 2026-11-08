@@ -4,6 +4,7 @@ import helmet from "helmet";
 
 import { checkDatabaseConnection } from "./config/database.js";
 import { createAuthMiddleware, createRequireAdmin } from "./middlewares/authMiddleware.js";
+import { createRateLimiters } from "./middlewares/rateLimit.js";
 import { createAdminRouter } from "./routes/adminRoutes.js";
 import { createAuthRouter } from "./routes/authRoutes.js";
 import { createConversationRouter } from "./routes/conversationRoutes.js";
@@ -19,12 +20,18 @@ import { isDbUnavailable } from "./utils/http.js";
 export function createApp({
   pool, jwtSecret, jwtExpiresIn = "15m", corsOrigins = [], bcryptRounds = 12,
   ai = createAiClient(), databaseMode = "postgres",
+  rateLimits = {}, trustProxy = "loopback",
 }) {
   const app = express();
+  // Which proxies may set X-Forwarded-For (the client IP used by rate limiting).
+  // "loopback" = only a proxy on this machine, such as the Vite dev server. A remote client cannot spoof it.
+  app.set("trust proxy", trustProxy);
+  const limiters = createRateLimiters(rateLimits);
 
   // Middlewares (kept from the original server: helmet + cors + JSON body)
   app.use(helmet());
   app.use(cors({ origin: corsOrigins.length ? corsOrigins : false }));
+  app.use("/api", limiters.api);
   app.use(express.json({ limit: "100kb" }));
 
   // Health check: always 200 while the process runs; reports database and AI service state separately.
@@ -43,7 +50,7 @@ export function createApp({
     });
   });
 
-  app.use("/api/auth", createAuthRouter({ pool, jwtSecret, jwtExpiresIn, bcryptRounds }));
+  app.use("/api/auth", createAuthRouter({ pool, jwtSecret, jwtExpiresIn, bcryptRounds, limiters }));
 
   // Everything below needs a database and an authenticated user.
   const protect = createAuthMiddleware({ jwtSecret });

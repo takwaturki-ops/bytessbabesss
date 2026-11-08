@@ -37,6 +37,7 @@ const app = createApp({
   corsOrigins: config.corsOrigins,
   ai: createAiClient({ baseUrl: config.aiServiceUrl, apiKey: config.internalApiKey, timeoutMs: config.aiTimeoutMs }),
   databaseMode,
+  trustProxy: config.trustProxy,
 });
 
 const database = await checkDatabaseConnection(pool);
