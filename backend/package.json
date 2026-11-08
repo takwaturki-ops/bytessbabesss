@@ -1,0 +1,32 @@
+{
+  "name": "finetech",
+  "version": "1.0.0",
+  "description": "Autonomous AI Agents for Intelligent and Secure Financial Operations.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takwaturki-ops/bytessbabesss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/takwaturki-ops/bytessbabesss/issues"
+  },
+  "homepage": "https://github.com/takwaturki-ops/bytessbabesss#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
