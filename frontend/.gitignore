@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+# the repository root ignores ".env.*"; the example holds no secrets and must be shared
+!.env.example
 
 # Editor directories and files
 .vscode/*

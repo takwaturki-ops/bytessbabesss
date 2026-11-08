@@ -1,5 +1,5 @@
 import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Me() {
   const { user, loading, token, logout } = useAuth();
@@ -7,8 +7,7 @@ export default function Me() {
 
   if (loading) return <div className="auth-container">Chargement...</div>;
   if (!token) {
-    navigate("/login");
-    return null;
+    return <Navigate to="/login" replace />;
   }
 
   return (

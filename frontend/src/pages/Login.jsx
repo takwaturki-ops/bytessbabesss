@@ -2,30 +2,34 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
+import { extractAccessToken, getErrorMessage } from "../api/authHelpers";
 import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  const { setUser, setToken } = useAuth();
+  const { signIn } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSubmitting(true);
 
     try {
       const res = await login({ email, password });
 
-      setToken(res.data.token);
-      localStorage.setItem("smartfin_token", res.data.token);
-      setUser(res.data.user || res.data);
+      // Throws if the backend did not return data.accessToken: no token, no login.
+      signIn(extractAccessToken(res));
 
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.error || "Erreur de connexion");
+      setError(getErrorMessage(err, "Erreur de connexion"));
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -55,7 +59,7 @@ export default function Login() {
 
         {error && <div className="auth-error">{error}</div>}
 
-        <button type="submit">Se connecter</button>
+        <button type="submit" disabled={submitting}>Se connecter</button>
       </form>
 
       <p style={{ marginTop: "20px", textAlign: "center" }}>

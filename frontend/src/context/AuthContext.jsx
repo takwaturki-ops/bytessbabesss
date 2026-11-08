@@ -1,15 +1,14 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import { me } from "../api/auth";
+import { clearToken, readToken, writeToken } from "../api/authHelpers";
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  const [token, setToken] = useState(() =>
-    localStorage.getItem("smartfin_token")
-  );
+  const [token, setToken] = useState(() => readToken(window.localStorage));
 
   const [loading, setLoading] = useState(true);
 
@@ -24,11 +23,15 @@ export function AuthProvider({ children }) {
 
     me(token)
       .then((res) => {
-        setUser(res.data);
+        // Backend: { status: "ok", data: { userId, id, name, email, role, createdAt } }
+        setUser(res.data?.data ?? null);
       })
-      .catch(() => {
-        localStorage.removeItem("smartfin_token");
-        setToken(null);
+      .catch((err) => {
+        // Only an authentication failure ends the session; a network error keeps the token.
+        if (err?.response?.status === 401) {
+          clearToken(window.localStorage);
+          setToken(null);
+        }
         setUser(null);
       })
       .finally(() => {
@@ -36,8 +39,14 @@ export function AuthProvider({ children }) {
       });
   }, [token]);
 
+  // Store a token received from the backend and start the session (/me is then loaded automatically).
+  const signIn = (newToken) => {
+    writeToken(window.localStorage, newToken);
+    setToken(newToken);
+  };
+
   const logout = () => {
-    localStorage.removeItem("smartfin_token");
+    clearToken(window.localStorage);
     setToken(null);
     setUser(null);
   };
@@ -48,6 +57,7 @@ export function AuthProvider({ children }) {
     loading,
     setUser,
     setToken,
+    signIn,
     logout,
   };
 
