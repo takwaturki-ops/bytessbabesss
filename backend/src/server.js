@@ -1,32 +1,45 @@
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import dotenv from "dotenv";
-import pool from "./config/database.js";
+import { createApp } from "./app.js";
+import { checkDatabaseConnection, createPool } from "./config/database.js";
+import { getConfig, loadEnv } from "./config/env.js";
 
-dotenv.config({ path: "../.env.local" });
-console.log("DATABASE_URL chargée :", !!process.env.DATABASE_URL);
+// Single startup entry point of the backend:  npm start  ->  node src/server.js
+loadEnv();
 
-const app = express();
+let config;
+try {
+  config = getConfig();
+} catch (err) {
+  console.error(`Configuration error: ${err.message}`);
+  process.exit(1);
+}
+if (config.weakSecret) {
+  console.warn("Warning: JWT_SECRET is shorter than 32 characters; use a long random value.");
+}
 
-// Middlewares
-app.use(helmet());
-app.use(cors());
-app.use(express.json());
-
-// Test du serveur
-app.get("/api/health", (req, res) => {
-    res.status(200).json({
-        status: "success",
-        message: "FinTech Backend is running!"
-    });
+console.log("DATABASE_URL chargée :", Boolean(config.databaseUrl));
+const pool = createPool(config.databaseUrl);
+const app = createApp({
+  pool,
+  jwtSecret: config.jwtSecret,
+  jwtExpiresIn: config.jwtExpiresIn,
+  corsOrigins: config.corsOrigins,
 });
 
-// Port du serveur
+const database = await checkDatabaseConnection(pool);
+if (database === "connected") {
+  console.log("Connexion réussie à Neon PostgreSQL !");
+} else {
+  console.error(`PostgreSQL ${database}: the server starts, authentication routes will answer 503 until it is reachable.`);
+}
 
-
-const PORT = 4000;
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+const server = app.listen(config.port, () => {
+  console.log(`Server running on http://localhost:${config.port}`);
 });
+
+const shutdown = () => {
+  server.close(() => {
+    Promise.resolve(pool?.end()).finally(() => process.exit(0));
+  });
+};
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);

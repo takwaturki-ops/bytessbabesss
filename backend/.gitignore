@@ -1,0 +1,4 @@
+node_modules/
+.env
+# the repository root ignores ".env.*"; the example holds no secrets and must be shared
+!.env.example

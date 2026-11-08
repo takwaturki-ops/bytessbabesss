@@ -1,24 +1,37 @@
-import dotenv from "dotenv";
 import pg from "pg";
-
-dotenv.config({ path: "../.env.local" });
 
 const { Pool } = pg;
 
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
+/**
+ * Create the single Neon PostgreSQL pool used by the whole backend.
+ * Returns null when DATABASE_URL is not configured (the server still starts; DB routes answer 503).
+ */
+export function createPool(connectionString) {
+  if (!connectionString) {
+    return null;
+  }
+  const pool = new Pool({
+    connectionString,
+    // Kept from the original Neon setup. See README: certificate verification should be reviewed by the team.
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 5000,
+  });
+  // An idle client losing its connection must not crash the process.
+  pool.on("error", (err) => {
+    console.error("PostgreSQL pool error:", err.message);
+  });
+  return pool;
+}
 
-pool.connect((err, client, release) => {
-    if (err) {
-        console.error("Erreur de connexion à PostgreSQL :", err);
-    } else {
-        console.log("Connexion réussie à Neon PostgreSQL !");
-        release();
-    }
-});
-
-export default pool;
+/** "connected" | "unavailable" | "not_configured" - never throws. */
+export async function checkDatabaseConnection(pool) {
+  if (!pool) {
+    return "not_configured";
+  }
+  try {
+    await pool.query("SELECT 1");
+    return "connected";
+  } catch {
+    return "unavailable";
+  }
+}
