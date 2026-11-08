@@ -7,7 +7,7 @@ from core import data
 from core.base_agent import BaseAgent
 from schemas.common import AgentMeta
 from schemas.financial import DataScope, FinancialDraft, FinancialMetrics, FinancialOutput, FinancialQuery
-from tools.financial_metrics import compute_metrics
+from tools.financial_metrics import compute_metrics, unmatched_warning
 
 NUMBER = re.compile(r"(?<![\w.])-?\d[\d,]*(?:\.\d+)?")
 
@@ -86,6 +86,10 @@ class FinancialAnalystAgent(BaseAgent[FinancialQuery, FinancialOutput]):
             convs = data.split_records("conversations", q.split)
             source = f"simulated:{q.split}"
         metrics = compute_metrics(orders, txns, data.course_map(), convs, q.date_from, q.date_to)
+        # Visibility only: metrics above are unchanged; we report transactions dropped for a missing order.
+        warning = unmatched_warning(orders, txns)
+        if warning:
+            meta.warnings.append(warning)
 
         if q.explain:
             # Token saving: send compact metrics (top-5 breakdowns), never raw rows.

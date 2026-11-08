@@ -34,6 +34,30 @@ def filter_dates(df: pd.DataFrame, date_from: str | None, date_to: str | None) -
     return df[mask]
 
 
+def unmatched_transactions(orders: list[dict], transactions: list[dict]) -> tuple[list[str], list[str]]:
+    """Read-only check: transactions whose order_id matches NO supplied order (exact, case-sensitive match,
+    same as the filter in compute_metrics). Returns (excluded transaction_ids, unmatched order_ids).
+    Date filtering is intentionally not considered here: only references to orders that were never supplied."""
+    known = {o.get("order_id") for o in orders}
+    excluded = [t for t in transactions if t.get("order_id") not in known]
+    tx_ids = [str(t.get("transaction_id")) for t in excluded]
+    order_ids = list(dict.fromkeys(str(t.get("order_id")) for t in excluded))
+    return tx_ids, order_ids
+
+
+def _preview(ids: list[str], limit: int = 20) -> str:
+    return ", ".join(ids[:limit]) + (f" (+{len(ids) - limit} more)" if len(ids) > limit else "")
+
+
+def unmatched_warning(orders: list[dict], transactions: list[dict]) -> str | None:
+    tx_ids, order_ids = unmatched_transactions(orders, transactions)
+    if not tx_ids:
+        return None
+    return (f"transactions_excluded_unmatched_order:{len(tx_ids)} - transaction_ids: {_preview(tx_ids)}; "
+            f"unmatched order_ids: {_preview(order_ids)}. These transactions were not counted in any metric; "
+            f"send their orders (order_id match is exact and case-sensitive).")
+
+
 def compute_metrics(orders: list[dict], transactions: list[dict], courses: dict[str, dict],
                     conversations: list[dict] | None = None, date_from: str | None = None,
                     date_to: str | None = None) -> FinancialMetrics:
