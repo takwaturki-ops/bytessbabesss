@@ -57,3 +57,10 @@ def allowed_prices(course_ids: list[str] | None = None) -> set[float]:
 
 def prices_in_text(text: str) -> list[float]:
     return [float(m.replace(",", ".")) for m in PRICE_PATTERN.findall(text)]
+
+
+def topic_matches(text: str) -> list[dict]:
+    """Courses whose title or a keyword appears in the text itself (no profile signals, no fallback)."""
+    t = norm(text)
+    return [c for c in data.courses()
+            if has(t, norm(c["title"])) or any(has(t, k.lower()) for k in c["keywords"])]

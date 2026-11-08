@@ -80,3 +80,53 @@ def sentiment_score(texts: list[str]) -> float:
 
 def sentiment_label(score: float) -> str:
     return "positive" if score > 0.35 else "negative" if score < -0.35 else "neutral"
+
+
+# ----------------------------------------------------------------------------- language & small talk
+# Latin-script Tunisian darija markers (3/7/9 digits, common words); French and English function words.
+DARIJA = ("3aslema", "aslema", "ahla", "chnowa", "chnoua", "chniya", "n7eb", "nheb", "n7ebb", "kifech", "kifeh",
+          "barcha", "behi", "ya3tik", "saha", "9adech", "9addech", "chkoun", "ena", "enti", "inti", "mta3",
+          "famma", "fama", "3andkom", "3andek", "nechri", "ghali", "ghalia", "brabi", "yesser", "wa9t", "ken",
+          "chbik", "labes", "lebes", "nchallah", "inchallah", "mouch", "mech", "bech", "nkhallas", "nodkhol",
+          "todhher", "fi", "w", "chwaya", "yezzi", "bslema", "marhba", "choukran", "chokran", "3lech", "win")
+FRENCH = ("je", "tu", "vous", "est", "c'est", "pour", "le", "la", "les", "des", "une", "un", "quel", "quels",
+          "quelle", "combien", "bonjour", "bonsoir", "salut", "coucou", "merci", "cours", "formation", "apprendre",
+          "veux", "voudrais", "aimerais", "trop", "cher", "pas", "avec", "comment", "pourquoi", "qui", "quoi",
+          "moi", "mon", "ma", "mes", "et", "ou", "suis", "es", "avez", "proposez", "débutant", "niveau")
+ENGLISH = ("i", "you", "the", "is", "are", "what", "which", "how", "much", "want", "learn", "course", "courses",
+           "hello", "hi", "hey", "thanks", "thank", "please", "can", "do", "have", "my", "me", "it", "for", "and")
+
+SMALLTALK_RULES: list[tuple[str, tuple[str, ...]]] = [  # order matters: first match wins
+    ("farewell", ("bye", "goodbye", "au revoir", "à plus", "a plus", "a+", "bslema", "bonne journée",
+                  "bonne soirée", "see you", "à bientôt", "a bientot")),
+    ("thanks", ("merci", "thanks", "thank you", "ya3tik saha", "ya3tik", "choukran", "chokran", "yaatik saha")),
+    ("whoami", ("qui es-tu", "qui es tu", "t'es qui", "tu es qui", "who are you", "what can you do",
+                "tu peux faire quoi", "que peux-tu faire", "que fais-tu", "chkoun inti", "chkoun enti",
+                "chnowa ta3mel", "aide-moi", "aide moi", "help me", "comment ça marche", "comment ca marche")),
+    ("catalog", ("catalogue", "tous les cours", "toutes les formations", "liste des cours", "quels cours",
+                 "quelles formations", "vos cours", "vos formations", "what courses", "all courses",
+                 "list of courses", "chnowa el formations", "chnowa famma", "les cours", "les formations")),
+    ("greeting", ("coucou", "cc", "salut", "slt", "bonjour", "bonsoir", "hello", "hi", "hey", "ahla",
+                  "aslema", "3aslema", "salam", "slm", "marhba", "yo", "hola")),
+]
+
+
+def detect_language(text: str, history_text: str = "") -> str:
+    """'tn' (darija, Latin script), 'fr' or 'en'. The current message decides; history breaks ties. Default 'fr'."""
+    for t in (norm(text), norm(history_text)):
+        tn = sum(has(t, k) for k in DARIJA) + 2 * len(re.findall(r"[a-z][379][a-z]|[379][a-z]{2}", t))
+        fr = sum(has(t, k) for k in FRENCH)
+        en = sum(has(t, k) for k in ENGLISH)
+        best = max(tn, fr, en)
+        if best:
+            return "tn" if tn == best else "fr" if fr == best else "en"
+    return "fr"
+
+
+def detect_smalltalk(text: str) -> str | None:
+    """greeting / thanks / farewell / whoami / catalog, or None when the message is about something concrete."""
+    t = norm(text)
+    for kind, kws in SMALLTALK_RULES:
+        if any(has(t, k) for k in kws):
+            return kind
+    return None

@@ -190,3 +190,14 @@
   .q-story { grid-template-columns: 54px 1fr; }
   .q-nav-links .hide-sm { display: none; }
 }
+
+/* structured agent replies (RichText) */
+.q-rich { white-space: normal; }
+.q-rich p { margin: 0 0 10px; white-space: pre-line; }
+.q-rich p:last-child, .q-rich ul:last-child { margin-bottom: 0; }
+.q-rich ul { margin: 0 0 10px; padding-left: 4px; list-style: none; display: grid; gap: 6px; }
+.q-rich li { position: relative; padding-left: 16px; }
+.q-rich li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, var(--violet)); }
+.q-rich li .detail { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+.q-rich strong { color: #fff; font-weight: 700; }

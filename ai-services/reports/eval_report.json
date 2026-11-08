@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-08 00:21 UTC",
-  "llm_mode": "mock",
-  "model": null,
+  "generated_at": "2026-11-08 05:56 UTC",
+  "llm_mode": "live",
+  "model": "claude-sonnet-5-5",
   "data": "SIMULATED",
   "summary": {
     "scenarios": 74,
@@ -14,7 +14,7 @@
         "id": "S01",
         "category": "normal",
         "description": "Purchase intent (EN)",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -51,7 +51,7 @@
             "path": "data.reply",
             "op": "regex_present",
             "expected": "199",
-            "actual": "[MOCK] Excellent choice! Python for AI (199 TND, 4 weeks, beginner). I will send you the secure payment link now.",
+            "actual": "[FALLBACK] Excellent choice! ✅\n\n• **Python for AI** — 199 TND · 4 weeks · beginner\n  Python basics, NumPy and pandas, aimed at future AI practitioners.\n\nClick **Buy** below to start the secure (simulated) checkout. Nothing is charged until you confirm.",
             "passed": true
           },
           {
@@ -67,7 +67,7 @@
         "id": "S02",
         "category": "normal",
         "description": "Information request",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -101,7 +101,7 @@
         "id": "S03",
         "category": "normal",
         "description": "Price objection from a student",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -145,7 +145,7 @@
         "id": "S04",
         "category": "normal",
         "description": "Course comparison",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -181,7 +181,7 @@
         "id": "S05",
         "category": "normal",
         "description": "Payment issue is routed, no upsell",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -218,7 +218,7 @@
         "id": "S06",
         "category": "normal",
         "description": "Support request",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -248,7 +248,7 @@
         "id": "S07",
         "category": "normal",
         "description": "Not interested",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -278,7 +278,7 @@
         "id": "S08",
         "category": "normal",
         "description": "Purchase intent (FR)",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -310,7 +310,7 @@
         "id": "S09",
         "category": "normal",
         "description": "Information request (darija)",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -342,7 +342,7 @@
         "id": "S10",
         "category": "edge",
         "description": "Difficulty objection -> beginner course",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -381,7 +381,7 @@
                 "price_tnd": 229.0,
                 "level": "beginner",
                 "duration_weeks": 4,
-                "reason": "beginner-friendly"
+                "reason": "beginner-friendly, no prerequisites"
               }
             ],
             "passed": true
@@ -392,7 +392,7 @@
         "id": "S11",
         "category": "missing_input",
         "description": "Empty message",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -439,7 +439,7 @@
             "path": "data.reply",
             "op": "regex_absent",
             "expected": "(?<!\\d)99 TND",
-            "actual": "[FALLBACK] Here is what I recommend: Python for AI (199 TND, 4 weeks, beginner). Would you like more details?",
+            "actual": "[FALLBACK] Here's what I recommend:\n\n• **Python for AI** — 199 TND · 4 weeks · beginner\n  Python basics, NumPy and pandas, aimed at future AI practitioners.\n\n👉 Want more details, a comparison, or ready to enrol?",
             "passed": true
           },
           {
@@ -481,7 +481,7 @@
             "path": "data.reply",
             "op": "regex_absent",
             "expected": "payment (is|was) confirmed",
-            "actual": "[FALLBACK] Excellent choice! Python for AI (199 TND, 4 weeks, beginner). I will send you the secure payment link now.",
+            "actual": "[FALLBACK] Great decision! 🚀\n\n• **Python for AI** — 199 TND · 4 weeks · beginner\n  Python basics, NumPy and pandas, aimed at future AI practitioners.\n\nClick **Buy** below to start the secure (simulated) checkout. Nothing is charged until you confirm.",
             "passed": true
           },
           {
@@ -497,7 +497,7 @@
         "id": "S14",
         "category": "ambiguous",
         "description": "Bare greeting",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -521,7 +521,7 @@
               "present_courses",
               "answer_question"
             ],
-            "actual": "present_courses",
+            "actual": "answer_question",
             "passed": true
           }
         ]
@@ -530,7 +530,7 @@
         "id": "S15",
         "category": "edge",
         "description": "Unknown customer id still answers",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -545,7 +545,8 @@
             "op": "contains",
             "expected": "unknown_customer_id:CUST9999",
             "actual": [
-              "unknown_customer_id:CUST9999"
+              "unknown_customer_id:CUST9999",
+              "llm_unavailable: authentication failed - set ANTHROPIC_API_KEY or switch LLM_MODE=mock"
             ],
             "passed": true
           }
@@ -557,7 +558,7 @@
         "id": "I01",
         "category": "normal",
         "description": "Happy buyer",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -610,7 +611,7 @@
         "id": "I02",
         "category": "normal",
         "description": "Price objection, disappointed (FR)",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -649,7 +650,7 @@
         "id": "I03",
         "category": "normal",
         "description": "Time objection, undecided",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -688,7 +689,7 @@
         "id": "I04",
         "category": "normal",
         "description": "Trust objection",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -713,7 +714,7 @@
         "id": "I05",
         "category": "normal",
         "description": "Payment problem",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -750,7 +751,7 @@
         "id": "I06",
         "category": "normal",
         "description": "Lost lead",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -787,7 +788,7 @@
         "id": "I07",
         "category": "normal",
         "description": "Support request",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -819,7 +820,7 @@
         "id": "I08",
         "category": "normal",
         "description": "Darija happy buyer",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -858,7 +859,7 @@
         "id": "I09",
         "category": "edge",
         "description": "Multiple objections",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -887,7 +888,7 @@
         "id": "I10",
         "category": "missing_input",
         "description": "No turns",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -913,7 +914,7 @@
         "id": "I11",
         "category": "missing_input",
         "description": "Only agent turns",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -1023,7 +1024,7 @@
         "id": "I14",
         "category": "ambiguous",
         "description": "Mixed signals",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1057,7 +1058,7 @@
         "id": "P01",
         "category": "normal",
         "description": "Success with full evidence",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1094,7 +1095,7 @@
         "id": "P02",
         "category": "normal",
         "description": "Card declined",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1131,7 +1132,7 @@
         "id": "P03",
         "category": "normal",
         "description": "Pending at provider",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1161,7 +1162,7 @@
         "id": "P04",
         "category": "normal",
         "description": "Provider flagged for review",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1191,7 +1192,7 @@
         "id": "P05",
         "category": "edge",
         "description": "Success claimed without provider reference",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1230,7 +1231,7 @@
         "id": "P06",
         "category": "edge",
         "description": "Success claimed with invalid signature",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1262,7 +1263,7 @@
         "id": "P07",
         "category": "edge",
         "description": "Success with amount lower than expected",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1294,7 +1295,7 @@
         "id": "P08",
         "category": "edge",
         "description": "Success in wrong currency",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1326,7 +1327,7 @@
         "id": "P09",
         "category": "ambiguous",
         "description": "Provider alias 'authorized' means pending",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1349,7 +1350,7 @@
         "id": "P10",
         "category": "ambiguous",
         "description": "Unknown provider status",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1386,7 +1387,7 @@
         "id": "P11",
         "category": "missing_input",
         "description": "Missing order_id",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -1412,7 +1413,7 @@
         "id": "P12",
         "category": "missing_input",
         "description": "Success but expected amount unknown",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1527,7 +1528,7 @@
         "id": "P15",
         "category": "ambiguous",
         "description": "Upper-case alias PAID with full evidence",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1557,7 +1558,7 @@
         "id": "P16",
         "category": "edge",
         "description": "Zero amount on a pending event",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1591,7 +1592,7 @@
         "id": "FA01",
         "category": "normal",
         "description": "Overview on a known mini-dataset",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1628,7 +1629,7 @@
         "id": "FA02",
         "category": "normal",
         "description": "Average order value and discount total",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1658,7 +1659,7 @@
         "id": "FA03",
         "category": "normal",
         "description": "Payment statistics",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1695,7 +1696,7 @@
         "id": "FA04",
         "category": "normal",
         "description": "Best-selling course",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1725,7 +1726,7 @@
         "id": "FA05",
         "category": "edge",
         "description": "Date filter on October only",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1762,7 +1763,7 @@
         "id": "FA06",
         "category": "edge",
         "description": "Empty dataset",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1806,7 +1807,7 @@
         "id": "FA07",
         "category": "missing_input",
         "description": "Orders missing required column",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -1859,7 +1860,7 @@
         "id": "FA09",
         "category": "normal",
         "description": "Dev split matches independent calculation",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -1959,7 +1960,7 @@
         "id": "FA10",
         "category": "normal",
         "description": "Eval split matches independent calculation",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2059,7 +2060,7 @@
         "id": "FA11",
         "category": "normal",
         "description": "Failure reasons breakdown",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2119,7 +2120,7 @@
         "id": "FA13",
         "category": "ambiguous",
         "description": "Date range with no data",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2151,7 +2152,7 @@
         "id": "F01",
         "category": "normal",
         "description": "Single clean success",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -2188,7 +2189,7 @@
         "id": "F02",
         "category": "normal",
         "description": "Order already paid -> duplicate",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2220,7 +2221,7 @@
         "id": "F03",
         "category": "normal",
         "description": "3 failed attempts in 10 min",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2252,7 +2253,7 @@
         "id": "F04",
         "category": "normal",
         "description": "6 failed attempts -> block",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2284,7 +2285,7 @@
         "id": "F05",
         "category": "normal",
         "description": "Amount differs from catalog",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2316,7 +2317,7 @@
         "id": "F06",
         "category": "normal",
         "description": "Success with invalid provider signature",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2348,7 +2349,7 @@
         "id": "F07",
         "category": "normal",
         "description": "Foreign IP on unknown device",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2380,7 +2381,7 @@
         "id": "F08",
         "category": "edge",
         "description": "Foreign IP but known device (travelling customer)",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -2403,7 +2404,7 @@
         "id": "F09",
         "category": "edge",
         "description": "Two failures then success (false-positive check)",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -2426,7 +2427,7 @@
         "id": "F10",
         "category": "edge",
         "description": "Duplicate AND amount mismatch",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2469,7 +2470,7 @@
         "id": "F11",
         "category": "missing_input",
         "description": "Event without timestamp",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -2534,7 +2535,7 @@
         "id": "F13",
         "category": "edge",
         "description": "Non-TND currency",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2566,7 +2567,7 @@
         "id": "F14",
         "category": "edge",
         "description": "Unusually high amount",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {
@@ -2598,7 +2599,7 @@
         "id": "F15",
         "category": "ambiguous",
         "description": "Five failures but 2 hours ago (outside window)",
-        "mode": "mock",
+        "mode": "live",
         "passed": true,
         "checks": [
           {
@@ -2621,7 +2622,7 @@
         "id": "F16",
         "category": "edge",
         "description": "Zero amount",
-        "mode": "mock",
+        "mode": "fallback",
         "passed": true,
         "checks": [
           {

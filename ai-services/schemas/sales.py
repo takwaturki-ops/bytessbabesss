@@ -40,7 +40,7 @@ class SalesOutput(BaseModel):
 
 class SalesDraft(BaseModel):
     text_fields: ClassVar[tuple[str, ...]] = ("reply",)
-    reply: str = Field(description="reply to the customer, max ~90 words, in the customer's language")
+    reply: str = Field(description="structured reply to the customer (bullets, **bold**), max ~120 words, in the customer's language")
     detected_intent: Intent
     objection_type: Literal["price", "time", "difficulty", "trust", "none"]
     recommended_course_ids: list[str] = Field(description="0-3 course_ids taken ONLY from `candidates`")

@@ -4,9 +4,11 @@ import { BookOpen, MessageSquare, Plus, Receipt, Send, ShieldCheck } from "lucid
 import { createConversation, getCourses, getMessages, getPurchase, listConversations, listPurchases, sendMessage } from "../api/client";
 import { getErrorMessage } from "../api/authHelpers";
 import PurchaseModal from "../components/PurchaseModal";
+import RichText from "../components/RichText";
 import SecurityPanel from "../components/SecurityPanel";
 import { AgentPipeline, AgentSummary, AppShell, StatusPill } from "../components/ui";
 import { useAuth } from "../context/AuthContext";
+import { stripAgentPrefix } from "../utils/richText";
 
 const TABS = [
   { id: "chat", label: "Assistant IA", icon: MessageSquare },
@@ -14,6 +16,8 @@ const TABS = [
   { id: "purchases", label: "Mes achats", icon: Receipt },
   { id: "security", label: "Sécurité", icon: ShieldCheck },
 ];
+
+const MODE_LABEL = { live: "IA Claude", mock: "réponses modèles", fallback: "IA indisponible · réponse modèle" };
 
 const fmt = (d) => (d ? new Date(d).toLocaleString("fr-TN", { dateStyle: "short", timeStyle: "short" }) : "");
 
@@ -72,7 +76,7 @@ function Chat({ onBuy }) {
         <button type="button" className="q-btn small" onClick={newConversation}><Plus size={14} /> Nouvelle conversation</button>
         {conversations.map((c) => (
           <button key={c.id} type="button" className={`q-conv ${c.id === activeId ? "active" : ""}`} onClick={() => setActiveId(c.id)}>
-            <strong>{c.title}</strong><small>{c.lastMessage ?? "Pas encore de message"}</small><small>{fmt(c.updatedAt)}</small>
+            <strong>{c.title}</strong><small>{c.lastMessage ? stripAgentPrefix(c.lastMessage) : "Pas encore de message"}</small><small>{fmt(c.updatedAt)}</small>
           </button>
         ))}
         {!conversations.length && <p className="q-muted" style={{ fontSize: 13 }}>Aucune conversation pour l'instant.</p>}
@@ -87,14 +91,14 @@ function Chat({ onBuy }) {
           )}
           {messages.map((m) => (
             <div key={m.id} className={`q-msg ${m.role}`}>
-              {m.content}
+              {m.role === "assistant" ? <RichText text={m.content} /> : m.content}
               {m.role === "assistant" && m.metadata && (
                 <>
                   <div className="meta">
                     <span className="q-pill">Sales Agent</span>
                     <span className="q-pill">intention : {m.metadata.detected_intent}</span>
                     {m.metadata.objection_type && m.metadata.objection_type !== "none" && <span className="q-pill warn">objection : {m.metadata.objection_type}</span>}
-                    {m.metadata.mode && <span className="q-pill">mode {m.metadata.mode}</span>}
+                    {m.metadata.mode && <span className={`q-pill ${m.metadata.mode === "live" ? "" : "warn"}`}>{MODE_LABEL[m.metadata.mode] ?? m.metadata.mode}</span>}
                   </div>
                   {m.metadata.recommended_courses?.length > 0 && (
                     <div className="q-reco">

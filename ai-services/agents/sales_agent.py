@@ -7,76 +7,118 @@ from core.base_agent import FALLBACK_PREFIX, BaseAgent
 from data_generation.catalog import DISCOUNT_CODES
 from schemas.common import AgentMeta
 from schemas.sales import CourseRecommendation, SalesDraft, SalesInput, SalesOutput
-from tools.catalog_search import allowed_prices, mentioned_course_ids, prices_in_text, search_courses
-from tools.text_rules import detect_intent, detect_objections
+from agents.sales_replies import WEEKS, LEVEL, Writer, join, seed_of
+from tools.catalog_search import (LEVEL_ORDER, allowed_prices, mentioned_course_ids, prices_in_text, search_courses,
+                                  topic_matches)
+from tools.text_rules import detect_intent, detect_language, detect_objections, detect_smalltalk
 
 INTENT_SCORE = {"purchase_intent": 0.85, "course_comparison": 0.6, "price_objection": 0.55,
                 "information_request": 0.5, "payment_issue": 0.6, "support_request": 0.3, "not_interested": 0.05}
 NO_RECO_INTENTS = {"payment_issue", "support_request", "not_interested"}
 
 
-def _fmt(c: dict) -> str:
-    return f"{c['title']} ({c['price_tnd']:.0f} TND, {c['duration_weeks']} weeks, {c['level']})"
-
-
-def template_draft(intent: str, objections: list[str], candidates: list[dict], profile: dict) -> SalesDraft:
-    """Deterministic reply built only from catalog facts (mock mode and guardrail fallback)."""
+def template_draft(intent: str, objections: list[str], candidates: list[dict], profile: dict,
+                   lang: str = "fr", smalltalk: str | None = None, first_turn: bool = True,
+                   seed: int = 0) -> SalesDraft:
+    """Deterministic, localized, structured reply built only from catalog facts (mock mode and guardrail fallback)."""
+    w = Writer(lang, seed)
     objection = objections[0] if objections else "none"
     if intent == "price_objection":
         objection = "price"
-    top = candidates[:1]
+    greet = (w.say("hello") if first_turn else w.say("hello_again")) if smalltalk == "greeting" else ""
     recos, reasons = [], []
-    if intent == "purchase_intent" and top:
-        c = top[0]
-        reply = f"Excellent choice! {_fmt(c)}. I will send you the secure payment link now."
-        recos, reasons, action = [c], ["course requested by the customer"], "send_payment_link"
+    action = "answer_question"
+
+    if intent == "information_request" and smalltalk and not candidates:
+        # pure small talk: no course pushed
+        if smalltalk == "greeting":
+            reply = join(greet + " " + w.say("offer_help"), w.say("ask_goal"))
+        elif smalltalk == "thanks":
+            reply = join(w.say("thanks") + " " + w.say("thanks_more"))
+        elif smalltalk == "farewell":
+            reply, action = w.say("farewell"), "end_conversation"
+        elif smalltalk == "whoami":
+            reply = join(w.say("whoami"), w.say("ask_goal"))
+        else:  # catalog
+            picks = sorted(data.courses(), key=lambda c: (LEVEL_ORDER[c["level"]], c["price_tnd"]))
+            seen, recos = set(), []
+            for c in picks:  # one course per category, most accessible first
+                if c["category"] not in seen:
+                    seen.add(c["category"])
+                    recos.append(c)
+            recos = recos[:3]
+            reasons = [w.reason("popular")] * len(recos)
+            reply = join(w.say("catalog", n=len(data.courses())),
+                         "\n".join(w.bullet(c, with_desc=False) for c in recos), w.say("close_present"))
+            action = "present_courses"
+    elif intent == "purchase_intent" and candidates:
+        c = candidates[0]
+        reply = join(w.say("purchase"), w.bullet(c), w.say("purchase_next"))
+        recos, reasons, action = [c], [w.reason("requested")], "send_payment_link"
     elif intent == "course_comparison" and len(candidates) >= 2:
         a, b = candidates[0], candidates[1]
-        reply = f"{_fmt(a)} vs {_fmt(b)}. {a['title']}: {a['description']} {b['title']}: {b['description']}"
-        recos, reasons, action = [a, b], ["compared course", "compared course"], "answer_question"
+        first, second = sorted((a, b), key=lambda c: (LEVEL_ORDER[c["level"]], len(c["prerequisites"])))
+        if first["course_id"] in second["prerequisites"] or LEVEL_ORDER[first["level"]] < LEVEL_ORDER[second["level"]]:
+            advice = w.say("advice_path", a=first["title"], b=second["title"])
+        else:
+            cheap, full = sorted((a, b), key=lambda c: c["price_tnd"])
+            advice = w.say("advice_cheap", a=cheap["title"], b=full["title"])
+        reply = join(w.say("compare"), w.compare_block(a), w.compare_block(b), advice)
+        recos, reasons = [a, b], [w.reason("compared")] * 2
     elif intent == "payment_issue":
-        reply = "Sorry for the inconvenience. I am forwarding your case to our payment team; no new charge will be made."
-        action = "route_to_payment_support"
+        reply, action = w.say("pay_issue"), "route_to_payment_support"
     elif intent == "support_request":
-        reply = "Sorry about that! Our support team will help you access your course very quickly."
-        action = "route_to_customer_support"
+        reply, action = w.say("support"), "route_to_customer_support"
     elif intent == "not_interested":
-        reply = "No problem, thank you for your time. We remain available if you change your mind."
-        action = "end_conversation"
+        reply, action = w.say("not_interested"), "end_conversation"
     elif objection != "none" and candidates:
         c = candidates[0]
+        action = "handle_objection"
         if objection == "price":
             cheaper = sorted([x for x in data.courses() if x["category"] == c["category"]
                               and x["price_tnd"] < c["price_tnd"]], key=lambda x: x["price_tnd"])
-            reply = f"I understand. {_fmt(c)}."
+            parts = [w.say("price_ack"), w.bullet(c, with_desc=False)]
             if cheaper:
-                reply += f" A lighter option is {_fmt(cheaper[0])}."
-                recos, reasons = [c, cheaper[0]], ["matches your goal", "more affordable alternative"]
+                parts += [w.say("price_cheaper") + "\n" + w.bullet(cheaper[0])]
+                recos, reasons = [c, cheaper[0]], [w.reason("goal"), w.reason("cheaper")]
             else:
-                recos, reasons = [c], ["matches your goal"]
+                parts.append(w.say("price_none"))
+                recos, reasons = [c], [w.reason("goal")]
             if profile.get("segment") == "student":
-                reply += f" Students can use code STUDENT20 (-20%: {c['price_tnd'] * 0.8:.2f} TND)."
+                parts.append(w.say("price_student", title=c["title"], price=c["price_tnd"] * 0.8))
+            reply = join(*parts)
         elif objection == "time":
-            short = min(candidates, key=lambda x: x["duration_hours"])
-            reply = f"I understand you are busy. {_fmt(short)} takes only {short['duration_hours']}h, {short['format']}."
-            recos, reasons = [short], ["shortest relevant course"]
+            same_topic = [x for x in candidates if x["category"] == c["category"]]  # stay on the asked topic
+            short = min(same_topic, key=lambda x: x["duration_hours"])
+            reply = join(w.say("time_ack"), w.bullet(short),
+                         w.say("time_detail", hpw=w.hours_per_week(short), hours=short["duration_hours"],
+                               fmt=w.fmt(short)))
+            recos, reasons = [short], [w.reason("short")]
         elif objection == "difficulty":
             easy = [x for x in candidates if x["level"] == "beginner"] or \
                    [x for x in data.courses() if x["level"] == "beginner" and x["category"] == c["category"]] or [c]
-            reply = f"No worries! {_fmt(easy[0])} is designed for beginners and has no prerequisites." \
-                if not easy[0]["prerequisites"] else f"{_fmt(easy[0])} requires: {', '.join(easy[0]['prerequisites'])}."
-            recos, reasons = [easy[0]], ["beginner-friendly"]
+            e = easy[0]
+            note = w.say("diff_ok") if not e["prerequisites"] else w.say("diff_prereq", prereqs=w.prereqs(e))
+            reply = join(w.say("diff_ack"), w.bullet(e), note)
+            recos, reasons = [e], [w.reason("beginner")]
         else:  # trust
-            reply = f"{_fmt(c)} includes a certificate of completion" + ("." if c["certificate"] else " (not included).")
-            recos, reasons = [c], ["matches your goal"]
-        action = "handle_objection"
+            cert = w.nth("trust_cert", 0 if c["certificate"] else 1)
+            more = w.say("trust_more", fmt=w.fmt(c), weeks=c["duration_weeks"], weeks_word=WEEKS[w.lang],
+                         hours=c["duration_hours"], level=LEVEL[w.lang][c["level"]])
+            reply = join(w.say("trust"), f"**{c['title']}**\n{cert}\n{more}")
+            recos, reasons = [c], [w.reason("goal")]
     elif candidates:
         recos = candidates[:2]
-        reasons = ["best match for your request"] * len(recos)
-        reply = "Here is what I recommend: " + "; ".join(_fmt(c) for c in recos) + ". Would you like more details?"
-        action = "present_courses"
+        reasons = [w.reason("starter") if c["level"] == "beginner" and not c["prerequisites"] else w.reason("match")
+                   for c in recos]
+        parts = [(greet + " " if greet else "") + w.say("present"), "\n".join(w.bullet(c) for c in recos)]
+        gated = next((c for c in recos if c["prerequisites"]), None)
+        if gated:
+            parts.append(w.say("prereq", title=gated["title"], prereqs=w.prereqs(gated)))
+        parts.append(w.say("close_present"))
+        reply, action = join(*parts), "present_courses"
     else:
-        reply, action = "Could you tell me more about your goal so I can recommend the right course?", "answer_question"
+        reply = join((greet + " " if greet else "") + w.say("clarify"), w.say("ask_goal"))
     return SalesDraft(reply=reply, detected_intent=intent, objection_type=objection,
                       recommended_course_ids=[c["course_id"] for c in recos], recommendation_reasons=reasons,
                       next_action=action, purchase_intent_score=INTENT_SCORE[intent],
@@ -104,10 +146,20 @@ class SalesAgent(BaseAgent[SalesInput, SalesOutput]):
         candidates = mentioned + [c for c in search_courses(inp.customer_message, profile, 3, history_text)
                                   if c not in mentioned]
         candidates = candidates[:4]
-        if intent_hint in NO_RECO_INTENTS:
+        lang = detect_language(inp.customer_message, history_text)
+        smalltalk = detect_smalltalk(inp.customer_message) if intent_hint == "information_request" else None
+        # small talk ("coucou", "merci") with no topic in the message itself: no course pushed
+        pure_smalltalk = smalltalk is not None and not mentioned and not topic_matches(inp.customer_message)
+        first_turn = not any(t.role == "agent" for t in inp.conversation_history)
+        seed = seed_of(inp.customer_message)
+        if intent_hint in NO_RECO_INTENTS or pure_smalltalk:
             mock_candidates = []
         else:
             mock_candidates = candidates
+
+        def fallback(intent: str, objections: list[str], cands: list[dict]) -> SalesDraft:
+            return template_draft(intent, objections, cands, profile, lang=lang, smalltalk=smalltalk,
+                                  first_turn=first_turn, seed=seed)
 
         payload = {
             "customer_message": inp.customer_message,
@@ -118,11 +170,12 @@ class SalesAgent(BaseAgent[SalesInput, SalesOutput]):
                                                "duration_hours", "prerequisites", "certificate", "format",
                                                "description")} for c in candidates],
             "offers": DISCOUNT_CODES,
-            "rule_hints": {"intent": intent_hint, "objections": objection_hint},
+            "rule_hints": {"intent": intent_hint, "objections": objection_hint, "language": lang,
+                           "small_talk": smalltalk if pure_smalltalk else None, "first_turn": first_turn},
             "channel": inp.channel,
         }
         draft = self.draft(payload=payload, draft_model=SalesDraft, meta=meta, text_fields=SalesDraft.text_fields,
-                           mock=lambda: template_draft(intent_hint, objection_hint, mock_candidates, profile))
+                           mock=lambda: fallback(intent_hint, objection_hint, mock_candidates))
         meta.decision_source = "llm" if meta.llm_used else "deterministic"
 
         # ---------------- guardrails: catalog grounding
@@ -138,8 +191,8 @@ class SalesAgent(BaseAgent[SalesInput, SalesOutput]):
                 f"reply_replaced:{'non_catalog_price ' + str(bad_prices) if bad_prices else 'payment_claim'}")
             grounded = False
             safe_candidates = [cmap[i] for i in valid_ids] or mock_candidates
-            safe = template_draft(draft.detected_intent, [] if draft.objection_type == "none" else [draft.objection_type],
-                                  [] if draft.detected_intent in NO_RECO_INTENTS else safe_candidates, profile)
+            safe = fallback(draft.detected_intent, [] if draft.objection_type == "none" else [draft.objection_type],
+                            [] if draft.detected_intent in NO_RECO_INTENTS else safe_candidates)
             draft = draft.model_copy(update={"reply": FALLBACK_PREFIX + safe.reply})
             valid_ids = [i for i in safe.recommended_course_ids if i in cmap] or valid_ids
 
