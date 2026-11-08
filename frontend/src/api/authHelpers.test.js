@@ -6,6 +6,8 @@ import {
   TOKEN_KEY,
   clearToken,
   extractAccessToken,
+  extractTwoFactorChallenge,
+  normalizeOtp,
   getErrorMessage,
   readToken,
   resolveApiBaseUrl,
@@ -84,4 +86,16 @@ test("empty tokens are never stored, and legacy 'undefined' values are cleaned u
 test("API base URL comes from configuration, without trailing slash", () => {
   assert.equal(resolveApiBaseUrl("https://api.example.com/"), "https://api.example.com");
   assert.equal(resolveApiBaseUrl(undefined), "http://localhost:4000");
+});
+
+test("2FA: a login answer with twoFactorRequired gives the challenge token", () => {
+  assert.equal(extractTwoFactorChallenge({ data: { status: "ok", data: { twoFactorRequired: true, challengeToken: "c.t.k" } } }), "c.t.k");
+  assert.equal(extractTwoFactorChallenge({ data: { status: "ok", data: { accessToken: "a.b.c" } } }), null);
+  assert.throws(() => extractTwoFactorChallenge({ data: { data: { twoFactorRequired: true } } }), /session de vérification/);
+});
+
+test("2FA: codes keep only 6 digits", () => {
+  assert.equal(normalizeOtp("123 456"), "123456");
+  assert.equal(normalizeOtp("12a34-5678"), "123456");
+  assert.equal(normalizeOtp(undefined), "");
 });

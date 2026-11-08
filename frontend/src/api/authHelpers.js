@@ -14,6 +14,25 @@ export function extractAccessToken(response) {
   return token;
 }
 
+/**
+ * 2FA login: when the account has two-factor authentication, POST /api/auth/login answers
+ * { status: "ok", data: { twoFactorRequired: true, challengeToken } } instead of an access token.
+ * Returns the challenge token, or null for a normal one-step login.
+ */
+export function extractTwoFactorChallenge(response) {
+  const data = response?.data?.data;
+  if (data?.twoFactorRequired !== true) return null;
+  if (typeof data.challengeToken !== "string" || data.challengeToken.trim() === "") {
+    throw new Error("Réponse du serveur invalide : session de vérification manquante.");
+  }
+  return data.challengeToken;
+}
+
+/** Keep only digits, at most 6 (pasting "123 456" from an authenticator app works). */
+export function normalizeOtp(value) {
+  return String(value ?? "").replace(/\D/g, "").slice(0, 6);
+}
+
 /** Backend errors are { status: "error", errors: ["..."] }. Returns a message safe to display. */
 export function getErrorMessage(error, fallback = "Une erreur est survenue.") {
   const data = error?.response?.data;

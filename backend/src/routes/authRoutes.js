@@ -15,5 +15,11 @@ export function createAuthRouter(options) {
   router.post("/login", asyncHandler(controller.login));
   router.get("/me", protect, asyncHandler(controller.me));
 
+  // Two-factor authentication (TOTP)
+  router.post("/login/2fa", asyncHandler(controller.loginTwoFactor));
+  router.post("/2fa/setup", protect, asyncHandler(controller.setupTwoFactor));
+  router.post("/2fa/enable", protect, asyncHandler(controller.enableTwoFactor));
+  router.post("/2fa/disable", protect, asyncHandler(controller.disableTwoFactor));
+
   return router;
 }

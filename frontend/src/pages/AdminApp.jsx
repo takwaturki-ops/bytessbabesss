@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import { Activity, BookOpen, LayoutDashboard, RefreshCw, ShieldAlert, ShoppingCart, Users } from "lucide-react";
+import { Activity, BookOpen, LayoutDashboard, RefreshCw, ShieldAlert, ShieldCheck, ShoppingCart, Users } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 import { admin } from "../api/client";
 import { getErrorMessage } from "../api/authHelpers";
+import SecurityPanel from "../components/SecurityPanel";
 import { AgentPipeline, AgentSummary, AppShell, StatusPill } from "../components/ui";
 
 const TABS = [
@@ -13,6 +14,7 @@ const TABS = [
   { id: "users", label: "Utilisateurs", icon: Users },
   { id: "courses", label: "Cours", icon: BookOpen },
   { id: "activity", label: "Activité agents", icon: Activity },
+  { id: "security", label: "Sécurité", icon: ShieldCheck },
 ];
 const COLORS = ["#3ee8ff", "#8b5cf6", "#e879f9", "#34d399", "#fbbf24", "#f87171", "#60a5fa", "#a78bfa"];
 const fmt = (d) => (d ? new Date(d).toLocaleString("fr-TN", { dateStyle: "short", timeStyle: "short" }) : "");
@@ -227,7 +229,7 @@ function ActivityTab() {
 
 export default function AdminApp() {
   const [tab, setTab] = useState("overview");
-  const views = { overview: Overview, orders: Orders, alerts: Alerts, users: UsersTab, courses: CoursesTab, activity: ActivityTab };
+  const views = { overview: Overview, orders: Orders, alerts: Alerts, users: UsersTab, courses: CoursesTab, activity: ActivityTab, security: SecurityPanel };
   const View = views[tab];
   return (
     <AppShell tabs={TABS} active={tab} onTab={setTab} subtitle="Administrateur">

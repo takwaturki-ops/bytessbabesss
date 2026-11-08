@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { BookOpen, MessageSquare, Plus, Receipt, Send } from "lucide-react";
+import { BookOpen, MessageSquare, Plus, Receipt, Send, ShieldCheck } from "lucide-react";
 
 import { createConversation, getCourses, getMessages, getPurchase, listConversations, listPurchases, sendMessage } from "../api/client";
 import { getErrorMessage } from "../api/authHelpers";
 import PurchaseModal from "../components/PurchaseModal";
+import SecurityPanel from "../components/SecurityPanel";
 import { AgentPipeline, AgentSummary, AppShell, StatusPill } from "../components/ui";
 import { useAuth } from "../context/AuthContext";
 
@@ -11,6 +12,7 @@ const TABS = [
   { id: "chat", label: "Assistant IA", icon: MessageSquare },
   { id: "courses", label: "Catalogue", icon: BookOpen },
   { id: "purchases", label: "Mes achats", icon: Receipt },
+  { id: "security", label: "Sécurité", icon: ShieldCheck },
 ];
 
 const fmt = (d) => (d ? new Date(d).toLocaleString("fr-TN", { dateStyle: "short", timeStyle: "short" }) : "");
@@ -189,7 +191,7 @@ export default function UserApp() {
   const [tab, setTab] = useState("chat");
   const [buying, setBuying] = useState(null);
   const [refreshKey, setRefreshKey] = useState(0);
-  const titles = { chat: "Assistant IA 9antra", courses: "Catalogue des formations", purchases: "Historique des achats" };
+  const titles = { chat: "Assistant IA 9antra", courses: "Catalogue des formations", purchases: "Historique des achats", security: "Sécurité du compte" };
 
   return (
     <AppShell tabs={TABS} active={tab} onTab={setTab} subtitle="Apprenant">
@@ -199,6 +201,7 @@ export default function UserApp() {
       {tab === "chat" && <Chat onBuy={(course, conversationId) => setBuying({ course, conversationId })} />}
       {tab === "courses" && <Courses onBuy={(course) => setBuying({ course })} />}
       {tab === "purchases" && <Purchases refreshKey={refreshKey} />}
+      {tab === "security" && <SecurityPanel />}
       {buying && (
         <PurchaseModal course={buying.course} conversationId={buying.conversationId}
           onClose={() => setBuying(null)} onDone={() => setRefreshKey((k) => k + 1)} />

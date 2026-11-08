@@ -15,7 +15,7 @@ const api = axios.create({
 
 // Protected requests: attach the stored token unless the caller already set one.
 api.interceptors.request.use((config) => {
-  const isPublic = config.url === "/login" || config.url === "/register";
+  const isPublic = config.url === "/login" || config.url === "/register" || config.url === "/login/2fa";
   const token = readToken(window.localStorage);
   if (!isPublic && token && !config.headers?.Authorization) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -27,5 +27,11 @@ export const register = (data) => api.post("/register", data);
 export const login = (data) => api.post("/login", data);
 export const me = (token) =>
   api.get("/me", token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
+
+// Two-factor authentication (TOTP)
+export const loginTwoFactor = (challengeToken, code) => api.post("/login/2fa", { challengeToken, code });
+export const setupTwoFactor = () => api.post("/2fa/setup", {});
+export const enableTwoFactor = (code) => api.post("/2fa/enable", { code });
+export const disableTwoFactor = (password, code) => api.post("/2fa/disable", { password, code });
 
 export default api;

@@ -48,6 +48,8 @@ Check: http://localhost:5173/api/health (proxied to the backend) shows `database
 |---|---|
 | `GET /api/health` | public |
 | `POST /api/auth/register`, `POST /api/auth/login`, `GET /api/auth/me` | public / user |
+| `POST /api/auth/login/2fa` (second login step when 2FA is on: `{ challengeToken, code }`) | public |
+| `POST /api/auth/2fa/setup`, `POST /api/auth/2fa/enable`, `POST /api/auth/2fa/disable` (TOTP, "Sécurité" tab) | user |
 | `GET /api/courses`, `GET /api/courses/:id` | public |
 | `GET/POST /api/conversations`, `GET/POST /api/conversations/:id/messages` | user (own data only) |
 | `POST /api/purchases`, `GET /api/purchases`, `GET /api/purchases/:id` | user |

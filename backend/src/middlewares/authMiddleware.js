@@ -23,6 +23,10 @@ export function createAuthMiddleware({ jwtSecret }) {
     } catch (err) {
       return unauthorized(res, err.name === "TokenExpiredError" ? "Token expired" : "Invalid token");
     }
+    // Access tokens have no audience. A token with one (the 2FA login challenge) is never an access token.
+    if (payload.aud !== undefined) {
+      return unauthorized(res, "Invalid token");
+    }
 
     const userId = Number(payload.sub);
     if (!Number.isInteger(userId) || userId <= 0) {

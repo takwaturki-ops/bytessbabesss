@@ -11,6 +11,14 @@ CREATE TABLE IF NOT EXISTS users (
     created_at    TIMESTAMPTZ  NOT NULL DEFAULT NOW()
 );
 
+-- Two-factor authentication (TOTP, authenticator apps). Added with ALTER so existing databases get the columns.
+--   totp_secret    : base32 secret, set at enrolment (pending until totp_enabled is true). Never sent back after enrolment.
+--   totp_enabled   : login asks for a 6-digit code only when TRUE.
+--   totp_last_step : last 30-second time step accepted, so the same code can never be used twice (replay).
+ALTER TABLE users ADD COLUMN IF NOT EXISTS totp_secret    VARCHAR(64);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS totp_enabled   BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS totp_last_step BIGINT;
+
 -- Course catalog. IDs and prices are the SAME as the AI service catalog (ai-services/data_generation/catalog.py):
 -- the purchase workflow takes the price from that catalog, so prices are not editable from the admin UI.
 CREATE TABLE IF NOT EXISTS courses (

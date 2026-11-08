@@ -10,7 +10,7 @@ import { loadEnv } from "../src/config/env.js";
 const dbDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "db");
 // Columns the backend relies on; an older table with another structure is reported instead of failing later.
 const REQUIRED = {
-  users: "id, name, email, password_hash, role, created_at",
+  users: "id, name, email, password_hash, role, created_at, totp_secret, totp_enabled, totp_last_step",
   courses: "id, title, category, level, price_tnd, duration_hours, duration_weeks, description, is_active",
   conversations: "id, user_id, title, created_at, updated_at",
   messages: "id, conversation_id, role, content, metadata, created_at",
