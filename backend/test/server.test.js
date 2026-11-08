@@ -11,7 +11,16 @@ function startServer(env) {
   const child = spawn(process.execPath, ["src/server.js"], {
     cwd: backendDir,
     // Clean environment: no inherited DATABASE_URL / JWT_SECRET from the developer's shell.
-    env: { PATH: process.env.PATH, SystemRoot: process.env.SystemRoot, ...env },
+    // The keys are set to "" because dotenv never overrides an existing variable: this keeps
+    // backend/.env (the developer's real config) from leaking into these tests.
+    env: {
+      PATH: process.env.PATH,
+      SystemRoot: process.env.SystemRoot,
+      JWT_SECRET: "",
+      DATABASE_URL: "",
+      USE_IN_MEMORY_DB: "",
+      ...env,
+    },
   });
   let output = "";
   child.stdout.on("data", (d) => { output += d; });
