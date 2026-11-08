@@ -41,7 +41,9 @@ const app = createApp({
 
 const database = await checkDatabaseConnection(pool);
 if (database === "connected") {
-  console.log(config.inMemoryDb ? "In-memory database ready." : "Connexion réussie à Neon PostgreSQL !");
+  // Only the host is logged, never the full connection string (it contains the password).
+  const host = config.databaseUrl ? new URL(config.databaseUrl).hostname : "";
+  console.log(config.inMemoryDb ? "In-memory database ready." : `Connexion réussie à PostgreSQL (${host}) !`);
 } else {
   console.error(`PostgreSQL ${database}: the server starts, database routes will answer 503 until it is reachable.`);
 }
